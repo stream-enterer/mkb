@@ -1,0 +1,177 @@
+[
+  {
+    "tension_id": "t-01",
+    "propositions": ["a1-03", "a3-02", "a3-03"],
+    "type": "contradiction",
+    "severity": 0.92,
+    "description": "a1-03 argues that opacity, permanence, fixed geometry, and spatial exclusivity should remain as separate weighted factors (not hard gates) to preserve diagnostic granularity. a3-02 demonstrates that five of the six factors are merely restatements of words already in the boxed definition ('opaque, persistent, non-overlapping'), making them redundant elaborations rather than independent discriminators. a3-03 extends this by arguing their redundancy creates false confidence in borderline classifications. The formalist wants to keep these factors as useful separate axes; the failure analyst says they are the same axis stated five times. The final document must decide whether these factors carry independent weight or are definitional tautologies."
+  },
+  {
+    "tension_id": "t-02",
+    "propositions": ["a1-02", "a3-01", "a3-04"],
+    "type": "undermining",
+    "severity": 0.90,
+    "description": "a1-02 proposes viewport partitioning (viewport_area < display_surface_area) as the single necessary condition for panel frame membership. a3-01 argues this spatial predicate actually smuggles in unstated functional assumptions (continuity, scrollability, primacy) that do the real discriminatory work. a3-04 provides a concrete counterexample: Diablo II in inventory-open state satisfies the spatial predicate yet no one classifies it as a panel-frame game, because the definition lacks a temporal dimension (persistence across game states, not just within one state). The formalist's clean necessary condition is undermined by both a missing functional foundation and a missing temporal requirement."
+  },
+  {
+    "tension_id": "t-03",
+    "propositions": ["a1-05", "a3-02"],
+    "type": "contradiction",
+    "severity": 0.85,
+    "description": "a1-05 argues that correlated factors should be preserved because they serve a diagnostic (prescriptive) function: 'your panel is not spatially exclusive' and 'your panel is not opaque' are different implementation fixes even if the factors correlate. a3-02 counters that five of the six factors are not merely correlated but logically entailed by the same three-word phrase, making them not just correlated diagnostics but restatements of the same criterion. If factors are truly entailed rather than correlated, the diagnostic-granularity argument collapses: telling a developer to fix 'opacity' and 'spatial exclusivity' separately is meaningless if both reduce to 'make the panel opaque and non-overlapping,' which is already in the definition."
+  },
+  {
+    "tension_id": "t-04",
+    "propositions": ["a1-08", "a2-19"],
+    "type": "latent_tension",
+    "severity": 0.68,
+    "description": "a1-08 proposes organizing the taxonomy as a six-dimensional morphological space where games are points, archetypes are clusters, and lineages are paths. a2-19 proposes a lookup table driven by the game's primary interaction pattern: commanding agents -> bottom-panel triptych, catalog construction -> sidebar, etc. These are not contradictory but represent fundamentally different organizational philosophies: the formalist's approach is analytical (position in abstract space), while the practitioner's is prescriptive (match pattern to archetype). A developer using a2-19 needs a simple decision tree; a developer using a1-08 needs to locate their game in a six-dimensional space. The final document must decide whether the taxonomy serves analysis or action, or find a way to layer both."
+  },
+  {
+    "tension_id": "t-05",
+    "propositions": ["a1-07", "a3-10", "a3-11"],
+    "type": "undermining",
+    "severity": 0.82,
+    "description": "a1-07 argues that archetypes (synchronic structural similarity) and lineages (diachronic design inheritance) are orthogonal classification axes that should both appear in the taxonomy. a3-10 attacks the lineage axis directly: without internal design documents, lineage claims are reverse-engineered narratives that privilege visual similarity over actual causal history. a3-11 reinforces this with the convergent-evolution evidence: the bottom-panel layout appeared in three studios within 12 months, suggesting shared constraints rather than inheritance. If lineages are epistemologically unreliable, the formalist's dual-axis taxonomy loses one of its two axes."
+  },
+  {
+    "tension_id": "t-06",
+    "propositions": ["a1-09", "a1-10", "a3-12", "a3-13"],
+    "type": "undermining",
+    "severity": 0.88,
+    "description": "a1-09 interprets viewport budget as a proxy for the designer's information model (high budget = world-primary, low budget = panel-co-equal). a1-10 argues viewport budget should not serve as a scoring axis. a3-12 demonstrates the metric is fundamentally misleading because two games with identical viewport budgets (0.70) can have wildly different functional layouts (tall sidebar vs. short bottom bar). a3-13 adds that the metric lacks a reproducible measurement methodology (bounding rectangles vs. visual boundaries, decorative borders, status bars). The formalist builds interpretive theory on a metric that the failure analyst shows is both conceptually flawed (collapses 2D layout to a scalar) and methodologically unspecified."
+  },
+  {
+    "tension_id": "t-07",
+    "propositions": ["a2-01", "a1-03", "a3-08"],
+    "type": "mutual_exclusion",
+    "severity": 0.83,
+    "description": "a2-01 argues that opacity is load-bearing and the hard edge between panel and viewport is functionally essential for legibility. a1-03 argues opacity should remain a weighted factor, not a hard gate, to avoid excluding legitimate semi-transparent panel designs. a3-08 argues the opacity binary forces arbitrary categorical judgments on a continuous gradient, citing Total Annihilation's semi-transparent build menus and Warcraft III's transparency-edged textures. Three mutually incompatible positions: opacity is functionally necessary (practitioner), opacity should be a soft factor (formalist), the opacity binary itself is ill-posed (failure analyst). The document cannot adopt all three."
+  },
+  {
+    "tension_id": "t-08",
+    "propositions": ["a1-06", "a3-25"],
+    "type": "undermining",
+    "severity": 0.80,
+    "description": "a1-06 proposes a three-tier weighting scheme where information density is classified as a 'characteristic' factor (the second-highest tier). a3-25 argues that information density is the only high-value factor adding genuinely new discriminatory content, but it is also the vaguest: it could mean display density, control density, or navigation density, each classifying panels differently. The formalist assigns information density a high structural role in the definition, but the failure analyst shows the term is too ambiguous to bear that weight without first resolving a three-way semantic ambiguity."
+  },
+  {
+    "tension_id": "t-09",
+    "propositions": ["a2-03", "a1-17", "a3-14"],
+    "type": "latent_tension",
+    "severity": 0.72,
+    "description": "a2-03 treats the StarCraft triptych (minimap/info/command card) as a cognitively principled layout answering Where/What/Do. a1-17 argues the triptych should be nested as a sub-pattern within the Ensemble Bottom Bar archetype, not elevated to a top-level definitional element. a3-14 argues that grouping RTS panels, city builder panels, and 4X panels under 'panel frame' is itself a category error because they serve radically different interaction tempos and cognitive demands. The practitioner wants the triptych as a first-class design principle, the formalist wants to nest it within one archetype, and the failure analyst questions whether the parent category is coherent enough to nest anything within."
+  },
+  {
+    "tension_id": "t-10",
+    "propositions": ["a1-16", "a2-16", "a3-23"],
+    "type": "latent_tension",
+    "severity": 0.75,
+    "description": "a1-16 argues that information strategies (modal screens, map-as-data, sidebar abstraction) are content patterns orthogonal to the panel frame's spatial layout pattern, and conflating them is a categorical error. a2-16 argues information channels should be separated by cognitive function (panel for persistent data, audio for transient events, overlays for spatial data). a3-23 argues the fundamental meta-failure is modeling a visual layout pattern when the actual design object is a multi-modal, temporally-dynamic, interaction-driven information architecture. The formalist wants to keep spatial layout pure; the practitioner wants to expand to multi-channel information design; the failure analyst says the spatial-only framing is the root problem. The document must decide whether to define a spatial pattern, an information architecture, or both."
+  },
+  {
+    "tension_id": "t-11",
+    "propositions": ["a2-13", "a1-22", "a3-12"],
+    "type": "mutual_exclusion",
+    "severity": 0.70,
+    "description": "a2-13 asserts the viewport should never consume less than 65% of total screen area and provides specific pixel limits at 1080p. a1-22 observes that golden-age budgets (0.55-0.85) translate to enormous panel areas at modern resolutions and recommends adjusting budgets upward to 0.80-0.90. a3-12 argues the viewport budget metric is misleading because it collapses 2D layout information into a scalar. The practitioner sets a hard floor (65%), the formalist suggests a higher modern target (80-90%), and the failure analyst says the metric itself is unreliable for comparison. These cannot all be simultaneously adopted as guidance without reconciling the metric's validity and the appropriate threshold."
+  },
+  {
+    "tension_id": "t-12",
+    "propositions": ["a1-14", "a1-15", "a3-22"],
+    "type": "undermining",
+    "severity": 0.65,
+    "description": "a1-14 argues anti-patterns should be organized inline with the factors they violate. a1-15 carves out an exception for systemic anti-patterns that reject the entire pattern. a3-22 argues the definition's failure modes form a connected topology of mutual reinforcement where individual issues compound. If failure modes are interconnected (as a3-22 argues), then organizing anti-patterns inline with individual factors (a1-14) will miss the systemic compounding effects. The failure analyst's connected-topology view of definitional problems undermines the factor-by-factor anti-pattern organization the formalist proposes."
+  },
+  {
+    "tension_id": "t-13",
+    "propositions": ["a2-11", "a2-24", "a3-07"],
+    "type": "undermining",
+    "severity": 0.73,
+    "description": "a2-11 identifies four implicit input assumptions (precision pointing, zero-cost context switching, screen-edge scrolling, Fitts's Law dynamics) and a2-24 argues the panel frame should not be used on platforms violating these assumptions. a3-07 argues these assumptions reveal the definition describes 'the Western PC strategy game panel frame with mouse input' rather than a universal pattern. The practitioner and failure analyst agree on the facts (input assumptions exist) but draw opposite conclusions: the practitioner treats them as a useful platform-gating checklist, while the failure analyst treats them as evidence the definition's universality claims are false. The document must decide whether mouse-input dependency is a feature (scoping criterion) or a bug (hidden bias)."
+  },
+  {
+    "tension_id": "t-14",
+    "propositions": ["a1-19", "a2-25", "a1-20"],
+    "type": "latent_tension",
+    "severity": 0.62,
+    "description": "a1-19 demands strict separation between descriptive, analytical, and prescriptive content to avoid contaminating the definition with opinions. a1-20 organizes guidance by developer decision points with citations back to factors. a2-25 frames the entire bible as a practitioner's workflow: identify interaction pattern, select archetype, apply principles. The formalist's strict separation means a developer must read the descriptive section, then the analytical section, then finally reach guidance. The practitioner's workflow-oriented synthesis wants interleaved content where analysis and guidance co-locate. These are architecturally compatible only if the document provides two reading paths (reference vs. tutorial), which neither agent proposes."
+  },
+  {
+    "tension_id": "t-15",
+    "propositions": ["a1-11", "a3-09", "a3-24"],
+    "type": "contradiction",
+    "severity": 0.86,
+    "description": "a1-11 argues the panel frame is a property of the persistent layout, and transient user-invoked windows are a separate pattern layered on top. a3-09 argues the definition treats 'panel frame' as a property of a game when it is actually a property of a view or mode, citing MOO2's four architecturally different views. a3-24 extends this by noting players often spend more time in secondary views (Civilization II city screens) than in the 'main' view the definition privileges. The formalist's persistent-vs-transient distinction partially addresses the temporal issue but still operates at the game level, while the failure analyst demands a view-level or mode-level unit of analysis. The document must decide whether 'panel frame' attaches to games, to views, or to persistent layouts within views."
+  },
+  {
+    "tension_id": "t-16",
+    "propositions": ["a2-12", "a2-04"],
+    "type": "undermining",
+    "severity": 0.60,
+    "description": "a2-04 argues the minimap must be placed in a screen corner because corners are infinite Fitts's Law targets. a2-12 argues the minimap was always a compression artifact and becomes redundant when strategic zoom allows the viewport to show the full map. These are internal tensions within the practitioner's own propositions: if the minimap is a compression artifact heading toward obsolescence, the elaborate Fitts's Law justification for its corner placement becomes moot for modern designs. A developer reading both propositions gets contradictory signals about how much design effort to invest in minimap placement."
+  },
+  {
+    "tension_id": "t-17",
+    "propositions": ["a1-25", "a3-14", "a3-21"],
+    "type": "undermining",
+    "severity": 0.78,
+    "description": "a1-25 proposes a thirteen-section bible structure treating 'panel frame' as a coherent pattern worthy of extensive formal treatment. a3-14 argues that grouping RTS, city builder, and 4X panels under one term commits a whale-and-fish category error. a3-21 identifies three architecturally distinct panel architectures (thin-panel/thick-viewport, navigation-panel/modal-complexity, layered-panel/map-mode) and argues that knowing a game 'uses a panel frame' provides zero design guidance. If the failure analyst is right that the category is incoherent, the formalist's thirteen-section bible is an elaborate treatment of a non-existent unified pattern. The document must either defend the category's coherence or restructure around the sub-categories."
+  },
+  {
+    "tension_id": "t-18",
+    "propositions": ["a2-10", "a2-16", "a3-20"],
+    "type": "latent_tension",
+    "severity": 0.58,
+    "description": "a2-10 and a2-16 advocate for audio as a first-class information channel designed alongside the panel, with events assigned to either panel or audio delivery based on cognitive function. a3-20 argues that the viewport budget metric fails to account for audio information substitution, systematically misestimating information costs. The practitioner and failure analyst agree audio matters, but the practitioner treats it as a design principle to apply alongside the panel frame, while the failure analyst treats it as evidence that the definition's core metric (viewport budget) is incomplete. The tension is whether audio integration is an addendum to the panel-frame definition or grounds for revising its foundational metric."
+  },
+  {
+    "tension_id": "t-19",
+    "propositions": ["a1-23", "a3-06"],
+    "type": "undermining",
+    "severity": 0.76,
+    "description": "a1-23 argues the bible should distinguish constitutive from contingent properties to avoid the Berlin Interpretation's error of conflating historical accident with definitional necessity. a3-06 argues the canon exclusively comprises English-language PC games from Western studios, systematically excluding Japanese strategy games (Koei titles) that used panel frames with inverted information hierarchies. If the canon is geographically biased (a3-06), then the formalist's attempt to separate constitutive from contingent properties (a1-23) is undermined: properties judged 'constitutive' may only appear universal because the sample excludes counter-traditions. What looks constitutive in a Western-PC-only sample may be contingent when the full global design space is considered."
+  },
+  {
+    "tension_id": "t-20",
+    "propositions": ["a2-09", "a3-19", "a3-16"],
+    "type": "latent_tension",
+    "severity": 0.67,
+    "description": "a2-09 argues every interactive panel element should serve both novice users (who click) and expert users (who use hotkeys). a3-19 argues the panel's importance inverts with skill level, becoming largely vestigial for experts. a3-16 argues the actual scarce resource is player attention, not screen space, and a panel operable entirely by keyboard imposes zero attention cost. Together these create a design paradox: the practitioner wants panels optimized for dual-use, but the failure analyst shows expert usage makes the visual panel nearly irrelevant. Should the bible guide panel design for the novice experience (where panels matter most), the expert experience (where panels are bypassed), or somehow both?"
+  },
+  {
+    "tension_id": "t-21",
+    "propositions": ["a1-13", "a3-23"],
+    "type": "mutual_exclusion",
+    "severity": 0.77,
+    "description": "a1-13 proposes Christopher Alexander's force-based framing as the bible's theoretical foundation, with factors becoming testable consequences of force resolution. a3-23 argues the fundamental meta-failure is modeling a visual layout pattern when the actual design object is a multi-modal, temporally-dynamic, user-dependent, interaction-driven information architecture. Both propose theoretical foundations but they point in opposite directions: the formalist's forces (world visibility vs. state accessibility, etc.) still ground the analysis in spatial layout tradeoffs, while the failure analyst demands the foundation shift to information architecture encompassing temporal dynamics, user models, and modality. Adopting Alexander's forces as the foundation precludes the information-architecture reframing, and vice versa."
+  },
+  {
+    "tension_id": "t-22",
+    "propositions": ["a1-04", "a3-05"],
+    "type": "latent_tension",
+    "severity": 0.63,
+    "description": "a1-04 proposes that the test for whether two factors should remain separate is whether they can be independently violated in at least one historical example. a3-05 argues the canon of 15 exemplar games is a tautological confirmation set that cannot test exclusion power and requires a near-miss set for rigorous testing. If the historical example base (the canon) is biased (a3-05), then the factor-independence test (a1-04) applied to that base may produce biased results. Factors that appear independently violable in a Western-PC sample might not be in a broader sample, and vice versa. The methodological tool's reliability depends on the sample quality the failure analyst has challenged."
+  },
+  {
+    "tension_id": "t-23",
+    "propositions": ["a1-18", "a3-15"],
+    "type": "latent_tension",
+    "severity": 0.55,
+    "description": "a1-18 argues resolution and display scaling should be handled as a context section preceding factor definitions because resolution is a property of the medium, not of the pattern. a3-15 argues panels are temporal systems (StarCraft's command card updates several times per second) and the definition lacks temporal vocabulary. Both identify dimensions excluded from the factor definitions but for different reasons: the formalist excludes resolution intentionally (medium property), while the failure analyst identifies temporal dynamics as a missing dimension that should be included. The document must decide which contextual dimensions are legitimately excluded (medium properties) and which are illegitimately absent (temporal dynamics), and the boundary between these categories is not obvious."
+  },
+  {
+    "tension_id": "t-24",
+    "propositions": ["a2-06", "a2-07", "a1-12"],
+    "type": "latent_tension",
+    "severity": 0.52,
+    "description": "a2-06 argues panel real-estate allocation should mirror the game's decision structure, and a2-07 argues the right sidebar persists in city builders because their decision structures favor vertical layout. a1-12 frames the panel frame as resolving four fundamental design forces (world visibility vs. state accessibility, etc.). The practitioner's decision-structure-driven allocation is concrete and genre-specific; the formalist's force-resolution framework is abstract and universal. A developer following a2-06/a2-07 gets 'look at your game's decisions, pick a layout.' A developer following a1-12 gets 'balance these four forces.' These are not contradictory but could generate conflicting advice when the force analysis recommends one layout while the decision-structure analysis recommends another."
+  },
+  {
+    "tension_id": "t-25",
+    "propositions": ["a1-06", "a3-17"],
+    "type": "undermining",
+    "severity": 0.64,
+    "description": "a1-06 classifies decorative surround as an 'incidental' factor in the lowest tier of the three-tier weighting scheme. a3-17 argues that decorative surround serves functional purposes in competitive play: StarCraft's race-specific panel textures (Zerg organic, Protoss crystalline, Terran metallic) instantly communicate race identity, and panel decoration's visual weight affects perceptual boundary strength and attention-switching cost. The formalist's low-tier classification is undermined by concrete evidence that decoration carries functional weight in specific contexts, suggesting the tier assignment reflects incomplete analysis of the factor's role."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "a3-01",
+    "proposition": "The boxed definition of panel frames presents itself as a spatial predicate (area relationship to the display surface) when it actually functions as a functional predicate (the 'main' scrollable, spatially-continuous world view), smuggling in unacknowledged assumptions about continuity, scrollability, and primacy that do the real discriminatory work.",
+    "scores": {
+      "defensibility": 0.92,
+      "specificity": 0.82,
+      "robustness": 0.88,
+      "compatibility": 0.80
+    },
+    "reasoning": {
+      "defensibility": "The analysis demonstrates that minimaps, unit portraits, and build-preview overlays all 'render the game world' yet are not viewports, proving the spatial predicate is insufficient without the unstated functional assumptions.",
+      "specificity": "Identifies the exact mismatch (spatial vs. functional predicate) and names the smuggled assumptions (continuity, scrollability, primacy), though the fix is implied rather than prescribed.",
+      "robustness": "The Dwarf Fortress fortress-mode example is a strong adversarial case: ASCII representations of game state genuinely resist classification under the spatial predicate alone.",
+      "compatibility": "This critique targets the foundation of the definition, so it is compatible with any proposition that builds on the definition only if those propositions acknowledge this limitation."
+    }
+  },
+  {
+    "id": "a3-02",
+    "proposition": "Five of the six high-value factors (viewport partitioning, opacity, permanence, fixed geometry, spatial exclusivity) are entailed by the three-word phrase 'opaque, persistent, non-overlapping' from the boxed definition, making them elaborations rather than independent discriminators.",
+    "scores": {
+      "defensibility": 0.95,
+      "specificity": 0.93,
+      "robustness": 0.90,
+      "compatibility": 0.72
+    },
+    "reasoning": {
+      "defensibility": "Each factor can be traced directly to a word in the boxed definition: viewport partitioning restates 'proper subset,' opacity restates 'opaque,' permanence restates 'persistent,' spatial exclusivity restates 'non-overlapping.' This is verifiable by inspection.",
+      "specificity": "Enumerates all five redundant factors by name and maps each to the specific word it restates. A reader can verify each mapping independently.",
+      "robustness": "The one counterargument is that 'fixed geometry' adds genuinely new information (panels do not move or resize), but the document immediately undercuts this with the Civilization III advisor-screen counterexample.",
+      "compatibility": "This directly challenges the definition's structure, so it conflicts with any proposition that treats the six factors as jointly constraining or independently valuable."
+    }
+  },
+  {
+    "id": "a3-03",
+    "proposition": "The redundancy of five factors creates false confidence: a user checking borderline cases will see five factors pass or fail together (because they are the same criterion stated five ways) and one subjective factor (information density), producing spuriously confident binary judgments where uncertain continuous judgments are appropriate.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.78,
+      "robustness": 0.85,
+      "compatibility": 0.75
+    },
+    "reasoning": {
+      "defensibility": "The logical structure is sound: if five criteria are not independent, their joint satisfaction provides no more evidence than one criterion's satisfaction. The '5/6 factors met!' false-confidence scenario is a valid Bayesian reasoning critique.",
+      "specificity": "Describes the mechanism (correlated pass/fail across five factors) and the consequence (false confidence), though it does not name a specific borderline game where this failure occurs.",
+      "robustness": "This is a general problem with redundant criteria sets, well-documented in psychometrics and decision theory. The critique applies regardless of the specific definition's content.",
+      "compatibility": "Compatible with the redundancy claim in a3-02; this is the downstream consequence of that structural flaw."
+    }
+  },
+  {
+    "id": "a3-04",
+    "proposition": "The panel frame definition fails to exclude Diablo II in inventory-open state, which meets all stated criteria (persistent bottom panel, opaque inventory panel, viewport budget less than 1.0) yet no one classifies Diablo II as a panel-frame game, revealing that the definition is a snapshot predicate applied to a temporal phenomenon.",
+    "scores": {
+      "defensibility": 0.90,
+      "specificity": 0.95,
+      "robustness": 0.82,
+      "compatibility": 0.78
+    },
+    "reasoning": {
+      "defensibility": "Diablo II's inventory screen verifiably satisfies opacity, persistence (while open), non-overlapping viewport partitioning, and non-zero panel area. The intuition that Diablo II is not a panel-frame game is widely shared among game designers.",
+      "specificity": "Names a specific game, a specific state (inventory open), and traces through each criterion to show it passes. This is a concrete, falsifiable counterexample.",
+      "robustness": "A defender could argue the definition requires panels to be persistent across game states, not just within one state. But the document correctly notes that this temporal requirement is not stated in the definition.",
+      "compatibility": "This is compatible with any proposition that acknowledges the definition needs a temporal dimension, but conflicts with propositions treating the definition as sufficient."
+    }
+  },
+  {
+    "id": "a3-05",
+    "proposition": "The canon of 15 exemplar games is a tautological confirmation set that can only test inclusion power, not exclusion power; rigorous testing requires a near-miss set of games that share most but not all panel-frame properties.",
+    "scores": {
+      "defensibility": 0.93,
+      "specificity": 0.80,
+      "robustness": 0.88,
+      "compatibility": 0.82
+    },
+    "reasoning": {
+      "defensibility": "This is a standard critique in classification theory: a training set selected by applying the definition cannot validate the definition's boundaries. The logical structure is airtight.",
+      "specificity": "Names four specific near-miss candidates (Dungeon Keeper, Myth, Homeworld, Syndicate) and what boundary condition each tests, making the abstract critique concrete.",
+      "robustness": "Even if the canon authors claim independent selection, the survivorship bias concern holds: games that obviously fit the definition are more likely to be remembered and included.",
+      "compatibility": "Compatible with propositions that use the canon for illustration, conflicts with propositions that treat the canon as definitional validation."
+    }
+  },
+  {
+    "id": "a3-06",
+    "proposition": "The canon exclusively comprises English-language PC games from Western studios, systematically excluding Japanese strategy games (Koei's titles) that used panel frames with inverted information hierarchies where the panel was the primary interaction surface and the viewport served as geographic context.",
+    "scores": {
+      "defensibility": 0.87,
+      "specificity": 0.88,
+      "robustness": 0.83,
+      "compatibility": 0.70
+    },
+    "reasoning": {
+      "defensibility": "Koei's Romance of the Three Kingdoms and Nobunaga's Ambition are verifiably panel-heavy strategy games from the 1980s-1990s that invert the Western viewport-primary assumption. Their exclusion from the canon is a factual observation.",
+      "specificity": "Names specific studios (Koei), titles (Romance of the Three Kingdoms, Nobunaga's Ambition, Bandit Kings of Ancient China), and the exact architectural difference (panel-primary vs. viewport-primary hierarchy).",
+      "robustness": "A defender might argue the definition does not assume viewport primacy, but the document demonstrates that the definition was 'fitted to' a viewport-primary canon, making generalization unearned.",
+      "compatibility": "Conflicts with any proposition that treats the definition as applying to 'strategy games broadly' without qualification."
+    }
+  },
+  {
+    "id": "a3-07",
+    "proposition": "Console strategy games (Advance Wars, Fire Emblem, Final Fantasy Tactics) operated under fundamentally different constraints (lower resolution, no mouse, d-pad navigation) that make the definition's implicit mouse-input and high-resolution assumptions visible, revealing it describes 'the Western PC strategy game panel frame with mouse input' rather than a universal pattern.",
+    "scores": {
+      "defensibility": 0.85,
+      "specificity": 0.87,
+      "robustness": 0.80,
+      "compatibility": 0.73
+    },
+    "reasoning": {
+      "defensibility": "The constraint differences (256x224 SNES resolution vs. 640x480 PC, d-pad vs. mouse) are factual and architecturally consequential. Panel design for d-pad navigation is demonstrably different from mouse-driven panel design.",
+      "specificity": "Names three specific console strategy games, their platform constraints (resolution, input method), and the exact hidden assumptions they expose (mouse input, high resolution).",
+      "robustness": "A defender could argue the definition is explicitly scoped to PC games, but if so, the universality claims need explicit qualification. The document targets the gap between implicit scope and stated scope.",
+      "compatibility": "Compatible with the geographic bias critique; together they narrow the definition's actual scope significantly."
+    }
+  },
+  {
+    "id": "a3-08",
+    "proposition": "The opacity binary (opaque panel vs. transparent overlay) forces categorical judgment on a continuous gradient, producing arbitrary classifications for intermediate cases like Total Annihilation's semi-transparent build menus and Warcraft III's transparency-edged panel textures, without the user knowing they are in the arbitrary zone.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.90,
+      "robustness": 0.85,
+      "compatibility": 0.77
+    },
+    "reasoning": {
+      "defensibility": "Semi-transparent UI elements are verifiably present in golden-age strategy games. The binary classification's inability to handle them is a direct logical consequence of a two-valued predicate applied to a continuous property.",
+      "specificity": "Names two specific games (Total Annihilation, Warcraft III) with specific transparency features (semi-transparent build menus, transparency-edged textures) that fall in the classification gap.",
+      "robustness": "The 'arbitrary zone' critique is strong: the definition gives no guidance on how to classify 50% opacity panels. This is not an edge case but a design-space region with real occupants.",
+      "compatibility": "Conflicts with the definition's opacity requirement. Compatible with propositions advocating for continuous rather than binary property models."
+    }
+  },
+  {
+    "id": "a3-09",
+    "proposition": "The definition treats 'panel frame' as a property of a game when it is actually a property of a view or mode within a game, creating confusion for multi-view games like Master of Orion II which has a galaxy view (panel frame), colony screen (different panel frame), ship design screen (modal), and combat screen (yet another panel frame).",
+    "scores": {
+      "defensibility": 0.91,
+      "specificity": 0.92,
+      "robustness": 0.87,
+      "compatibility": 0.75
+    },
+    "reasoning": {
+      "defensibility": "Master of Orion II verifiably has four major views with different UI architectures. The question 'Is MOO2 a panel-frame game?' has no single correct answer at the game level, only at the view level.",
+      "specificity": "Enumerates all four MOO2 views, classifies each (panel frame, different panel frame, modal, panel frame), and identifies the definitional level confusion (game vs. view).",
+      "robustness": "This applies to most golden-age strategy games: Civilization II, Age of Empires, and StarCraft all have multiple views with different UI architectures. The critique generalizes broadly.",
+      "compatibility": "Conflicts with any proposition that classifies games as panel-frame or not. Compatible with propositions that operate at the view/mode level."
+    }
+  },
+  {
+    "id": "a3-10",
+    "proposition": "Lineage-based organization (Westwood tree, Blizzard tree, Ensemble tree) implies conscious reference to predecessors when actual design causation involves dozens of simultaneous influences (competitor games, platform SDKs, publisher requirements, engine constraints, team size), and without internal design documents, lineage claims are reverse-engineered narratives that privilege visual similarity over actual causal history.",
+    "scores": {
+      "defensibility": 0.84,
+      "specificity": 0.80,
+      "robustness": 0.82,
+      "compatibility": 0.78
+    },
+    "reasoning": {
+      "defensibility": "The epistemological point is sound: attributing design lineage from visual similarity alone commits the post-hoc-ergo-propter-hoc fallacy. Without developer testimony, lineage is speculative.",
+      "specificity": "Names three specific studio trees and lists five alternative causal factors (competitor games, platform SDKs, publisher requirements, engine constraints, team size).",
+      "robustness": "A defender could provide developer interviews confirming lineage for specific cases, but the general critique holds: the lineage model is presented as established fact when it is inference.",
+      "compatibility": "Conflicts with any proposition that organizes panel-frame history by studio lineage. Compatible with ecosystem-level or constraint-driven explanations."
+    }
+  },
+  {
+    "id": "a3-11",
+    "proposition": "The bottom-panel layout appeared in Age of Empires (1997), StarCraft (1998), and Dark Reign (1997) within a 12-month window, suggesting convergent evolution driven by shared constraints (higher resolutions making sidebars less efficient) rather than the tree-structured lineage the definition assumes.",
+    "scores": {
+      "defensibility": 0.82,
+      "specificity": 0.93,
+      "robustness": 0.75,
+      "compatibility": 0.72
+    },
+    "reasoning": {
+      "defensibility": "The three games and their release dates are verifiable facts. The convergent-evolution hypothesis is plausible but, like the lineage hypothesis, not proven without developer testimony.",
+      "specificity": "Names three games, their studios (Ensemble, Blizzard, Auran), the 12-month window, and the hypothesized shared constraint (higher resolutions). Very concrete.",
+      "robustness": "The convergent-evolution explanation is one of several possible explanations. Direct influence between these studios during development is also plausible. The proposition acknowledges this implicitly with 'suggesting' rather than 'proving.'",
+      "compatibility": "Directly conflicts with lineage-tree organization. Compatible with constraint-driven or ecosystem explanations of design evolution."
+    }
+  },
+  {
+    "id": "a3-12",
+    "proposition": "Viewport budget (viewport_area / display_surface_area) is a systematically misleading metric because two games with identical viewport budgets of 0.70 can have wildly different functional layouts: a tall narrow right sidebar ideal for RTS base management versus a short wide bottom bar ideal for isometric exploration.",
+    "scores": {
+      "defensibility": 0.90,
+      "specificity": 0.92,
+      "robustness": 0.88,
+      "compatibility": 0.75
+    },
+    "reasoning": {
+      "defensibility": "The example is logically watertight: a 0.70 budget can result from a 30%-width sidebar or a 30%-height bottom bar, creating opposite viewport aspect ratios with identical scalar metrics.",
+      "specificity": "Provides the exact metric formula, the exact budget value (0.70), two contrasting layouts (right sidebar vs. bottom bar), and their functional implications (wide horizontal view vs. square-ish view).",
+      "robustness": "This is a fundamental critique of scalar reduction of 2D layout information. No refinement of the viewport budget formula can fix it while remaining a single scalar.",
+      "compatibility": "Conflicts with any proposition that uses viewport budget as a comparison metric across games. Compatible with propositions that use shape-aware layout descriptors."
+    }
+  },
+  {
+    "id": "a3-13",
+    "proposition": "The viewport budget numbers lack a measurement methodology, failing the basic scientific criterion of reproducibility: whether panels are measured by bounding rectangles or visual boundaries, whether decorative borders count as panel or viewport area, and whether status bars are included are all unspecified.",
+    "scores": {
+      "defensibility": 0.91,
+      "specificity": 0.85,
+      "robustness": 0.87,
+      "compatibility": 0.80
+    },
+    "reasoning": {
+      "defensibility": "The absence of measurement methodology is a factual claim about the document's content. Reproducibility requires specified measurement procedures, which are not provided.",
+      "specificity": "Names three specific ambiguities (bounding rectangles vs. visual boundaries, decorative borders, status bars) that would produce different measurements from the same screenshot.",
+      "robustness": "Even approximate measurements need a stated method to be reproducible. The critique holds regardless of desired precision level.",
+      "compatibility": "Compatible with the viewport-budget-is-misleading critique; together they challenge the metric from both conceptual and methodological angles."
+    }
+  },
+  {
+    "id": "a3-14",
+    "proposition": "Grouping RTS panels (200+ APM, instant feedback), city builder panels (5-10 APM, long-term trends), and 4X panels (variable tempo, dual tactical/strategic) under 'panel frame' because they look alike commits the same error as grouping whales and fish because they both swim: the visual similarity is a convergent response to finite display area, not evidence of shared design intent.",
+    "scores": {
+      "defensibility": 0.86,
+      "specificity": 0.88,
+      "robustness": 0.80,
+      "compatibility": 0.68
+    },
+    "reasoning": {
+      "defensibility": "The APM figures and interaction pattern differences are broadly accurate for these genres. The analogy to convergent evolution in biology is apt and well-established in design theory.",
+      "specificity": "Provides concrete APM ranges per genre, names the shared constraint (finite display area), and distinguishes three architecturally distinct interaction patterns.",
+      "robustness": "A defender could argue that shared visual structure is itself a meaningful design pattern worth studying, independent of interaction differences. The proposition's claim that the classification 'provides no design guidance' is slightly overstated.",
+      "compatibility": "Conflicts with any proposition that treats 'panel frame' as a single coherent design pattern across strategy sub-genres."
+    }
+  },
+  {
+    "id": "a3-15",
+    "proposition": "The definition describes panel frames as static spatial layouts but panels are temporal systems: the StarCraft command card changes contents several times per second, and two panel frames with identical spatial layouts but different update rates create different cognitive loads that the definition cannot distinguish because it has no temporal vocabulary.",
+    "scores": {
+      "defensibility": 0.89,
+      "specificity": 0.86,
+      "robustness": 0.84,
+      "compatibility": 0.77
+    },
+    "reasoning": {
+      "defensibility": "The observation that panels have temporal dynamics (update rates, content changes) is factually undeniable. The claim that the definition lacks temporal vocabulary is verifiable by inspection of the definition.",
+      "specificity": "Names StarCraft's command card as a concrete example and contrasts 30fps-update panels (peripheral attention) with once-per-minute panels (deliberate checking).",
+      "robustness": "The temporal dimension is genuinely design-critical for RTS panels. Even if one argues that temporal behavior is a second-order concern, the complete absence of temporal vocabulary is a real gap.",
+      "compatibility": "Compatible with propositions about interaction models and user models. Conflicts with propositions that treat the spatial definition as complete."
+    }
+  },
+  {
+    "id": "a3-16",
+    "proposition": "The definition models screen space as the scarce resource (viewport budget) when the actual scarce resource is player attention: a panel operable entirely by keyboard shortcuts imposes zero attention cost from the viewport, making two visually identical panel frames functionally different interfaces for different player populations.",
+    "scores": {
+      "defensibility": 0.87,
+      "specificity": 0.83,
+      "robustness": 0.82,
+      "compatibility": 0.74
+    },
+    "reasoning": {
+      "defensibility": "The attention-vs-area distinction is well-established in HCI literature. The StarCraft novice (clicking panel buttons) vs. expert (keyboard shortcuts) example is well-documented in esports research.",
+      "specificity": "Identifies the exact mismodeled resource (screen space vs. attention), provides the novice/expert divergence example, and names the consequence (same panel is two different interfaces).",
+      "robustness": "A defender might argue that screen space allocation shapes attention allocation, making viewport budget a reasonable proxy. But the keyboard-shortcut counterexample shows they can fully decouple.",
+      "compatibility": "Conflicts with viewport-budget-centric propositions. Compatible with interaction-model and user-model propositions."
+    }
+  },
+  {
+    "id": "a3-17",
+    "proposition": "The definition classifies decorative surround as a low-value factor, but race-specific panel textures in StarCraft (Zerg organic, Protoss crystalline, Terran metallic) serve a functional purpose in competitive play by instantly communicating race identity, and panel decoration's visual weight affects perceptual boundary strength and thus attention-switching cost.",
+    "scores": {
+      "defensibility": 0.83,
+      "specificity": 0.90,
+      "robustness": 0.78,
+      "compatibility": 0.72
+    },
+    "reasoning": {
+      "defensibility": "StarCraft's race-specific panel textures are verifiable, and their utility in spectator mode and mirror matches is documented in esports commentary. The perceptual boundary argument draws on established Gestalt psychology.",
+      "specificity": "Names three specific texture styles (organic, crystalline, metallic) mapped to three races, the functional use (race identification in spectator mode), and the perceptual mechanism (boundary strength affecting attention switching).",
+      "robustness": "The functional role of decoration is strongest in competitive/spectator contexts and weaker in casual single-player. The proposition's force varies by context.",
+      "compatibility": "Conflicts with the low-value classification of decorative surround. Compatible with propositions emphasizing interaction and attention models."
+    }
+  },
+  {
+    "id": "a3-18",
+    "proposition": "The term 'panel' subsumes wildly different UI elements (a 32-pixel resource bar, a 200x400 command card, a 180x180 minimap, a 120-pixel unit portrait) that have different update rates, interaction models, cognitive load profiles, and design constraints, making the single term analytically useless when designing any one of them.",
+    "scores": {
+      "defensibility": 0.86,
+      "specificity": 0.91,
+      "robustness": 0.83,
+      "compatibility": 0.70
+    },
+    "reasoning": {
+      "defensibility": "The four named elements are verifiably present in most RTS panel frames and verifiably serve different functions (passive telemetry, active control, navigation, context display). The heterogeneity claim is factual.",
+      "specificity": "Provides pixel dimensions for four distinct panel elements, names their functional categories (telemetry, control surface, navigation tool, context display), and the specific dimensions of difference (update rates, interaction models, cognitive load).",
+      "robustness": "A defender might argue that 'panel' is a useful container term even if contents vary, like 'dashboard component.' The document anticipates this with the steering-wheel/speedometer/mirror analogy.",
+      "compatibility": "Conflicts with propositions that treat panels as a uniform category. Compatible with propositions that sub-classify panel elements by function."
+    }
+  },
+  {
+    "id": "a3-19",
+    "proposition": "The panel frame's importance inverts with player skill: for novices it is the primary learning interface (visible commands, displayed resources, spatial orientation via minimap), while for experts it is largely vestigial (commands via hotkeys, resources tracked mentally, only the minimap retaining high value).",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.84,
+      "robustness": 0.80,
+      "compatibility": 0.76
+    },
+    "reasoning": {
+      "defensibility": "The novice-expert skill inversion is well-documented in RTS esports research and HCI studies of command interfaces. The minimap-as-last-valuable-panel-element observation aligns with professional player screen-fixation studies.",
+      "specificity": "Contrasts three panel elements (command buttons, resource display, minimap) across two skill levels, identifying which retain value and which become vestigial.",
+      "robustness": "The inversion is strongest in competitive RTS. In city builders and 4X games, panels may retain value at expert level because strategic information (trend graphs, advisor summaries) has no hotkey equivalent.",
+      "compatibility": "Compatible with the missing-user-model critique. Conflicts with propositions treating the panel frame as having fixed structural importance."
+    }
+  },
+  {
+    "id": "a3-20",
+    "proposition": "Golden-age strategy games used audio as an information channel (unit acknowledgments, alert sounds, production-complete jingles) that substitutes for panel space, meaning the viewport budget is not the full information budget: comparing viewport budgets across games without accounting for audio information substitution systematically misestimates information costs.",
+    "scores": {
+      "defensibility": 0.84,
+      "specificity": 0.82,
+      "robustness": 0.78,
+      "compatibility": 0.73
+    },
+    "reasoning": {
+      "defensibility": "Audio as information channel in strategy games is well-documented (StarCraft's distinctive unit acknowledgments, C&C's 'construction complete'). The substitution argument (audio replaces visual panel space) is logically sound.",
+      "specificity": "Names four audio channel types (acknowledgments, alerts, ambient sounds, production jingles) and maps each to the panel element it replaces (command-received indicator, event alert, location awareness, production notification).",
+      "robustness": "The substitution is real but difficult to quantify, making the 'systematically misestimates' claim directionally correct but hard to calibrate. The magnitude of the error depends on each game's audio design.",
+      "compatibility": "Compatible with the viewport-budget-is-misleading critique. Adds a new dimension (audio) that most propositions ignore entirely."
+    }
+  },
+  {
+    "id": "a3-21",
+    "proposition": "The three 'thin-panel/thick-viewport' (city builders), 'navigation-panel/modal-complexity' (4X games), and 'layered-panel/map-mode' (grand strategy) panel architectures are so architecturally distinct that knowing a game 'uses a panel frame' provides zero design guidance about how its information architecture actually works.",
+    "scores": {
+      "defensibility": 0.83,
+      "specificity": 0.87,
+      "robustness": 0.77,
+      "compatibility": 0.68
+    },
+    "reasoning": {
+      "defensibility": "The three-way taxonomy is well-illustrated with named game examples (SimCity/Transport Tycoon, Civilization/MOO, EU/Victoria). The claim that knowing only 'panel frame' gives zero guidance is slightly overstated but directionally correct.",
+      "specificity": "Names three distinct architectures with genre mappings and structural descriptions (thin vs. navigation vs. layered). A developer could use this taxonomy to classify a new game.",
+      "robustness": "The 'zero design guidance' claim is hyperbolic: knowing a game uses a panel frame at least tells you it is not a pure 3D HUD game. But the point that the classification is too coarse for design decisions is well-taken.",
+      "compatibility": "Conflicts with propositions treating 'panel frame' as a single useful design category. Compatible with sub-classification approaches."
+    }
+  },
+  {
+    "id": "a3-22",
+    "proposition": "The definition's failure modes form a connected topology of mutual reinforcement: definitional circularity prevents excluding borderline cases, which leaves survivorship bias untested, which preserves genre conflation; the viewport budget fallacy combines with temporal blindness and the audio blind spot to capture perhaps 30% of actual information architecture while presenting itself as complete.",
+    "scores": {
+      "defensibility": 0.85,
+      "specificity": 0.75,
+      "robustness": 0.82,
+      "compatibility": 0.85
+    },
+    "reasoning": {
+      "defensibility": "Each individual compounding relationship is argued with specific mechanisms in the source document. The connected-topology metaphor accurately describes how the blind spots reinforce each other.",
+      "specificity": "Names five specific compounding chains and maps their interactions, though the '30%' figure is an estimate. This is a meta-level synthesis rather than an atomic operational claim.",
+      "robustness": "The interconnection of failure modes is a standard pattern in definitional analysis. The specific chains identified are well-argued, though one could dispute the 30% coverage estimate.",
+      "compatibility": "This is a synthesizing proposition compatible with all other failure-mode propositions by design. It may conflict with propositions that treat the definition's shortcomings as isolated and fixable."
+    }
+  },
+  {
+    "id": "a3-23",
+    "proposition": "The fundamental meta-failure is that the panel frame bible models a visual layout pattern when the actual design object is a multi-modal, temporally-dynamic, user-dependent, interaction-driven information architecture that happens to have a visual layout as one of its manifestations.",
+    "scores": {
+      "defensibility": 0.87,
+      "specificity": 0.72,
+      "robustness": 0.85,
+      "compatibility": 0.70
+    },
+    "reasoning": {
+      "defensibility": "This synthesizes the temporal blindness, missing interaction model, missing user model, and audio blind spot into a single structural critique. Each supporting argument is individually well-defended in the source document.",
+      "specificity": "Identifies four missing dimensions (multi-modal, temporal, user-dependent, interaction-driven) but is a high-level architectural critique rather than an actionable instruction. It tells you what is wrong, not what to build instead.",
+      "robustness": "The Platonic cave analogy is apt: the definition describes the shadow (visual layout) rather than the object (information architecture). This critique would survive most counterarguments because it operates at a higher level of abstraction.",
+      "compatibility": "Conflicts with any proposition that treats visual layout analysis as sufficient. Compatible with propositions advocating for richer models of panel-frame behavior."
+    }
+  },
+  {
+    "id": "a3-24",
+    "proposition": "The definition implicitly privileges the 'main' view of a multi-modal game, but many golden-age strategy games spent significant play-time in secondary views: a Civilization II player might spend more time in city screens than on the main map, creating a mismatch between what the definition describes and what the player experiences.",
+    "scores": {
+      "defensibility": 0.86,
+      "specificity": 0.84,
+      "robustness": 0.79,
+      "compatibility": 0.76
+    },
+    "reasoning": {
+      "defensibility": "The observation that Civilization II city management consumes substantial play-time is consistent with widely shared player experience. The implicit main-view privilege is verifiable from the definition's structure.",
+      "specificity": "Names a specific game (Civilization II), a specific secondary view (city screen), and the specific mismatch (time allocation vs. definitional hierarchy).",
+      "robustness": "A defender could argue that the 'main' view is the one the player returns to between actions, not the one consuming the most time. But this distinction is not made in the definition.",
+      "compatibility": "Compatible with the view-vs-game-level critique. Strengthens the argument that the definition needs a multi-view model."
+    }
+  },
+  {
+    "id": "a3-25",
+    "proposition": "Information density, the only high-value factor that adds genuinely new discriminatory content beyond the boxed definition, is also the vaguest: it specifies no metric, no baseline for comparison, and could mean display density (pixels of distinct visual information per area), control density (interactive controls per area), or navigation density (spatial affordances per area), each of which would classify panels differently.",
+    "scores": {
+      "defensibility": 0.90,
+      "specificity": 0.88,
+      "robustness": 0.85,
+      "compatibility": 0.78
+    },
+    "reasoning": {
+      "defensibility": "The three-way ambiguity of 'information density' is demonstrated with concrete examples: a minimap has high navigation density but low control density, a command card has high control density but moderate display density. These are verifiable facts.",
+      "specificity": "Names three distinct density types with definitions, maps each to a concrete panel element (minimap, command card, resource bar), and shows they produce different classifications.",
+      "robustness": "The ambiguity is inherent to the unqualified term 'information density.' Any attempt to operationalize the factor must choose one of these interpretations (or another), and the choice matters.",
+      "compatibility": "Compatible with the redundancy critique: it strengthens the case that the definition's effective discriminatory power is thin. Conflicts with propositions that use information density as a reliable criterion."
+    }
+  }
+]

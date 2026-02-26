@@ -1,0 +1,1963 @@
+[
+  {
+    "id": "a2-09",
+    "proposition": "Every interactive panel element should serve both novice users (who click it) and expert users (who use hotkeys), by printing hotkey letters on icons, maintaining consistent grid positions across all contexts, and making the panel useful as a read-only status display.",
+    "initial_scores": {
+      "defensibility": 0.92,
+      "specificity": 0.9,
+      "robustness": 0.88,
+      "compatibility": 0.92
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-20",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.03,
+        "reasoning": "The defense makes an excellent point about scaffolding: dual-use design enabling the novice-to-expert transition is precisely the goal, not a contradiction. a2-09's robustness takes only a minimal hit (-0.03) because the tension is real (the bible should acknowledge the expert-path vestigiality) but does not undermine the dual-use design principle itself. No adjustment to a3-19 because the prosecution's specificity concern was minor and the defense did not contest it, but the 'largely vestigial' claim remains contextually accurate for competitive RTS."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.92,
+      "specificity": 0.9,
+      "robustness": 0.85,
+      "compatibility": 0.92
+    },
+    "composite": 0.8975,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-20"
+    ]
+  },
+  {
+    "id": "a3-02",
+    "proposition": "Five of the six high-value factors (viewport partitioning, opacity, permanence, fixed geometry, spatial exclusivity) are entailed by the three-word phrase 'opaque, persistent, non-overlapping' from the boxed definition, making them elaborations rather than independent discriminators.",
+    "initial_scores": {
+      "defensibility": 0.95,
+      "specificity": 0.93,
+      "robustness": 0.9,
+      "compatibility": 0.72
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-01",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": 0.03,
+        "reasoning": "The prosecution's core point stands: the five factors do not provide five independent pieces of evidence for classification purposes, and a1-03's claim that they should 'remain weighted factors' overstates their classificatory independence. However, the defense correctly identifies that the prescriptive/diagnostic function (a1-05's argument) partially rescues a1-03's position -- factors can be logically correlated yet prescriptively distinct. The adjudicator applies a significant robustness hit (-0.12) because a1-03's robustness was already its weakest axis and the redundancy argument materially weakens the claim that separate factors prevent misclassification. A defensibility hit of -0.08 reflects that the argument's foundation (factor independence) is genuinely weakened, not merely challenged. a3-02 gets a modest 0.03 defensibility boost -- the entailment argument is strong but was already scored at 0.95, and the defense's point about 'persistent' having a weak vs. strong reading prevents a larger increase."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.98,
+      "specificity": 0.93,
+      "robustness": 0.9,
+      "compatibility": 0.72
+    },
+    "composite": 0.8825,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-01"
+    ]
+  },
+  {
+    "id": "a1-04",
+    "proposition": "The correct test for whether two factors should remain separate or be merged is: can the two factors be independently violated in at least one historical example?",
+    "initial_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.92,
+      "robustness": 0.85,
+      "compatibility": 0.88
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-22",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.05,
+        "reasoning": "The defense correctly notes that a single-counterexample test is less sample-dependent than a statistical test. However, the prosecution's concern has a narrower valid form: if the sample is biased, the test might fail to FIND counterexamples that exist in the excluded population, leading to false factor merges. This is a real but modest risk. The robustness hit (-0.05) reflects this bounded vulnerability -- the test is sound in principle but its application to the current canon may produce incomplete results."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.92,
+      "robustness": 0.8,
+      "compatibility": 0.88
+    },
+    "composite": 0.875,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-22"
+    ]
+  },
+  {
+    "id": "a2-16",
+    "proposition": "Information channels should be separated by cognitive function: the panel carries persistent quantitative data read at the player's initiative, audio carries transient event notifications pushed asynchronously, and viewport overlays carry spatial data contextually attached to world-space entities.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.88,
+      "robustness": 0.8,
+      "compatibility": 0.92
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.88,
+      "robustness": 0.8,
+      "compatibility": 0.92
+    },
+    "composite": 0.87,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-04",
+    "proposition": "The panel frame definition fails to exclude Diablo II in inventory-open state, which meets all stated criteria (persistent bottom panel, opaque inventory panel, viewport budget less than 1.0) yet no one classifies Diablo II as a panel-frame game, revealing that the definition is a snapshot predicate applied to a temporal phenomenon.",
+    "initial_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.95,
+      "robustness": 0.82,
+      "compatibility": 0.78
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-02",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": 0.03,
+        "reasoning": "The defense makes a critical correct point: a1-02 proposes a necessary condition, not a sufficient one, so the Diablo II counterexample does not refute the proposition's logic -- it only shows the condition is not sufficient, which was never claimed. However, a3-01's critique that the spatial predicate smuggles in unstated functional assumptions is a genuine weakness: the inequality as stated (viewport_area < display_surface_area) does not distinguish between a persistent panel frame and a temporary inventory overlay, meaning the predicate requires unstated qualifiers to function as intended. This is a real robustness problem (-0.10). The smaller defensibility hit (-0.05) reflects that the 'difference of kind' argument in a1-02 is weakened when the predicate admits cases that are intuitively 'different in kind' from panel frames. a3-04 gets a small defensibility boost because the Diablo II example is concrete and verifiable."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.93,
+      "specificity": 0.95,
+      "robustness": 0.82,
+      "compatibility": 0.78
+    },
+    "composite": 0.87,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-02"
+    ]
+  },
+  {
+    "id": "a3-09",
+    "proposition": "The definition treats 'panel frame' as a property of a game when it is actually a property of a view or mode within a game, creating confusion for multi-view games like Master of Orion II which has a galaxy view (panel frame), colony screen (different panel frame), ship design screen (modal), and combat screen (yet another panel frame).",
+    "initial_scores": {
+      "defensibility": 0.91,
+      "specificity": 0.92,
+      "robustness": 0.87,
+      "compatibility": 0.75
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-15",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": 0.03,
+        "reasoning": "The defense correctly notes that persistent-vs-transient and game-vs-view are complementary distinctions. However, a1-11 does not explicitly acknowledge the view-level issue -- it frames the panel frame as a property of 'the persistent layout' without specifying which view's persistent layout. This ambiguity is a genuine robustness weakness: a developer applying a1-11 to MOO2 would not know which view to analyze. The compatibility hit reflects that a3-09 and a3-24 demand a more granular unit of analysis than a1-11 provides. a3-09 gets a modest defensibility boost because the MOO2 four-view example is concrete, verifiable, and clearly demonstrates the game-vs-view confusion."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.94,
+      "specificity": 0.92,
+      "robustness": 0.87,
+      "compatibility": 0.75
+    },
+    "composite": 0.87,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-15"
+    ]
+  },
+  {
+    "id": "a3-12",
+    "proposition": "Viewport budget (viewport_area / display_surface_area) is a systematically misleading metric because two games with identical viewport budgets of 0.70 can have wildly different functional layouts: a tall narrow right sidebar ideal for RTS base management versus a short wide bottom bar ideal for isometric exploration.",
+    "initial_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.92,
+      "robustness": 0.88,
+      "compatibility": 0.75
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-06",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": 0.03,
+        "reasoning": "The defense correctly notes that proxies can be lossy and within-layout-type comparisons remain meaningful. However, the prosecution's core point is not that the metric is imprecise but that it is categorically misleading: collapsing 2D layout to a scalar loses the functional dimension (sidebar vs. bottom-bar), which is precisely the dimension that matters most for design decisions. a1-09's theory (budget reflects information model) is plausible as a trend observation but is weakened when the metric it interprets cannot distinguish functionally opposite layouts. a1-10's internal inconsistency is real regardless of how it is characterized -- introducing thresholds after rejecting scoring creates confusion about the metric's role. a3-12 earns a modest defensibility boost because its critique is both logically airtight and practically consequential."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.93,
+      "specificity": 0.92,
+      "robustness": 0.88,
+      "compatibility": 0.75
+    },
+    "composite": 0.87,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-06"
+    ]
+  },
+  {
+    "id": "a1-01",
+    "proposition": "The panel frame definition should use a hybrid approach: prototype theory with weighted factors for the cluster, but classical necessary-and-sufficient logic for one hard boundary condition (viewport partitioning).",
+    "initial_scores": {
+      "defensibility": 0.92,
+      "specificity": 0.85,
+      "robustness": 0.88,
+      "compatibility": 0.8
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.92,
+      "specificity": 0.85,
+      "robustness": 0.88,
+      "compatibility": 0.8
+    },
+    "composite": 0.8625,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-22",
+    "proposition": "Golden-age viewport budgets (0.55-0.85) translate to enormous panel areas at modern resolutions; modern implementations must either fill that space with proportionally more information or adjust the budget upward toward 0.80-0.90.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.86,
+      "robustness": 0.83,
+      "compatibility": 0.88
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.86,
+      "robustness": 0.83,
+      "compatibility": 0.88
+    },
+    "composite": 0.8625,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-02",
+    "proposition": "Panel dimensions should be driven by content legibility requirements (the widest content element such as a two-column build grid or minimap), not by proportional ratios of screen space.",
+    "initial_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.8,
+      "robustness": 0.85,
+      "compatibility": 0.9
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.8,
+      "robustness": 0.85,
+      "compatibility": 0.9
+    },
+    "composite": 0.8625,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-06",
+    "proposition": "Panel real-estate allocation should mirror the decision structure of the game: if decisions are primarily 'what to do with this unit,' the command card dominates; if decisions are primarily 'which units to build and where,' stats and production dominate.",
+    "initial_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.82,
+      "robustness": 0.85,
+      "compatibility": 0.88
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.82,
+      "robustness": 0.85,
+      "compatibility": 0.88
+    },
+    "composite": 0.8625,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-08",
+    "proposition": "Viewport overlay systems (like Caesar III's toggleable data visualizations for water, fire, crime, desirability) reduce pressure on panel information density by making the viewport itself carry spatial data that the panel would otherwise need to summarize as numbers.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.85,
+      "robustness": 0.82,
+      "compatibility": 0.9
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.85,
+      "robustness": 0.82,
+      "compatibility": 0.9
+    },
+    "composite": 0.8625,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-11",
+    "proposition": "The panel frame pattern requires four implicit input assumptions: high-precision random-access pointing, zero-cost context switching between viewport and panel, screen-edge scrolling, and Fitts's Law dynamics with a free-roaming cursor. Platforms violating these assumptions degrade the pattern.",
+    "initial_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.88,
+      "robustness": 0.85,
+      "compatibility": 0.82
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.88,
+      "robustness": 0.85,
+      "compatibility": 0.82
+    },
+    "composite": 0.8625,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-20",
+    "proposition": "The guidance section should be organized by developer decision points ('how wide should my sidebar be?', 'where should the minimap go?'), not by factors, with each recommendation explicitly citing the factors and analyses it derives from.",
+    "initial_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.9,
+      "robustness": 0.82,
+      "compatibility": 0.85
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.9,
+      "robustness": 0.82,
+      "compatibility": 0.85
+    },
+    "composite": 0.86,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-25",
+    "proposition": "Information density, the only high-value factor that adds genuinely new discriminatory content beyond the boxed definition, is also the vaguest: it specifies no metric, no baseline for comparison, and could mean display density (pixels of distinct visual information per area), control density (interactive controls per area), or navigation density (spatial affordances per area), each of which would classify panels differently.",
+    "initial_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.88,
+      "robustness": 0.85,
+      "compatibility": 0.78
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-08",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": 0.03,
+        "reasoning": "The defense correctly notes that 'characteristic' placement hedges against vagueness, and that the ambiguity is solvable. However, the prosecution's core point stands: a1-06 assigns a structural role to a term it does not define, and the three-way ambiguity means different readers will apply different criteria when evaluating information density, undermining the scheme's reliability. The robustness hit (-0.10) reflects that the tier assignment is unstable until the term is disambiguated. The defensibility hit (-0.05) is smaller because the scheme's structure (necessary/characteristic/incidental) is sound even if one specific assignment is premature. a3-25 gets a modest boost because identifying the triple ambiguity is a genuine contribution that a1-06's scheme must address."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.93,
+      "specificity": 0.88,
+      "robustness": 0.85,
+      "compatibility": 0.78
+    },
+    "composite": 0.86,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-08"
+    ]
+  },
+  {
+    "id": "a3-05",
+    "proposition": "The canon of 15 exemplar games is a tautological confirmation set that can only test inclusion power, not exclusion power; rigorous testing requires a near-miss set of games that share most but not all panel-frame properties.",
+    "initial_scores": {
+      "defensibility": 0.93,
+      "specificity": 0.8,
+      "robustness": 0.88,
+      "compatibility": 0.82
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.93,
+      "specificity": 0.8,
+      "robustness": 0.88,
+      "compatibility": 0.82
+    },
+    "composite": 0.8575,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-13",
+    "proposition": "The viewport budget numbers lack a measurement methodology, failing the basic scientific criterion of reproducibility: whether panels are measured by bounding rectangles or visual boundaries, whether decorative borders count as panel or viewport area, and whether status bars are included are all unspecified.",
+    "initial_scores": {
+      "defensibility": 0.91,
+      "specificity": 0.85,
+      "robustness": 0.87,
+      "compatibility": 0.8
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.91,
+      "specificity": 0.85,
+      "robustness": 0.87,
+      "compatibility": 0.8
+    },
+    "composite": 0.8575,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-04",
+    "proposition": "The minimap must be placed in a screen corner because screen corners are 'infinite' Fitts's Law targets in two dimensions -- the cursor physically cannot overshoot -- making the minimap trivially easy to hit with a fast, imprecise mouse flick.",
+    "initial_scores": {
+      "defensibility": 0.92,
+      "specificity": 0.9,
+      "robustness": 0.75,
+      "compatibility": 0.85
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.92,
+      "specificity": 0.9,
+      "robustness": 0.75,
+      "compatibility": 0.85
+    },
+    "composite": 0.855,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-01",
+    "proposition": "The boxed definition of panel frames presents itself as a spatial predicate (area relationship to the display surface) when it actually functions as a functional predicate (the 'main' scrollable, spatially-continuous world view), smuggling in unacknowledged assumptions about continuity, scrollability, and primacy that do the real discriminatory work.",
+    "initial_scores": {
+      "defensibility": 0.92,
+      "specificity": 0.82,
+      "robustness": 0.88,
+      "compatibility": 0.8
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.92,
+      "specificity": 0.82,
+      "robustness": 0.88,
+      "compatibility": 0.8
+    },
+    "composite": 0.855,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-14",
+    "proposition": "Panel scaling should use fixed logical dimensions scaled by integer DPI factors, not proportional screen ratios: a 4K display at 2x scaling should show the same logical layout as 1080p with crisper rendering, and all additional pixels should go to the viewport.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.9,
+      "robustness": 0.78,
+      "compatibility": 0.85
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.9,
+      "robustness": 0.78,
+      "compatibility": 0.85
+    },
+    "composite": 0.8525,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-15",
+    "proposition": "The Westwood sidebar declined not because it was aesthetically outdated but because it was optimized for sequential construction from a catalog, and when that interaction pattern ceased to dominate gameplay (as in Generals), the layout ceased to serve.",
+    "initial_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.78,
+      "robustness": 0.82,
+      "compatibility": 0.9
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.78,
+      "robustness": 0.82,
+      "compatibility": 0.9
+    },
+    "composite": 0.85,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-25",
+    "proposition": "The golden-age panel frame was not one design but a family of designs each optimized for a specific interaction pattern, and the practitioner's task is to identify their game's primary interaction pattern, select the matching layout archetype, then apply the concrete principles (Fitts's Law placement, channel separation, expert/novice divergence, fixed-logical scaling, audio integration, overlay complementarity) to execute it.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.72,
+      "robustness": 0.85,
+      "compatibility": 0.95
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.72,
+      "robustness": 0.85,
+      "compatibility": 0.95
+    },
+    "composite": 0.85,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-08",
+    "proposition": "The opacity binary (opaque panel vs. transparent overlay) forces categorical judgment on a continuous gradient, producing arbitrary classifications for intermediate cases like Total Annihilation's semi-transparent build menus and Warcraft III's transparency-edged panel textures, without the user knowing they are in the arbitrary zone.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.9,
+      "robustness": 0.85,
+      "compatibility": 0.77
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.9,
+      "robustness": 0.85,
+      "compatibility": 0.77
+    },
+    "composite": 0.85,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-20",
+    "proposition": "The idle-villager button in Age of Empires II represents a higher level of information abstraction than raw data display: it is a derived-state indicator that collapses an entire map scan into a single glanceable element, communicating a judgment ('you have villagers doing nothing, which is bad') rather than a number.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.85,
+      "robustness": 0.78,
+      "compatibility": 0.88
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.85,
+      "robustness": 0.78,
+      "compatibility": 0.88
+    },
+    "composite": 0.8475,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-23",
+    "proposition": "No single information channel (panel, audio, viewport overlays) should try to carry all three cognitive functions (persistent quantitative data, event notifications, spatial data), because overloading any one channel degrades its primary purpose through clutter, confusion, or visual noise respectively.",
+    "initial_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.8,
+      "robustness": 0.78,
+      "compatibility": 0.92
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.8,
+      "robustness": 0.78,
+      "compatibility": 0.92
+    },
+    "composite": 0.84,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-15",
+    "proposition": "The definition describes panel frames as static spatial layouts but panels are temporal systems: the StarCraft command card changes contents several times per second, and two panel frames with identical spatial layouts but different update rates create different cognitive loads that the definition cannot distinguish because it has no temporal vocabulary.",
+    "initial_scores": {
+      "defensibility": 0.89,
+      "specificity": 0.86,
+      "robustness": 0.84,
+      "compatibility": 0.77
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.89,
+      "specificity": 0.86,
+      "robustness": 0.84,
+      "compatibility": 0.77
+    },
+    "composite": 0.84,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-07",
+    "proposition": "Archetypes (synchronic structural similarity) and lineages (diachronic design inheritance) are orthogonal classification axes, not competing alternatives, and should both be represented in the bible's taxonomy.",
+    "initial_scores": {
+      "defensibility": 0.91,
+      "specificity": 0.8,
+      "robustness": 0.87,
+      "compatibility": 0.9
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-05",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.08,
+        "reasoning": "The defense correctly distinguishes within-studio lineages (observable, verifiable) from cross-studio lineages (speculative). However, a1-07 explicitly uses cross-studio examples ('Blizzard crossing from right-sidebar to bottom-panel archetype') as its demonstration of orthogonality, which is exactly the kind of claim a3-10 targets. The robustness hit (-0.08) reflects that the lineage axis's evidentiary basis is weaker than claimed for the specific cross-studio comparisons a1-07 relies on. The defensibility hit (-0.05) is moderate because the synchronic/diachronic framework itself remains valid even if the diachronic data is less reliable than assumed. a3-10 gets a small boost because the convergent-evolution evidence from a3-11 strengthens the epistemological critique."
+      },
+      {
+        "round": 3,
+        "tension": "t-05",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": -0.05,
+        "reasoning": "The defense correctly distinguishes within-studio lineages (observable, verifiable) from cross-studio lineages (speculative). However, a1-07 explicitly uses cross-studio examples ('Blizzard crossing from right-sidebar to bottom-panel archetype') as its demonstration of orthogonality, which is exactly the kind of claim a3-10 targets. The robustness hit (-0.08) reflects that the lineage axis's evidentiary basis is weaker than claimed for the specific cross-studio comparisons a1-07 relies on. The defensibility hit (-0.05) is moderate because the synchronic/diachronic framework itself remains valid even if the diachronic data is less reliable than assumed. a3-10 gets a small boost because the convergent-evolution evidence from a3-11 strengthens the epistemological critique."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.8,
+      "robustness": 0.79,
+      "compatibility": 0.9
+    },
+    "composite": 0.8375,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-05"
+    ]
+  },
+  {
+    "id": "a2-05",
+    "proposition": "The center information panel optimizes for visual scanning rather than pointing, and this functional decomposition -- edges for interaction targets, center for information display -- is a principled Fitts's Law optimization.",
+    "initial_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.78,
+      "robustness": 0.8,
+      "compatibility": 0.9
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.78,
+      "robustness": 0.8,
+      "compatibility": 0.9
+    },
+    "composite": 0.8325,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-19",
+    "proposition": "Layout archetype selection should be driven by the game's primary interaction pattern: commanding agents requires a bottom-panel triptych, sequential catalog construction requires a sidebar, canvas painting requires a top toolbar, and multi-variable comparison requires floating windows.",
+    "initial_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.92,
+      "robustness": 0.7,
+      "compatibility": 0.85
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.92,
+      "robustness": 0.7,
+      "compatibility": 0.85
+    },
+    "composite": 0.83,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-24",
+    "proposition": "If a target platform cannot provide a free-roaming cursor with sub-pixel precision, zero-cost viewport-to-panel transitions, and screen-edge scrolling, the panel frame pattern should not be used and a different interaction pattern (radial menus for controllers, gesture-based for touch) should be adopted instead.",
+    "initial_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.88,
+      "robustness": 0.8,
+      "compatibility": 0.82
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-13",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.05,
+        "reasoning": "The defense makes a strong point: explicit scoping is not bias, and the panel frame may genuinely be a mouse-input pattern. This largely neutralizes a3-07's critique as applied to a2-11 and a2-24. However, a2-24's 'should not be used' is too absolutist given documented compromises (Halo Wars), warranting a modest robustness hit. a2-11 survives without adjustment because it correctly identifies assumptions without prescribing abandonment."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.88,
+      "robustness": 0.75,
+      "compatibility": 0.82
+    },
+    "composite": 0.825,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-13"
+    ]
+  },
+  {
+    "id": "a3-18",
+    "proposition": "The term 'panel' subsumes wildly different UI elements (a 32-pixel resource bar, a 200x400 command card, a 180x180 minimap, a 120-pixel unit portrait) that have different update rates, interaction models, cognitive load profiles, and design constraints, making the single term analytically useless when designing any one of them.",
+    "initial_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.91,
+      "robustness": 0.83,
+      "compatibility": 0.7
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.91,
+      "robustness": 0.83,
+      "compatibility": 0.7
+    },
+    "composite": 0.825,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-18",
+    "proposition": "Resolution and display scaling should be handled as a context section preceding factor definitions, not as factors themselves, because resolution is a property of the medium, not of the pattern.",
+    "initial_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.84,
+      "robustness": 0.8,
+      "compatibility": 0.82
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-23",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.03,
+        "reasoning": "The defense is largely correct: a1-18's specific claim about resolution is independent of a3-15's claim about temporal dynamics. The minimal robustness hit (-0.03) reflects only that a1-18's medium-vs-pattern boundary principle, while sound for resolution, does not provide guidance for borderline cases like temporal dynamics, which are both pattern-intrinsic and context-dependent. The tension is real but low-impact on a1-18 specifically."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.84,
+      "robustness": 0.77,
+      "compatibility": 0.82
+    },
+    "composite": 0.8225,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-18",
+    "proposition": "The interaction's cognitive demand structure determines whether fixed or floating information surfaces are appropriate: comparison-heavy management sims favor floating windows, while rapid spatial action games favor fixed panels.",
+    "initial_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.75,
+      "robustness": 0.8,
+      "compatibility": 0.88
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.75,
+      "robustness": 0.8,
+      "compatibility": 0.88
+    },
+    "composite": 0.8225,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-07",
+    "proposition": "The right sidebar persists in city builders not out of conservatism but because deep hierarchical building categories, absence of unit commanding, deliberate pacing, and persistent tool state all favor a vertical sidebar over a horizontal bottom bar.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.8,
+      "robustness": 0.82,
+      "compatibility": 0.78
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.8,
+      "robustness": 0.82,
+      "compatibility": 0.78
+    },
+    "composite": 0.82,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-06",
+    "proposition": "The canon exclusively comprises English-language PC games from Western studios, systematically excluding Japanese strategy games (Koei's titles) that used panel frames with inverted information hierarchies where the panel was the primary interaction surface and the viewport served as geographic context.",
+    "initial_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.88,
+      "robustness": 0.83,
+      "compatibility": 0.7
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.88,
+      "robustness": 0.83,
+      "compatibility": 0.7
+    },
+    "composite": 0.82,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-19",
+    "proposition": "The panel frame's importance inverts with player skill: for novices it is the primary learning interface (visible commands, displayed resources, spatial orientation via minimap), while for experts it is largely vestigial (commands via hotkeys, resources tracked mentally, only the minimap retaining high value).",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.84,
+      "robustness": 0.8,
+      "compatibility": 0.76
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.84,
+      "robustness": 0.8,
+      "compatibility": 0.76
+    },
+    "composite": 0.82,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-10",
+    "proposition": "Lineage-based organization (Westwood tree, Blizzard tree, Ensemble tree) implies conscious reference to predecessors when actual design causation involves dozens of simultaneous influences (competitor games, platform SDKs, publisher requirements, engine constraints, team size), and without internal design documents, lineage claims are reverse-engineered narratives that privilege visual similarity over actual causal history.",
+    "initial_scores": {
+      "defensibility": 0.84,
+      "specificity": 0.8,
+      "robustness": 0.82,
+      "compatibility": 0.78
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-05",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": 0.03,
+        "reasoning": "The defense correctly distinguishes within-studio lineages (observable, verifiable) from cross-studio lineages (speculative). However, a1-07 explicitly uses cross-studio examples ('Blizzard crossing from right-sidebar to bottom-panel archetype') as its demonstration of orthogonality, which is exactly the kind of claim a3-10 targets. The robustness hit (-0.08) reflects that the lineage axis's evidentiary basis is weaker than claimed for the specific cross-studio comparisons a1-07 relies on. The defensibility hit (-0.05) is moderate because the synchronic/diachronic framework itself remains valid even if the diachronic data is less reliable than assumed. a3-10 gets a small boost because the convergent-evolution evidence from a3-11 strengthens the epistemological critique."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.8,
+      "robustness": 0.82,
+      "compatibility": 0.78
+    },
+    "composite": 0.8175,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-05"
+    ]
+  },
+  {
+    "id": "a3-22",
+    "proposition": "The definition's failure modes form a connected topology of mutual reinforcement: definitional circularity prevents excluding borderline cases, which leaves survivorship bias untested, which preserves genre conflation; the viewport budget fallacy combines with temporal blindness and the audio blind spot to capture perhaps 30% of actual information architecture while presenting itself as complete.",
+    "initial_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.75,
+      "robustness": 0.82,
+      "compatibility": 0.85
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.75,
+      "robustness": 0.82,
+      "compatibility": 0.85
+    },
+    "composite": 0.8175,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-03",
+    "proposition": "The redundancy of five factors creates false confidence: a user checking borderline cases will see five factors pass or fail together (because they are the same criterion stated five ways) and one subjective factor (information density), producing spuriously confident binary judgments where uncertain continuous judgments are appropriate.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.78,
+      "robustness": 0.85,
+      "compatibility": 0.75
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.78,
+      "robustness": 0.85,
+      "compatibility": 0.75
+    },
+    "composite": 0.815,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-16",
+    "proposition": "The definition models screen space as the scarce resource (viewport budget) when the actual scarce resource is player attention: a panel operable entirely by keyboard shortcuts imposes zero attention cost from the viewport, making two visually identical panel frames functionally different interfaces for different player populations.",
+    "initial_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.83,
+      "robustness": 0.82,
+      "compatibility": 0.74
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.83,
+      "robustness": 0.82,
+      "compatibility": 0.74
+    },
+    "composite": 0.815,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-17",
+    "proposition": "The definition classifies decorative surround as a low-value factor, but race-specific panel textures in StarCraft (Zerg organic, Protoss crystalline, Terran metallic) serve a functional purpose in competitive play by instantly communicating race identity, and panel decoration's visual weight affects perceptual boundary strength and thus attention-switching cost.",
+    "initial_scores": {
+      "defensibility": 0.83,
+      "specificity": 0.9,
+      "robustness": 0.78,
+      "compatibility": 0.72
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-25",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": 0.03,
+        "reasoning": "The defense makes a valid point about the general-vs-specific distinction: decorative surround may be incidental to the pattern in general while being functionally significant in specific games. However, a1-06's tier assignment should account for the boundary between incidental-but-sometimes-functional and truly incidental, which it does not. The specificity hit (-0.05) reflects that the incidental tier may need an internal distinction between decorative features that can serve functional purposes (decorative surround, with its boundary-strength and identity-communication roles) and those that cannot. a3-17 earns a modest defensibility boost for providing concrete, verifiable evidence of decoration's functional role."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.9,
+      "robustness": 0.78,
+      "compatibility": 0.72
+    },
+    "composite": 0.815,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-25"
+    ]
+  },
+  {
+    "id": "a1-15",
+    "proposition": "Systemic anti-patterns that reject the entire pattern (like Sacrifice's first-person perspective with spell wheel overlay) deserve standalone treatment separate from inline single-factor anti-patterns.",
+    "initial_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.82,
+      "robustness": 0.8,
+      "compatibility": 0.78
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.82,
+      "robustness": 0.8,
+      "compatibility": 0.78
+    },
+    "composite": 0.8125,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-21",
+    "proposition": "The Berlin Interpretation's failure to include any necessary conditions led to the notorious problem of calling Diablo II a roguelike; the panel frame definition avoids this by admitting exactly one necessary condition.",
+    "initial_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.78,
+      "robustness": 0.8,
+      "compatibility": 0.82
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.78,
+      "robustness": 0.8,
+      "compatibility": 0.82
+    },
+    "composite": 0.8125,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-07",
+    "proposition": "Console strategy games (Advance Wars, Fire Emblem, Final Fantasy Tactics) operated under fundamentally different constraints (lower resolution, no mouse, d-pad navigation) that make the definition's implicit mouse-input and high-resolution assumptions visible, revealing it describes 'the Western PC strategy game panel frame with mouse input' rather than a universal pattern.",
+    "initial_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.87,
+      "robustness": 0.8,
+      "compatibility": 0.73
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.87,
+      "robustness": 0.8,
+      "compatibility": 0.73
+    },
+    "composite": 0.8125,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-24",
+    "proposition": "The definition implicitly privileges the 'main' view of a multi-modal game, but many golden-age strategy games spent significant play-time in secondary views: a Civilization II player might spend more time in city screens than on the main map, creating a mismatch between what the definition describes and what the player experiences.",
+    "initial_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.84,
+      "robustness": 0.79,
+      "compatibility": 0.76
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.84,
+      "robustness": 0.79,
+      "compatibility": 0.76
+    },
+    "composite": 0.8125,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-10",
+    "proposition": "Audio is a first-class information channel that should be designed alongside the panel, not after it: every player-relevant event should be assigned to either panel (persistent, player-initiated) or audio (transient, system-initiated) delivery.",
+    "initial_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.82,
+      "robustness": 0.72,
+      "compatibility": 0.85
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.82,
+      "robustness": 0.72,
+      "compatibility": 0.85
+    },
+    "composite": 0.81,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-11",
+    "proposition": "The panel frame is a property of the persistent layout, not of the total interface: transient user-invoked windows (like RollerCoaster Tycoon's floating windows) are a separate pattern layered on top and do not affect panel frame classification.",
+    "initial_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.88,
+      "robustness": 0.82,
+      "compatibility": 0.8
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-15",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.08,
+        "reasoning": "The defense correctly notes that persistent-vs-transient and game-vs-view are complementary distinctions. However, a1-11 does not explicitly acknowledge the view-level issue -- it frames the panel frame as a property of 'the persistent layout' without specifying which view's persistent layout. This ambiguity is a genuine robustness weakness: a developer applying a1-11 to MOO2 would not know which view to analyze. The compatibility hit reflects that a3-09 and a3-24 demand a more granular unit of analysis than a1-11 provides. a3-09 gets a modest defensibility boost because the MOO2 four-view example is concrete, verifiable, and clearly demonstrates the game-vs-view confusion."
+      },
+      {
+        "round": 3,
+        "tension": "t-15",
+        "pass": "adjudication",
+        "axis": "compatibility",
+        "delta": -0.05,
+        "reasoning": "The defense correctly notes that persistent-vs-transient and game-vs-view are complementary distinctions. However, a1-11 does not explicitly acknowledge the view-level issue -- it frames the panel frame as a property of 'the persistent layout' without specifying which view's persistent layout. This ambiguity is a genuine robustness weakness: a developer applying a1-11 to MOO2 would not know which view to analyze. The compatibility hit reflects that a3-09 and a3-24 demand a more granular unit of analysis than a1-11 provides. a3-09 gets a modest defensibility boost because the MOO2 four-view example is concrete, verifiable, and clearly demonstrates the game-vs-view confusion."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.88,
+      "robustness": 0.74,
+      "compatibility": 0.75
+    },
+    "composite": 0.8075,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-15"
+    ]
+  },
+  {
+    "id": "a1-23",
+    "proposition": "The bible should distinguish between properties that are constitutive of the panel frame pattern and properties that are historically common but contingent, to avoid the Berlin Interpretation's error of conflating historical accident with definitional necessity.",
+    "initial_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.75,
+      "robustness": 0.85,
+      "compatibility": 0.8
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-19",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.07,
+        "reasoning": "The defense correctly argues the principle survives even if the sample is biased -- the fix is to expand the sample, not discard the principle. However, a1-23's current formulation does not acknowledge the sample-dependence of constitutive/contingent judgments, which is a genuine robustness weakness. If the proposition claimed 'distinguish constitutive from contingent properties using a geographically diverse sample,' it would be fully robust. As stated, it is vulnerable to the very bias a3-06 identifies. The robustness hit is moderate (-0.07) because the principle is sound but its application as currently scoped is unreliable."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.9,
+      "specificity": 0.75,
+      "robustness": 0.78,
+      "compatibility": 0.8
+    },
+    "composite": 0.8075,
+    "category": "survivor",
+    "unresolved_tensions": [
+      "t-19"
+    ]
+  },
+  {
+    "id": "a3-11",
+    "proposition": "The bottom-panel layout appeared in Age of Empires (1997), StarCraft (1998), and Dark Reign (1997) within a 12-month window, suggesting convergent evolution driven by shared constraints (higher resolutions making sidebars less efficient) rather than the tree-structured lineage the definition assumes.",
+    "initial_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.93,
+      "robustness": 0.75,
+      "compatibility": 0.72
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.93,
+      "robustness": 0.75,
+      "compatibility": 0.72
+    },
+    "composite": 0.805,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-14",
+    "proposition": "Grouping RTS panels (200+ APM, instant feedback), city builder panels (5-10 APM, long-term trends), and 4X panels (variable tempo, dual tactical/strategic) under 'panel frame' because they look alike commits the same error as grouping whales and fish because they both swim: the visual similarity is a convergent response to finite display area, not evidence of shared design intent.",
+    "initial_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.88,
+      "robustness": 0.8,
+      "compatibility": 0.68
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.86,
+      "specificity": 0.88,
+      "robustness": 0.8,
+      "compatibility": 0.68
+    },
+    "composite": 0.805,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-02",
+    "proposition": "Viewport partitioning (viewport_area < display_surface_area) is the single necessary condition for panel frame membership, and it should be the ONLY necessary condition.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.93,
+      "robustness": 0.82,
+      "compatibility": 0.72
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-02",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.1,
+        "reasoning": "The defense makes a critical correct point: a1-02 proposes a necessary condition, not a sufficient one, so the Diablo II counterexample does not refute the proposition's logic -- it only shows the condition is not sufficient, which was never claimed. However, a3-01's critique that the spatial predicate smuggles in unstated functional assumptions is a genuine weakness: the inequality as stated (viewport_area < display_surface_area) does not distinguish between a persistent panel frame and a temporary inventory overlay, meaning the predicate requires unstated qualifiers to function as intended. This is a real robustness problem (-0.10). The smaller defensibility hit (-0.05) reflects that the 'difference of kind' argument in a1-02 is weakened when the predicate admits cases that are intuitively 'different in kind' from panel frames. a3-04 gets a small defensibility boost because the Diablo II example is concrete and verifiable."
+      },
+      {
+        "round": 3,
+        "tension": "t-02",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": -0.05,
+        "reasoning": "The defense makes a critical correct point: a1-02 proposes a necessary condition, not a sufficient one, so the Diablo II counterexample does not refute the proposition's logic -- it only shows the condition is not sufficient, which was never claimed. However, a3-01's critique that the spatial predicate smuggles in unstated functional assumptions is a genuine weakness: the inequality as stated (viewport_area < display_surface_area) does not distinguish between a persistent panel frame and a temporary inventory overlay, meaning the predicate requires unstated qualifiers to function as intended. This is a real robustness problem (-0.10). The smaller defensibility hit (-0.05) reflects that the 'difference of kind' argument in a1-02 is weakened when the predicate admits cases that are intuitively 'different in kind' from panel frames. a3-04 gets a small defensibility boost because the Diablo II example is concrete and verifiable."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.83,
+      "specificity": 0.93,
+      "robustness": 0.72,
+      "compatibility": 0.72
+    },
+    "composite": 0.8,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-02"
+    ]
+  },
+  {
+    "id": "a2-03",
+    "proposition": "StarCraft's bottom-panel triptych (minimap / info / command card) answers three cognitive questions in left-to-right order -- Where am I? / What am I looking at? / What can I do? -- and this maps onto the decision loop orient-assess-act.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.85,
+      "robustness": 0.72,
+      "compatibility": 0.8
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-09",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.05,
+        "reasoning": "The defense makes a fair point: a1-17's nesting is arguably validated rather than undermined by the genre-specificity argument, and a2-03 already acknowledges its limited scope. However, both propositions implicitly assume the parent category ('panel frame') is coherent enough to house sub-patterns, and a3-14's critique does raise genuine questions about whether the parent category does useful work. The robustness hits are modest (-0.05 each) rather than the prosecution's larger proposals, reflecting that the tension is real but does not fatally undermine either proposition -- it primarily challenges the umbrella category they operate within."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.85,
+      "robustness": 0.67,
+      "compatibility": 0.8
+    },
+    "composite": 0.8,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-09"
+    ]
+  },
+  {
+    "id": "a1-24",
+    "proposition": "The morphological space approach accommodates pattern evolution by treating it as movement through the space: post-golden-age trends (higher viewport budgets, contextual panels) are trajectories, not invalidations of the golden-age definition.",
+    "initial_scores": {
+      "defensibility": 0.83,
+      "specificity": 0.77,
+      "robustness": 0.79,
+      "compatibility": 0.8
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.83,
+      "specificity": 0.77,
+      "robustness": 0.79,
+      "compatibility": 0.8
+    },
+    "composite": 0.7975,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-17",
+    "proposition": "The StarCraft triptych (minimap / info display / command card) should be treated as a functional constraint within the Ensemble Bottom Bar archetype -- a pattern nested within a pattern -- not as a top-level definitional element.",
+    "initial_scores": {
+      "defensibility": 0.83,
+      "specificity": 0.87,
+      "robustness": 0.78,
+      "compatibility": 0.75
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-09",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.05,
+        "reasoning": "The defense makes a fair point: a1-17's nesting is arguably validated rather than undermined by the genre-specificity argument, and a2-03 already acknowledges its limited scope. However, both propositions implicitly assume the parent category ('panel frame') is coherent enough to house sub-patterns, and a3-14's critique does raise genuine questions about whether the parent category does useful work. The robustness hits are modest (-0.05 each) rather than the prosecution's larger proposals, reflecting that the tension is real but does not fatally undermine either proposition -- it primarily challenges the umbrella category they operate within."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.83,
+      "specificity": 0.87,
+      "robustness": 0.73,
+      "compatibility": 0.75
+    },
+    "composite": 0.795,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-09"
+    ]
+  },
+  {
+    "id": "a3-20",
+    "proposition": "Golden-age strategy games used audio as an information channel (unit acknowledgments, alert sounds, production-complete jingles) that substitutes for panel space, meaning the viewport budget is not the full information budget: comparing viewport budgets across games without accounting for audio information substitution systematically misestimates information costs.",
+    "initial_scores": {
+      "defensibility": 0.84,
+      "specificity": 0.82,
+      "robustness": 0.78,
+      "compatibility": 0.73
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.84,
+      "specificity": 0.82,
+      "robustness": 0.78,
+      "compatibility": 0.73
+    },
+    "composite": 0.7925,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-21",
+    "proposition": "The three 'thin-panel/thick-viewport' (city builders), 'navigation-panel/modal-complexity' (4X games), and 'layered-panel/map-mode' (grand strategy) panel architectures are so architecturally distinct that knowing a game 'uses a panel frame' provides zero design guidance about how its information architecture actually works.",
+    "initial_scores": {
+      "defensibility": 0.83,
+      "specificity": 0.87,
+      "robustness": 0.77,
+      "compatibility": 0.68
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.83,
+      "specificity": 0.87,
+      "robustness": 0.77,
+      "compatibility": 0.68
+    },
+    "composite": 0.7875,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-16",
+    "proposition": "Information strategies (modal screens, map-as-data, sidebar abstraction) are content patterns orthogonal to the panel frame's spatial layout pattern, and conflating them is a categorical error that would weaken the definition.",
+    "initial_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.8,
+      "robustness": 0.83,
+      "compatibility": 0.72
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-10",
+        "pass": "adjudication",
+        "axis": "compatibility",
+        "delta": -0.05,
+        "reasoning": "The defense's modular-design argument is reasonable: spatial layout can be defined separately from information architecture as long as the document covers both. However, a1-16's framing ('conflating them is a categorical error that would weaken the definition') is stronger than necessary -- it is not a categorical error if the bible has a spatial-pattern section AND an information-architecture section. The compatibility and robustness hits are modest because the proposition's core insight (spatial layout is a distinct concern) is valid, but its exclusionary framing creates unnecessary friction with propositions that want the bible to address richer concerns."
+      },
+      {
+        "round": 3,
+        "tension": "t-10",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.05,
+        "reasoning": "The defense's modular-design argument is reasonable: spatial layout can be defined separately from information architecture as long as the document covers both. However, a1-16's framing ('conflating them is a categorical error that would weaken the definition') is stronger than necessary -- it is not a categorical error if the bible has a spatial-pattern section AND an information-architecture section. The compatibility and robustness hits are modest because the proposition's core insight (spatial layout is a distinct concern) is valid, but its exclusionary framing creates unnecessary friction with propositions that want the bible to address richer concerns."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.88,
+      "specificity": 0.8,
+      "robustness": 0.78,
+      "compatibility": 0.67
+    },
+    "composite": 0.7825,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-10"
+    ]
+  },
+  {
+    "id": "a2-22",
+    "proposition": "A wider, shorter viewport (as produced by a bottom panel) better serves RTS gameplay than a narrower, taller viewport (as produced by a sidebar) because lateral terrain visibility supports the core spatial reasoning tasks of flanking, army positioning, and base layout.",
+    "initial_scores": {
+      "defensibility": 0.8,
+      "specificity": 0.78,
+      "robustness": 0.72,
+      "compatibility": 0.82
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.8,
+      "specificity": 0.78,
+      "robustness": 0.72,
+      "compatibility": 0.82
+    },
+    "composite": 0.78,
+    "category": "survivor"
+  },
+  {
+    "id": "a1-06",
+    "proposition": "The binary high/low weighting scheme from the Berlin Interpretation should be replaced with a three-tier scheme: necessary (viewport partitioning only), characteristic (opacity, permanence, fixed geometry, spatial exclusivity, information density), and incidental (minimap, contextual sub-panels, decorative surround, resource bar, layout convention, panel-embedded controls).",
+    "initial_scores": {
+      "defensibility": 0.83,
+      "specificity": 0.95,
+      "robustness": 0.78,
+      "compatibility": 0.75
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-08",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.1,
+        "reasoning": "The defense correctly notes that 'characteristic' placement hedges against vagueness, and that the ambiguity is solvable. However, the prosecution's core point stands: a1-06 assigns a structural role to a term it does not define, and the three-way ambiguity means different readers will apply different criteria when evaluating information density, undermining the scheme's reliability. The robustness hit (-0.10) reflects that the tier assignment is unstable until the term is disambiguated. The defensibility hit (-0.05) is smaller because the scheme's structure (necessary/characteristic/incidental) is sound even if one specific assignment is premature. a3-25 gets a modest boost because identifying the triple ambiguity is a genuine contribution that a1-06's scheme must address."
+      },
+      {
+        "round": 3,
+        "tension": "t-08",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": -0.05,
+        "reasoning": "The defense correctly notes that 'characteristic' placement hedges against vagueness, and that the ambiguity is solvable. However, the prosecution's core point stands: a1-06 assigns a structural role to a term it does not define, and the three-way ambiguity means different readers will apply different criteria when evaluating information density, undermining the scheme's reliability. The robustness hit (-0.10) reflects that the tier assignment is unstable until the term is disambiguated. The defensibility hit (-0.05) is smaller because the scheme's structure (necessary/characteristic/incidental) is sound even if one specific assignment is premature. a3-25 gets a modest boost because identifying the triple ambiguity is a genuine contribution that a1-06's scheme must address."
+      },
+      {
+        "round": 3,
+        "tension": "t-25",
+        "pass": "adjudication",
+        "axis": "specificity",
+        "delta": -0.05,
+        "reasoning": "The defense makes a valid point about the general-vs-specific distinction: decorative surround may be incidental to the pattern in general while being functionally significant in specific games. However, a1-06's tier assignment should account for the boundary between incidental-but-sometimes-functional and truly incidental, which it does not. The specificity hit (-0.05) reflects that the incidental tier may need an internal distinction between decorative features that can serve functional purposes (decorative surround, with its boundary-strength and identity-communication roles) and those that cannot. a3-17 earns a modest defensibility boost for providing concrete, verifiable evidence of decoration's functional role."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.78,
+      "specificity": 0.9,
+      "robustness": 0.68,
+      "compatibility": 0.75
+    },
+    "composite": 0.7775,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-08",
+      "t-25"
+    ]
+  },
+  {
+    "id": "a1-10",
+    "proposition": "The viewport budget should NOT serve as a scoring axis for pattern membership: a game with budget 0.55 is not 'more of a panel frame' than one with budget 0.80; the budget measures how the pattern is instantiated, not how well.",
+    "initial_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.85,
+      "robustness": 0.75,
+      "compatibility": 0.78
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-06",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.1,
+        "reasoning": "The defense correctly notes that proxies can be lossy and within-layout-type comparisons remain meaningful. However, the prosecution's core point is not that the metric is imprecise but that it is categorically misleading: collapsing 2D layout to a scalar loses the functional dimension (sidebar vs. bottom-bar), which is precisely the dimension that matters most for design decisions. a1-09's theory (budget reflects information model) is plausible as a trend observation but is weakened when the metric it interprets cannot distinguish functionally opposite layouts. a1-10's internal inconsistency is real regardless of how it is characterized -- introducing thresholds after rejecting scoring creates confusion about the metric's role. a3-12 earns a modest defensibility boost because its critique is both logically airtight and practically consequential."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.85,
+      "robustness": 0.65,
+      "compatibility": 0.78
+    },
+    "composite": 0.775,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-06"
+    ]
+  },
+  {
+    "id": "a1-12",
+    "proposition": "The panel frame resolves four fundamental design forces: world visibility vs. state accessibility, information density vs. cognitive load, interaction efficiency vs. learning curve, and aesthetic immersion vs. functional utility.",
+    "initial_scores": {
+      "defensibility": 0.84,
+      "specificity": 0.7,
+      "robustness": 0.76,
+      "compatibility": 0.82
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-24",
+        "pass": "adjudication",
+        "axis": "specificity",
+        "delta": -0.03,
+        "reasoning": "The defense correctly identifies the complementary layering. The forces are the theory; the decision-structure analysis is the practice. However, a1-12's specificity still deserves a small hit because the proposition frames the four forces as 'fundamental' without providing a decision procedure for when they conflict with each other. The robustness concern is adequately addressed by the complementarity argument."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.84,
+      "specificity": 0.67,
+      "robustness": 0.76,
+      "compatibility": 0.82
+    },
+    "composite": 0.7725,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-17",
+    "proposition": "Chris Sawyer's floating-window system (Transport Tycoon, RollerCoaster Tycoon) is the most powerful information-comparison architecture of the golden age because it allows simultaneous multi-variable comparison, but its window-management overhead, viewport occlusion, and lack of canonical layout make it unsuitable for rapid spatial action games.",
+    "initial_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.8,
+      "robustness": 0.75,
+      "compatibility": 0.72
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.8,
+      "robustness": 0.75,
+      "compatibility": 0.72
+    },
+    "composite": 0.7725,
+    "category": "survivor"
+  },
+  {
+    "id": "a3-23",
+    "proposition": "The fundamental meta-failure is that the panel frame bible models a visual layout pattern when the actual design object is a multi-modal, temporally-dynamic, user-dependent, interaction-driven information architecture that happens to have a visual layout as one of its manifestations.",
+    "initial_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.72,
+      "robustness": 0.85,
+      "compatibility": 0.7
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-21",
+        "pass": "adjudication",
+        "axis": "specificity",
+        "delta": -0.05,
+        "reasoning": "The defense makes a genuinely important point: Alexander's forces are not inherently limited to spatial layout, and the force framework could potentially encompass information architecture if the forces are defined to include temporal, modal, and user-model dimensions. However, a1-13 as actually stated frames the forces in spatial terms ('world visibility vs. state accessibility'), and its application in a1-12 does not include temporal dynamics or user models. The proposition would need substantial revision to serve as the foundation for a3-23's broader vision. The robustness hit (-0.08) reflects that the forces-as-stated are too narrow, even if the framework could be expanded. The compatibility hit (-0.05) is smaller than prosecuted because the expansion path exists. a3-23's specificity hit (-0.05) is warranted because the critique genuinely does not specify a replacement framework."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.67,
+      "robustness": 0.85,
+      "compatibility": 0.7
+    },
+    "composite": 0.7725,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-21"
+    ]
+  },
+  {
+    "id": "a1-05",
+    "proposition": "Factor granularity serves a diagnostic (prescriptive) function, not just a descriptive (classificatory) function: correlated factors should be preserved because they point to different implementation fixes.",
+    "initial_scores": {
+      "defensibility": 0.85,
+      "specificity": 0.75,
+      "robustness": 0.8,
+      "compatibility": 0.82
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-03",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": -0.07,
+        "reasoning": "The defense makes a legitimate point about implementation-level distinctness: opacity and spatial exclusivity do map to different code changes. However, this defense only works if the bible explicitly frames these factors as implementation diagnostics rather than classificatory criteria. a1-05 argues for both roles ('diagnostic/prescriptive function, not just descriptive/classificatory'), but the prescriptive role is only rescued if the document clearly separates 'these factors help classify' (where they are redundant) from 'these factors guide implementation' (where they remain distinct). Since a1-05 does not make this separation explicit, its defensibility takes a moderate hit. The robustness hit is larger because a3-02's entailment argument specifically targets the scenario where factors pass and fail together, which is exactly the classificatory use case a1-05 claims to support."
+      },
+      {
+        "round": 3,
+        "tension": "t-03",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.08,
+        "reasoning": "The defense makes a legitimate point about implementation-level distinctness: opacity and spatial exclusivity do map to different code changes. However, this defense only works if the bible explicitly frames these factors as implementation diagnostics rather than classificatory criteria. a1-05 argues for both roles ('diagnostic/prescriptive function, not just descriptive/classificatory'), but the prescriptive role is only rescued if the document clearly separates 'these factors help classify' (where they are redundant) from 'these factors guide implementation' (where they remain distinct). Since a1-05 does not make this separation explicit, its defensibility takes a moderate hit. The robustness hit is larger because a3-02's entailment argument specifically targets the scenario where factors pass and fail together, which is exactly the classificatory use case a1-05 claims to support."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.78,
+      "specificity": 0.75,
+      "robustness": 0.72,
+      "compatibility": 0.82
+    },
+    "composite": 0.7675,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-03"
+    ]
+  },
+  {
+    "id": "a1-09",
+    "proposition": "The viewport budget (viewport_area / display_surface_area) is a proxy for the designer's model of where information lives: high budgets say the world is the primary information display, low budgets say panels provide co-equal information alongside the world.",
+    "initial_scores": {
+      "defensibility": 0.87,
+      "specificity": 0.72,
+      "robustness": 0.8,
+      "compatibility": 0.85
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-06",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.12,
+        "reasoning": "The defense correctly notes that proxies can be lossy and within-layout-type comparisons remain meaningful. However, the prosecution's core point is not that the metric is imprecise but that it is categorically misleading: collapsing 2D layout to a scalar loses the functional dimension (sidebar vs. bottom-bar), which is precisely the dimension that matters most for design decisions. a1-09's theory (budget reflects information model) is plausible as a trend observation but is weakened when the metric it interprets cannot distinguish functionally opposite layouts. a1-10's internal inconsistency is real regardless of how it is characterized -- introducing thresholds after rejecting scoring creates confusion about the metric's role. a3-12 earns a modest defensibility boost because its critique is both logically airtight and practically consequential."
+      },
+      {
+        "round": 3,
+        "tension": "t-06",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": -0.05,
+        "reasoning": "The defense correctly notes that proxies can be lossy and within-layout-type comparisons remain meaningful. However, the prosecution's core point is not that the metric is imprecise but that it is categorically misleading: collapsing 2D layout to a scalar loses the functional dimension (sidebar vs. bottom-bar), which is precisely the dimension that matters most for design decisions. a1-09's theory (budget reflects information model) is plausible as a trend observation but is weakened when the metric it interprets cannot distinguish functionally opposite layouts. a1-10's internal inconsistency is real regardless of how it is characterized -- introducing thresholds after rejecting scoring creates confusion about the metric's role. a3-12 earns a modest defensibility boost because its critique is both logically airtight and practically consequential."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.72,
+      "robustness": 0.68,
+      "compatibility": 0.85
+    },
+    "composite": 0.7675,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-06"
+    ]
+  },
+  {
+    "id": "a2-21",
+    "proposition": "The post-golden-age trend is information migration from the panel into the viewport through overlays, contextual tooltips, and strategic zoom, but the panel has not been fully replaced because the three-question decomposition (Where/What/Do) remains cognitively valid even when some answers can be embedded in the viewport.",
+    "initial_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.68,
+      "robustness": 0.75,
+      "compatibility": 0.8
+    },
+    "deltas": [],
+    "final_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.68,
+      "robustness": 0.75,
+      "compatibility": 0.8
+    },
+    "composite": 0.7625,
+    "category": "survivor"
+  },
+  {
+    "id": "a2-01",
+    "proposition": "The panel frame's opacity is load-bearing: the hard edge between panel and viewport creates two distinct visual fields that the eye processes independently, and softening that edge (e.g., semi-transparency as in Tiberian Sun) degrades both regions' legibility.",
+    "initial_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.75,
+      "robustness": 0.7,
+      "compatibility": 0.85
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-07",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.08,
+        "reasoning": "The defense correctly identifies a viable synthesis (opacity as a high-weight characteristic factor on a gradient), which means the three positions are not fully mutually exclusive -- but they do require each to retreat from its strongest form. a1-03's compatibility drops because the synthesis requires opacity to be a high-weight factor, not just any weighted factor, which is closer to a2-01's position than a1-03 intended. Its robustness takes a smaller hit because the defense's synthesis is available. a2-01's robustness drops because the 'hard edge is essential' claim is empirically falsified by Total Annihilation and Warcraft III -- these games demonstrate that semi-transparent panels can function, even if fully opaque panels function better. The drop is meaningful (-0.08) because a2-01's perceptual-science framing ('the eye processes independently') claimed a stronger effect than the evidence supports."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.75,
+      "robustness": 0.62,
+      "compatibility": 0.85
+    },
+    "composite": 0.76,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-07"
+    ]
+  },
+  {
+    "id": "a1-14",
+    "proposition": "Anti-patterns should be organized inline with the factors they violate, not in a dedicated section, because a developer reading about a factor should immediately see what happens when it is violated.",
+    "initial_scores": {
+      "defensibility": 0.79,
+      "specificity": 0.9,
+      "robustness": 0.74,
+      "compatibility": 0.65
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-12",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.05,
+        "reasoning": "The defense correctly notes that the a1-14/a1-15 two-tier system partially addresses the systemic concern. However, the connected-topology observation from a3-22 suggests that many anti-patterns that appear single-factor are actually multi-factor in practice, making the inline-vs-standalone boundary harder to draw than a1-14 assumes. The hits are modest because a1-14's pedagogical argument (reduce cross-referencing) is sound and a1-15's exception handles the clearest systemic cases."
+      },
+      {
+        "round": 3,
+        "tension": "t-12",
+        "pass": "adjudication",
+        "axis": "compatibility",
+        "delta": -0.05,
+        "reasoning": "The defense correctly notes that the a1-14/a1-15 two-tier system partially addresses the systemic concern. However, the connected-topology observation from a3-22 suggests that many anti-patterns that appear single-factor are actually multi-factor in practice, making the inline-vs-standalone boundary harder to draw than a1-14 assumes. The hits are modest because a1-14's pedagogical argument (reduce cross-referencing) is sound and a1-15's exception handles the clearest systemic cases."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.79,
+      "specificity": 0.9,
+      "robustness": 0.69,
+      "compatibility": 0.6
+    },
+    "composite": 0.745,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-12"
+    ]
+  },
+  {
+    "id": "a1-19",
+    "proposition": "The bible must maintain a strict separation between descriptive content (definition, factors, scoring, canon), analytical content (boundary cases, anti-patterns, context), and prescriptive content (developer guidance), to avoid contaminating the definition with opinions.",
+    "initial_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.85,
+      "robustness": 0.73,
+      "compatibility": 0.68
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-14",
+        "pass": "adjudication",
+        "axis": "compatibility",
+        "delta": -0.05,
+        "reasoning": "The defense's reference-document argument is valid for experienced users but does not resolve the first-time reader's problem. The tension is real but moderate: strict separation works for reference use but creates friction for tutorial-style reading. Both hits are modest because the proposition's methodological soundness is genuine even if the strict implementation is aspirational."
+      },
+      {
+        "round": 3,
+        "tension": "t-14",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.05,
+        "reasoning": "The defense's reference-document argument is valid for experienced users but does not resolve the first-time reader's problem. The tension is real but moderate: strict separation works for reference use but creates friction for tutorial-style reading. Both hits are modest because the proposition's methodological soundness is genuine even if the strict implementation is aspirational."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.82,
+      "specificity": 0.85,
+      "robustness": 0.68,
+      "compatibility": 0.63
+    },
+    "composite": 0.745,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-14"
+    ]
+  },
+  {
+    "id": "a1-25",
+    "proposition": "The proposed thirteen-section bible structure (Scope, Forces, Definitions, Necessary Condition, Characteristic Factors, Incidental Factors, Viewport Budget, Morphological Space, Canon, Boundary Cases, Historical Context, Design Guidance, Glossary) moves from theoretical foundation through formal definition through empirical mapping to practical application, with each section building on the previous ones.",
+    "initial_scores": {
+      "defensibility": 0.79,
+      "specificity": 0.93,
+      "robustness": 0.7,
+      "compatibility": 0.65
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-17",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.08,
+        "reasoning": "The defense's shared-structural-properties argument is valid: the sub-patterns do share non-trivial common features. However, a1-25's specific thirteen-section structure presupposes a level of unified coherence that the sub-patterns challenge. A developer seeking city-builder panel guidance must navigate through RTS-focused sections and vice versa. The robustness hit reflects that the structure may need reorganization around sub-patterns rather than a unified category. The compatibility hit reflects practitioners' likely frustration with a thirteen-section document that mixes genre-specific guidance. No defensibility hit because the document's progressive-depth structure is methodologically sound regardless of whether the category is fully unified."
+      },
+      {
+        "round": 3,
+        "tension": "t-17",
+        "pass": "adjudication",
+        "axis": "compatibility",
+        "delta": -0.05,
+        "reasoning": "The defense's shared-structural-properties argument is valid: the sub-patterns do share non-trivial common features. However, a1-25's specific thirteen-section structure presupposes a level of unified coherence that the sub-patterns challenge. A developer seeking city-builder panel guidance must navigate through RTS-focused sections and vice versa. The robustness hit reflects that the structure may need reorganization around sub-patterns rather than a unified category. The compatibility hit reflects practitioners' likely frustration with a thirteen-section document that mixes genre-specific guidance. No defensibility hit because the document's progressive-depth structure is methodologically sound regardless of whether the category is fully unified."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.79,
+      "specificity": 0.93,
+      "robustness": 0.62,
+      "compatibility": 0.6
+    },
+    "composite": 0.735,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-17"
+    ]
+  },
+  {
+    "id": "a1-08",
+    "proposition": "The bible should define a six-dimensional morphological space (panel placement, panel count, functional decomposition, viewport budget, visual grammar, interaction model) where each game occupies a point, archetypes are clusters, lineages are paths, and sub-types are named regions.",
+    "initial_scores": {
+      "defensibility": 0.78,
+      "specificity": 0.88,
+      "robustness": 0.7,
+      "compatibility": 0.68
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-04",
+        "pass": "adjudication",
+        "axis": "compatibility",
+        "delta": -0.08,
+        "reasoning": "The defense correctly notes these can be layered, but the tension remains real: the document must decide which comes first, which gets more space, and what happens when they disagree. The compatibility hit is smaller than prosecuted (-0.08 vs. -0.15) because layering is viable, but nonzero because the tension between analytical and prescriptive framing creates editorial friction. The robustness hit (-0.05) reflects the genuine complexity objection that the defense does not fully resolve -- a six-dimensional space is a substantial cognitive overhead even as background theory."
+      },
+      {
+        "round": 3,
+        "tension": "t-04",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.05,
+        "reasoning": "The defense correctly notes these can be layered, but the tension remains real: the document must decide which comes first, which gets more space, and what happens when they disagree. The compatibility hit is smaller than prosecuted (-0.08 vs. -0.15) because layering is viable, but nonzero because the tension between analytical and prescriptive framing creates editorial friction. The robustness hit (-0.05) reflects the genuine complexity objection that the defense does not fully resolve -- a six-dimensional space is a substantial cognitive overhead even as background theory."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.78,
+      "specificity": 0.88,
+      "robustness": 0.65,
+      "compatibility": 0.6
+    },
+    "composite": 0.7275,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-04"
+    ]
+  },
+  {
+    "id": "a1-13",
+    "proposition": "The bible should adopt Christopher Alexander's force-based framing as its theoretical foundation, presented before factor definitions, so that factors become testable consequences of force resolution rather than arbitrary feature checklists.",
+    "initial_scores": {
+      "defensibility": 0.8,
+      "specificity": 0.82,
+      "robustness": 0.72,
+      "compatibility": 0.7
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-21",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.08,
+        "reasoning": "The defense makes a genuinely important point: Alexander's forces are not inherently limited to spatial layout, and the force framework could potentially encompass information architecture if the forces are defined to include temporal, modal, and user-model dimensions. However, a1-13 as actually stated frames the forces in spatial terms ('world visibility vs. state accessibility'), and its application in a1-12 does not include temporal dynamics or user models. The proposition would need substantial revision to serve as the foundation for a3-23's broader vision. The robustness hit (-0.08) reflects that the forces-as-stated are too narrow, even if the framework could be expanded. The compatibility hit (-0.05) is smaller than prosecuted because the expansion path exists. a3-23's specificity hit (-0.05) is warranted because the critique genuinely does not specify a replacement framework."
+      },
+      {
+        "round": 3,
+        "tension": "t-21",
+        "pass": "adjudication",
+        "axis": "compatibility",
+        "delta": -0.05,
+        "reasoning": "The defense makes a genuinely important point: Alexander's forces are not inherently limited to spatial layout, and the force framework could potentially encompass information architecture if the forces are defined to include temporal, modal, and user-model dimensions. However, a1-13 as actually stated frames the forces in spatial terms ('world visibility vs. state accessibility'), and its application in a1-12 does not include temporal dynamics or user models. The proposition would need substantial revision to serve as the foundation for a3-23's broader vision. The robustness hit (-0.08) reflects that the forces-as-stated are too narrow, even if the framework could be expanded. The compatibility hit (-0.05) is smaller than prosecuted because the expansion path exists. a3-23's specificity hit (-0.05) is warranted because the critique genuinely does not specify a replacement framework."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.8,
+      "specificity": 0.82,
+      "robustness": 0.64,
+      "compatibility": 0.65
+    },
+    "composite": 0.7275,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-21"
+    ]
+  },
+  {
+    "id": "a2-13",
+    "proposition": "The viewport should never consume less than 65% of total screen area; at 1920x1080 reference resolution, the panel may consume at most approximately 350 pixels of height (bottom panel) or 480 pixels of width (sidebar).",
+    "initial_scores": {
+      "defensibility": 0.7,
+      "specificity": 0.92,
+      "robustness": 0.62,
+      "compatibility": 0.8
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-11",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": -0.08,
+        "reasoning": "The defense's layering argument partially works, but a2-13's specific numbers (65% floor, 350px height limit, 480px width limit) remain asserted without derivation. The defensibility drop is warranted because a practitioner following this guidance needs to know WHY 65% and not 60% or 70% -- the proposition provides no foundation for these specific values. The robustness drop reflects a3-12's valid point that the same 65% budget produces functionally different layouts depending on panel placement, making a single floor inadequate. No adjustment to a1-22 because the prosecution's compatibility concern was minor and the defense adequately addressed it."
+      },
+      {
+        "round": 3,
+        "tension": "t-11",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.07,
+        "reasoning": "The defense's layering argument partially works, but a2-13's specific numbers (65% floor, 350px height limit, 480px width limit) remain asserted without derivation. The defensibility drop is warranted because a practitioner following this guidance needs to know WHY 65% and not 60% or 70% -- the proposition provides no foundation for these specific values. The robustness drop reflects a3-12's valid point that the same 65% budget produces functionally different layouts depending on panel placement, making a single floor inadequate. No adjustment to a1-22 because the prosecution's compatibility concern was minor and the defense adequately addressed it."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.62,
+      "specificity": 0.92,
+      "robustness": 0.55,
+      "compatibility": 0.8
+    },
+    "composite": 0.7225,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-11"
+    ]
+  },
+  {
+    "id": "a1-03",
+    "proposition": "Every additional necessary condition beyond viewport partitioning risks excluding a legitimate edge case; opacity, permanence, fixed geometry, and spatial exclusivity should remain weighted factors, not hard gates.",
+    "initial_scores": {
+      "defensibility": 0.8,
+      "specificity": 0.78,
+      "robustness": 0.72,
+      "compatibility": 0.65
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-01",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.12,
+        "reasoning": "The prosecution's core point stands: the five factors do not provide five independent pieces of evidence for classification purposes, and a1-03's claim that they should 'remain weighted factors' overstates their classificatory independence. However, the defense correctly identifies that the prescriptive/diagnostic function (a1-05's argument) partially rescues a1-03's position -- factors can be logically correlated yet prescriptively distinct. The adjudicator applies a significant robustness hit (-0.12) because a1-03's robustness was already its weakest axis and the redundancy argument materially weakens the claim that separate factors prevent misclassification. A defensibility hit of -0.08 reflects that the argument's foundation (factor independence) is genuinely weakened, not merely challenged. a3-02 gets a modest 0.03 defensibility boost -- the entailment argument is strong but was already scored at 0.95, and the defense's point about 'persistent' having a weak vs. strong reading prevents a larger increase."
+      },
+      {
+        "round": 3,
+        "tension": "t-01",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": -0.08,
+        "reasoning": "The prosecution's core point stands: the five factors do not provide five independent pieces of evidence for classification purposes, and a1-03's claim that they should 'remain weighted factors' overstates their classificatory independence. However, the defense correctly identifies that the prescriptive/diagnostic function (a1-05's argument) partially rescues a1-03's position -- factors can be logically correlated yet prescriptively distinct. The adjudicator applies a significant robustness hit (-0.12) because a1-03's robustness was already its weakest axis and the redundancy argument materially weakens the claim that separate factors prevent misclassification. A defensibility hit of -0.08 reflects that the argument's foundation (factor independence) is genuinely weakened, not merely challenged. a3-02 gets a modest 0.03 defensibility boost -- the entailment argument is strong but was already scored at 0.95, and the defense's point about 'persistent' having a weak vs. strong reading prevents a larger increase."
+      },
+      {
+        "round": 3,
+        "tension": "t-07",
+        "pass": "adjudication",
+        "axis": "compatibility",
+        "delta": -0.08,
+        "reasoning": "The defense correctly identifies a viable synthesis (opacity as a high-weight characteristic factor on a gradient), which means the three positions are not fully mutually exclusive -- but they do require each to retreat from its strongest form. a1-03's compatibility drops because the synthesis requires opacity to be a high-weight factor, not just any weighted factor, which is closer to a2-01's position than a1-03 intended. Its robustness takes a smaller hit because the defense's synthesis is available. a2-01's robustness drops because the 'hard edge is essential' claim is empirically falsified by Total Annihilation and Warcraft III -- these games demonstrate that semi-transparent panels can function, even if fully opaque panels function better. The drop is meaningful (-0.08) because a2-01's perceptual-science framing ('the eye processes independently') claimed a stronger effect than the evidence supports."
+      },
+      {
+        "round": 3,
+        "tension": "t-07",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.05,
+        "reasoning": "The defense correctly identifies a viable synthesis (opacity as a high-weight characteristic factor on a gradient), which means the three positions are not fully mutually exclusive -- but they do require each to retreat from its strongest form. a1-03's compatibility drops because the synthesis requires opacity to be a high-weight factor, not just any weighted factor, which is closer to a2-01's position than a1-03 intended. Its robustness takes a smaller hit because the defense's synthesis is available. a2-01's robustness drops because the 'hard edge is essential' claim is empirically falsified by Total Annihilation and Warcraft III -- these games demonstrate that semi-transparent panels can function, even if fully opaque panels function better. The drop is meaningful (-0.08) because a2-01's perceptual-science framing ('the eye processes independently') claimed a stronger effect than the evidence supports."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.72,
+      "specificity": 0.78,
+      "robustness": 0.55,
+      "compatibility": 0.57
+    },
+    "composite": 0.655,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-01",
+      "t-07"
+    ]
+  },
+  {
+    "id": "a2-12",
+    "proposition": "The minimap was always a compression artifact -- a small rendering of the map crammed into the panel because the viewport could not show the full map -- and when continuous strategic zoom allows the viewport to show the full map, the minimap becomes redundant.",
+    "initial_scores": {
+      "defensibility": 0.72,
+      "specificity": 0.75,
+      "robustness": 0.58,
+      "compatibility": 0.6
+    },
+    "deltas": [
+      {
+        "round": 3,
+        "tension": "t-16",
+        "pass": "adjudication",
+        "axis": "defensibility",
+        "delta": -0.05,
+        "reasoning": "The defense's temporal-layering argument is reasonable but does not resolve the core weakness: the 'compression artifact' framing is reductive and empirically challenged by games that deliberately preserve minimaps alongside strategic zoom. The defensibility hit (-0.05) reflects the overstatement in 'compression artifact.' The robustness hit (-0.07) reflects the empirical counter-evidence (SC2, AoE4 keeping minimaps). These are smaller than the prosecution proposed because the directional trend (information migrating to viewport) is real, even if the 'minimap becomes redundant' conclusion is overstated."
+      },
+      {
+        "round": 3,
+        "tension": "t-16",
+        "pass": "adjudication",
+        "axis": "robustness",
+        "delta": -0.07,
+        "reasoning": "The defense's temporal-layering argument is reasonable but does not resolve the core weakness: the 'compression artifact' framing is reductive and empirically challenged by games that deliberately preserve minimaps alongside strategic zoom. The defensibility hit (-0.05) reflects the overstatement in 'compression artifact.' The robustness hit (-0.07) reflects the empirical counter-evidence (SC2, AoE4 keeping minimaps). These are smaller than the prosecution proposed because the directional trend (information migrating to viewport) is real, even if the 'minimap becomes redundant' conclusion is overstated."
+      }
+    ],
+    "final_scores": {
+      "defensibility": 0.67,
+      "specificity": 0.75,
+      "robustness": 0.51,
+      "compatibility": 0.6
+    },
+    "composite": 0.6325,
+    "category": "contested",
+    "unresolved_tensions": [
+      "t-16"
+    ]
+  }
+]

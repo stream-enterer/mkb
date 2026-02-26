@@ -1,0 +1,402 @@
+[
+  {
+    "id": "a2-01",
+    "proposition": "The panel frame's opacity is load-bearing: the hard edge between panel and viewport creates two distinct visual fields that the eye processes independently, and softening that edge (e.g., semi-transparency as in Tiberian Sun) degrades both regions' legibility.",
+    "scores": {
+      "defensibility": 0.82,
+      "specificity": 0.75,
+      "robustness": 0.70,
+      "compatibility": 0.85
+    },
+    "reasoning": {
+      "defensibility": "Grounded in the Tiberian Sun transparency experiment's concrete failure, but the claim 'the eye processes independently' invokes perceptual science without citation.",
+      "specificity": "Gives a clear design directive (maintain hard opaque edges), though it does not specify exact opacity thresholds or blending parameters.",
+      "robustness": "Modern games like StarCraft II successfully use partial transparency on panels, suggesting the claim may be too absolute. The principle holds for busy backgrounds but not universally.",
+      "compatibility": "Compatible with most panel-frame approaches; any design that uses distinct panel regions implicitly agrees that visual separation matters."
+    }
+  },
+  {
+    "id": "a2-02",
+    "proposition": "Panel dimensions should be driven by content legibility requirements (the widest content element such as a two-column build grid or minimap), not by proportional ratios of screen space.",
+    "scores": {
+      "defensibility": 0.90,
+      "specificity": 0.80,
+      "robustness": 0.85,
+      "compatibility": 0.90
+    },
+    "reasoning": {
+      "defensibility": "Strongly supported by the Westwood sidebar lineage: the sidebar's absolute pixel width barely changed from 128px to 160px across resolution doublings, demonstrating content-driven sizing.",
+      "specificity": "Tells a developer exactly what to measure (widest content element) as the sizing anchor, though it does not provide formulas for padding or margins.",
+      "robustness": "Survives most adversarial cases. Even responsive/adaptive designs eventually need a minimum content-legibility floor. The principle could struggle at extreme resolutions without DPI scaling.",
+      "compatibility": "Harmonizes with the document's own Principle 6 (fixed logical dimensions) and with general UI design best practices."
+    }
+  },
+  {
+    "id": "a2-03",
+    "proposition": "StarCraft's bottom-panel triptych (minimap / info / command card) answers three cognitive questions in left-to-right order -- Where am I? / What am I looking at? / What can I do? -- and this maps onto the decision loop orient-assess-act.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.85,
+      "robustness": 0.72,
+      "compatibility": 0.80
+    },
+    "reasoning": {
+      "defensibility": "The three-question decomposition is well-supported by the adoption history (AoE2, WC3, and nearly every subsequent RTS copied it). The orient-assess-act framing is plausible cognitive science.",
+      "specificity": "Provides a concrete three-region layout with assigned functions and spatial positions. A developer can directly implement this.",
+      "robustness": "The document itself acknowledges this is genre-specific to real-time agent-command games and fails for city builders, 4X, and management sims. Robust within its domain but not universal.",
+      "compatibility": "Highly compatible with other panel-frame propositions. Slight tension with claims about panel dissolution and viewport augmentation replacing panel regions."
+    }
+  },
+  {
+    "id": "a2-04",
+    "proposition": "The minimap must be placed in a screen corner because screen corners are 'infinite' Fitts's Law targets in two dimensions -- the cursor physically cannot overshoot -- making the minimap trivially easy to hit with a fast, imprecise mouse flick.",
+    "scores": {
+      "defensibility": 0.92,
+      "specificity": 0.90,
+      "robustness": 0.75,
+      "compatibility": 0.85
+    },
+    "reasoning": {
+      "defensibility": "Fitts's Law corner-target analysis is well-established in HCI literature. The claim is empirically verifiable and consistent with decades of mouse-interaction research.",
+      "specificity": "Extremely concrete: the minimap goes in a corner, period. A developer knows exactly where to place it.",
+      "robustness": "Weakened by modern windowed/multi-monitor setups where the cursor does not stop at screen edges. Also inapplicable to touch or gamepad input. The document acknowledges the input-device dependency.",
+      "compatibility": "Universally compatible with any panel-frame design that includes a minimap. No tension with other propositions."
+    }
+  },
+  {
+    "id": "a2-05",
+    "proposition": "The center information panel optimizes for visual scanning rather than pointing, and this functional decomposition -- edges for interaction targets, center for information display -- is a principled Fitts's Law optimization.",
+    "scores": {
+      "defensibility": 0.85,
+      "specificity": 0.78,
+      "robustness": 0.80,
+      "compatibility": 0.90
+    },
+    "reasoning": {
+      "defensibility": "Logically sound: if edges have Fitts's Law advantages for clicking, placing read-only information in the non-edge center is a correct allocation of spatial resources.",
+      "specificity": "Tells a developer where to put read-only vs. interactive elements, though it does not specify exact pixel boundaries.",
+      "robustness": "Holds well across different panel layouts. Could be challenged if a game requires frequent clicking on stat displays, but the general principle is sound.",
+      "compatibility": "Directly supports the triptych layout and is consistent with all other Fitts's Law claims in the document."
+    }
+  },
+  {
+    "id": "a2-06",
+    "proposition": "Panel real-estate allocation should mirror the decision structure of the game: if decisions are primarily 'what to do with this unit,' the command card dominates; if decisions are primarily 'which units to build and where,' stats and production dominate.",
+    "scores": {
+      "defensibility": 0.90,
+      "specificity": 0.82,
+      "robustness": 0.85,
+      "compatibility": 0.88
+    },
+    "reasoning": {
+      "defensibility": "Strongly supported by the StarCraft vs. AoE2 comparison: SC's complex unit abilities justify a large command card, while AoE2's simpler unit commands justify larger stat displays.",
+      "specificity": "Gives a developer a concrete decision procedure: analyze your game's decision structure, then allocate panel space proportionally.",
+      "robustness": "Survives most counterexamples. Games with both complex abilities AND composition decisions need balanced allocation, which the principle accommodates as a heuristic rather than a formula.",
+      "compatibility": "Harmonizes with all layout-selection principles. No conflicts with other propositions."
+    }
+  },
+  {
+    "id": "a2-07",
+    "proposition": "The right sidebar persists in city builders not out of conservatism but because deep hierarchical building categories, absence of unit commanding, deliberate pacing, and persistent tool state all favor a vertical sidebar over a horizontal bottom bar.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.80,
+      "robustness": 0.82,
+      "compatibility": 0.78
+    },
+    "reasoning": {
+      "defensibility": "Four distinct functional reasons are given, each independently verifiable against the Impressions Games lineage (Caesar III through Emperor).",
+      "specificity": "Identifies four concrete criteria a developer can check against their own game to determine sidebar suitability.",
+      "robustness": "Could be challenged by modern city builders that successfully use bottom panels (e.g., Cities: Skylines). The claim is strongest for golden-age-style city builders with deep hierarchical menus.",
+      "compatibility": "Slight tension with the triptych-as-standard framing, but the document explicitly scopes the triptych to RTS. Compatible within the full framework."
+    }
+  },
+  {
+    "id": "a2-08",
+    "proposition": "Viewport overlay systems (like Caesar III's toggleable data visualizations for water, fire, crime, desirability) reduce pressure on panel information density by making the viewport itself carry spatial data that the panel would otherwise need to summarize as numbers.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.85,
+      "robustness": 0.82,
+      "compatibility": 0.90
+    },
+    "reasoning": {
+      "defensibility": "Concrete and well-argued: 'water coverage: 73%' in a panel is demonstrably less useful than a spatial overlay showing which blocks lack water.",
+      "specificity": "Names a specific implementation (Caesar III overlays), specific hotkey conventions (F/W/D/C), and a specific design goal (offloading spatial data from panel to viewport).",
+      "robustness": "Overlays can create visual noise if overused or if the viewport is already complex. The document partially addresses this by recommending toggling rather than persistent display.",
+      "compatibility": "Strongly compatible with the panel-dissolution trend and the principle of separating information channels by cognitive function."
+    }
+  },
+  {
+    "id": "a2-09",
+    "proposition": "Every interactive panel element should serve both novice users (who click it) and expert users (who use hotkeys), by printing hotkey letters on icons, maintaining consistent grid positions across all contexts, and making the panel useful as a read-only status display.",
+    "scores": {
+      "defensibility": 0.92,
+      "specificity": 0.90,
+      "robustness": 0.88,
+      "compatibility": 0.92
+    },
+    "reasoning": {
+      "defensibility": "Strongly supported by StarCraft and WC3's proven designs. The dual-use principle is empirically validated across millions of players over decades.",
+      "specificity": "Three concrete techniques are named: hotkey letters on icons, consistent grid positions, and read-only status utility. A developer can implement all three immediately.",
+      "robustness": "Survives adversarial pressure well. Even games that deviate (hiding hotkeys, randomizing grid positions) are generally considered worse for it.",
+      "compatibility": "Compatible with virtually every panel-frame design. No conflicts with other propositions."
+    }
+  },
+  {
+    "id": "a2-10",
+    "proposition": "Audio is a first-class information channel that should be designed alongside the panel, not after it: every player-relevant event should be assigned to either panel (persistent, player-initiated) or audio (transient, system-initiated) delivery.",
+    "scores": {
+      "defensibility": 0.85,
+      "specificity": 0.82,
+      "robustness": 0.72,
+      "compatibility": 0.85
+    },
+    "reasoning": {
+      "defensibility": "Well-supported by StarCraft and C&C examples where audio cues are so distinctive that experienced players can partially play by ear.",
+      "specificity": "Provides a concrete decision procedure: categorize events as persistent/player-initiated vs. transient/system-initiated, then assign to panel or audio respectively.",
+      "robustness": "Weakened by accessibility concerns (deaf/hard-of-hearing players) and environments where players mute game audio. The channel cannot be solely relied upon.",
+      "compatibility": "Highly compatible with the information-channel separation principle. Complements rather than conflicts with panel design."
+    }
+  },
+  {
+    "id": "a2-11",
+    "proposition": "The panel frame pattern requires four implicit input assumptions: high-precision random-access pointing, zero-cost context switching between viewport and panel, screen-edge scrolling, and Fitts's Law dynamics with a free-roaming cursor. Platforms violating these assumptions degrade the pattern.",
+    "scores": {
+      "defensibility": 0.90,
+      "specificity": 0.88,
+      "robustness": 0.85,
+      "compatibility": 0.82
+    },
+    "reasoning": {
+      "defensibility": "Derived from concrete console-port failures (StarCraft 64, C&C PlayStation) where each assumption's violation produced specific, documented degradations.",
+      "specificity": "Four discrete, testable assumptions. A developer can evaluate their target platform against each one and make a go/no-go decision on the panel frame.",
+      "robustness": "Touch screens partially satisfy the assumptions (as the document notes), which correctly predicts their partial success with panel frames. Controller interfaces consistently fail.",
+      "compatibility": "Compatible with all other propositions. Provides a gating function that determines when the other principles even apply."
+    }
+  },
+  {
+    "id": "a2-12",
+    "proposition": "The minimap was always a compression artifact -- a small rendering of the map crammed into the panel because the viewport could not show the full map -- and when continuous strategic zoom allows the viewport to show the full map, the minimap becomes redundant.",
+    "scores": {
+      "defensibility": 0.72,
+      "specificity": 0.75,
+      "robustness": 0.58,
+      "compatibility": 0.60
+    },
+    "reasoning": {
+      "defensibility": "Supported by Supreme Commander's design, but overstated. The minimap provides persistent at-a-glance context without requiring the player to zoom out and lose ground-level detail.",
+      "specificity": "Concrete reference to Supreme Commander's strategic zoom. Tells a developer that if they implement strategic zoom, the minimap may become optional.",
+      "robustness": "Weakened by the fact that many games with strategic zoom (SC2, AoE4) still include minimaps. Players value the persistent overview without losing their current zoom level.",
+      "compatibility": "Tension with the strong minimap-in-corner proposition (a2-04). If the minimap is a compression artifact, the Fitts's Law argument for corner placement becomes moot for modern games."
+    }
+  },
+  {
+    "id": "a2-13",
+    "proposition": "The viewport should never consume less than 65% of total screen area; at 1920x1080 reference resolution, the panel may consume at most approximately 350 pixels of height (bottom panel) or 480 pixels of width (sidebar).",
+    "scores": {
+      "defensibility": 0.70,
+      "specificity": 0.92,
+      "robustness": 0.62,
+      "compatibility": 0.80
+    },
+    "reasoning": {
+      "defensibility": "The 65% floor is asserted without rigorous derivation. The historical data (StarCraft at ~69% viewport) supports the range but the specific threshold is not proven.",
+      "specificity": "Extremely concrete: exact percentages and pixel counts at a named reference resolution. A developer can implement this immediately.",
+      "robustness": "The 65% floor may be too generous for information-heavy games (management sims, grand strategy) where players need extensive panel space. The document's own Sawyer floating-window analysis implicitly allows much less viewport.",
+      "compatibility": "Compatible with most panel designs but creates tension with the Impressions sidebar at 40% width (Dune II) and with floating-window approaches."
+    }
+  },
+  {
+    "id": "a2-14",
+    "proposition": "Panel scaling should use fixed logical dimensions scaled by integer DPI factors, not proportional screen ratios: a 4K display at 2x scaling should show the same logical layout as 1080p with crisper rendering, and all additional pixels should go to the viewport.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.90,
+      "robustness": 0.78,
+      "compatibility": 0.85
+    },
+    "reasoning": {
+      "defensibility": "Follows from the content-legibility principle: if the panel is sized for content, scaling it proportionally to screen size wastes space at high resolutions. Integer DPI factors avoid subpixel rendering artifacts.",
+      "specificity": "Names a reference resolution (1080p), a scaling method (integer DPI factors), and an allocation rule (surplus pixels go to viewport). Directly implementable.",
+      "robustness": "Integer-only scaling breaks at non-standard DPIs (e.g., 1.5x scaling on 2560x1440). Fractional scaling is increasingly common. The principle is correct in intent but overly rigid in requiring integer factors.",
+      "compatibility": "Consistent with the content-legibility principle and with the viewport-budget proposition. Minor tension with fractional-scaling realities."
+    }
+  },
+  {
+    "id": "a2-15",
+    "proposition": "The Westwood sidebar declined not because it was aesthetically outdated but because it was optimized for sequential construction from a catalog, and when that interaction pattern ceased to dominate gameplay (as in Generals), the layout ceased to serve.",
+    "scores": {
+      "defensibility": 0.90,
+      "specificity": 0.78,
+      "robustness": 0.82,
+      "compatibility": 0.90
+    },
+    "reasoning": {
+      "defensibility": "Strongly argued through the Generals example: the general's-powers system replaced sequential construction as the primary interaction, making the sidebar's vertical build queue obsolete.",
+      "specificity": "Identifies a specific cause (interaction pattern change) for a specific historical outcome (sidebar abandonment). Less prescriptive than some propositions but highly informative for design reasoning.",
+      "robustness": "Could be challenged by noting that sidebars also declined for aesthetic/fashion reasons. But the functional argument is the stronger explanation and survives scrutiny.",
+      "compatibility": "Directly supports the meta-principle that layout should follow interaction pattern. Highly compatible with all other propositions."
+    }
+  },
+  {
+    "id": "a2-16",
+    "proposition": "Information channels should be separated by cognitive function: the panel carries persistent quantitative data read at the player's initiative, audio carries transient event notifications pushed asynchronously, and viewport overlays carry spatial data contextually attached to world-space entities.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.88,
+      "robustness": 0.80,
+      "compatibility": 0.92
+    },
+    "reasoning": {
+      "defensibility": "The three-channel taxonomy is clean and each channel's assignment is justified by its cognitive properties (persistent vs. transient, spatial vs. non-spatial, player-initiated vs. system-initiated).",
+      "specificity": "Names three channels, assigns each a data type with concrete examples (resource counts, attack alerts, health bars). A developer can classify any game event into one of these channels.",
+      "robustness": "Weakened by events that need multiple channels simultaneously (e.g., 'base under attack' benefits from audio AND minimap flash AND viewport indicator). The taxonomy handles overlap less well.",
+      "compatibility": "Compatible with virtually every other proposition. This is a foundational principle that other claims build upon."
+    }
+  },
+  {
+    "id": "a2-17",
+    "proposition": "Chris Sawyer's floating-window system (Transport Tycoon, RollerCoaster Tycoon) is the most powerful information-comparison architecture of the golden age because it allows simultaneous multi-variable comparison, but its window-management overhead, viewport occlusion, and lack of canonical layout make it unsuitable for rapid spatial action games.",
+    "scores": {
+      "defensibility": 0.82,
+      "specificity": 0.80,
+      "robustness": 0.75,
+      "compatibility": 0.72
+    },
+    "reasoning": {
+      "defensibility": "The argument for comparison power is well-made: fixed panels show one thing at a time while floating windows enable simultaneous comparison. The three named tradeoffs are concrete and accurate.",
+      "specificity": "Names the specific games, the specific advantage (multi-variable comparison), and three specific disadvantages. A developer can weigh these tradeoffs for their own game.",
+      "robustness": "The 'most powerful' claim is superlative and could be challenged by modern tabbed/split-pane designs. The tradeoff analysis somewhat understates the cognitive load of window management.",
+      "compatibility": "Some tension with the fixed-panel orthodoxy of other propositions. The document handles this by scoping each layout to its genre, but floating windows may seem to contradict the panel-frame thesis."
+    }
+  },
+  {
+    "id": "a2-18",
+    "proposition": "The interaction's cognitive demand structure determines whether fixed or floating information surfaces are appropriate: comparison-heavy management sims favor floating windows, while rapid spatial action games favor fixed panels.",
+    "scores": {
+      "defensibility": 0.86,
+      "specificity": 0.75,
+      "robustness": 0.80,
+      "compatibility": 0.88
+    },
+    "reasoning": {
+      "defensibility": "Logically follows from the analysis of Sawyer's games vs. RTS games. The mapping between cognitive demand (comparison vs. action) and UI pattern (floating vs. fixed) is well-argued.",
+      "specificity": "Provides a decision procedure (assess cognitive demands, then choose fixed or floating), though it does not address hybrid cases in detail.",
+      "robustness": "Games with mixed demands (e.g., Dwarf Fortress) challenge the binary framing. The principle is better as a spectrum than a dichotomy.",
+      "compatibility": "Consistent with the layout-follows-interaction-pattern meta-principle and with all genre-specific layout recommendations."
+    }
+  },
+  {
+    "id": "a2-19",
+    "proposition": "Layout archetype selection should be driven by the game's primary interaction pattern: commanding agents requires a bottom-panel triptych, sequential catalog construction requires a sidebar, canvas painting requires a top toolbar, and multi-variable comparison requires floating windows.",
+    "scores": {
+      "defensibility": 0.85,
+      "specificity": 0.92,
+      "robustness": 0.70,
+      "compatibility": 0.85
+    },
+    "reasoning": {
+      "defensibility": "The four-way mapping is well-supported by historical examples in each category. The causal arguments for each pairing are independently convincing.",
+      "specificity": "Provides a concrete lookup table: identify your interaction pattern, select the corresponding layout. Extremely actionable for a developer starting a new project.",
+      "robustness": "Games with hybrid interaction patterns may not map cleanly to one archetype. The table is a simplification that could mislead in edge cases.",
+      "compatibility": "This is the document's central organizing principle. All other propositions are consistent with or derived from it."
+    }
+  },
+  {
+    "id": "a2-20",
+    "proposition": "The idle-villager button in Age of Empires II represents a higher level of information abstraction than raw data display: it is a derived-state indicator that collapses an entire map scan into a single glanceable element, communicating a judgment ('you have villagers doing nothing, which is bad') rather than a number.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.85,
+      "robustness": 0.78,
+      "compatibility": 0.88
+    },
+    "reasoning": {
+      "defensibility": "Accurately describes the idle-villager button's function. The distinction between raw data and derived-state indicators is a genuine and useful abstraction level in UI design.",
+      "specificity": "Names a specific UI element in a specific game and articulates exactly what makes it different from standard data display. A developer can identify where their own game needs similar derived-state indicators.",
+      "robustness": "The principle generalizes well (e.g., 'army supply warning' in SC2 is another derived-state indicator). Could be challenged by arguing all UI is derived state at some level, but the distinction between 'villager count: 40' and 'you have idle villagers' is meaningful.",
+      "compatibility": "Compatible with the information-density philosophy and the panel-as-decision-support framing."
+    }
+  },
+  {
+    "id": "a2-21",
+    "proposition": "The post-golden-age trend is information migration from the panel into the viewport through overlays, contextual tooltips, and strategic zoom, but the panel has not been fully replaced because the three-question decomposition (Where/What/Do) remains cognitively valid even when some answers can be embedded in the viewport.",
+    "scores": {
+      "defensibility": 0.82,
+      "specificity": 0.68,
+      "robustness": 0.75,
+      "compatibility": 0.80
+    },
+    "reasoning": {
+      "defensibility": "Supported by examples (Supreme Commander, Company of Heroes, SC2, AoE4). The claim that the triptych persists because it remains cognitively valid is plausible but harder to prove than the trend observation.",
+      "specificity": "More of a trend observation than a concrete design directive. A developer learns 'panels are shrinking' but does not get a precise rule for how much to shrink.",
+      "robustness": "Could be challenged by fully overlay-based designs that work without persistent panels. The claim hedges correctly with 'not fully replaced' but does not specify when full replacement might succeed.",
+      "compatibility": "Compatible with both the panel-frame advocates and the overlay advocates. Attempts to synthesize both positions."
+    }
+  },
+  {
+    "id": "a2-22",
+    "proposition": "A wider, shorter viewport (as produced by a bottom panel) better serves RTS gameplay than a narrower, taller viewport (as produced by a sidebar) because lateral terrain visibility supports the core spatial reasoning tasks of flanking, army positioning, and base layout.",
+    "scores": {
+      "defensibility": 0.80,
+      "specificity": 0.78,
+      "robustness": 0.72,
+      "compatibility": 0.82
+    },
+    "reasoning": {
+      "defensibility": "The argument that RTS spatial reasoning is laterally biased is plausible and supported by the StarCraft migration. However, isometric RTS games have diagonal bias, not purely lateral, which weakens the claim.",
+      "specificity": "Names three specific RTS tasks (flanking, army positioning, base layout) that benefit from width. A developer can evaluate whether their game's spatial reasoning has similar lateral bias.",
+      "robustness": "Challenged by games where vertical terrain visibility matters equally (hill-based strategy, aerial units). Isometric projection means 'wider' does not straightforwardly map to 'more lateral terrain.'",
+      "compatibility": "Supports the bottom-panel recommendation for RTS. Consistent with the sidebar-for-city-builders recommendation since city builders have different spatial priorities."
+    }
+  },
+  {
+    "id": "a2-23",
+    "proposition": "No single information channel (panel, audio, viewport overlays) should try to carry all three cognitive functions (persistent quantitative data, event notifications, spatial data), because overloading any one channel degrades its primary purpose through clutter, confusion, or visual noise respectively.",
+    "scores": {
+      "defensibility": 0.86,
+      "specificity": 0.80,
+      "robustness": 0.78,
+      "compatibility": 0.92
+    },
+    "reasoning": {
+      "defensibility": "The argument that channel overload causes degradation is supported by cognitive load theory. The specific degradation modes (clutter, confusion, noise) are concrete and convincing.",
+      "specificity": "Names three specific overload failure modes. A developer can audit their design for these specific anti-patterns.",
+      "robustness": "Weakened by the reality that some overlap is necessary and beneficial (e.g., redundant channels for critical alerts). The claim against overloading is correct but should not be read as forbidding all overlap.",
+      "compatibility": "Directly supports the three-channel separation principle. Compatible with all other propositions."
+    }
+  },
+  {
+    "id": "a2-24",
+    "proposition": "If a target platform cannot provide a free-roaming cursor with sub-pixel precision, zero-cost viewport-to-panel transitions, and screen-edge scrolling, the panel frame pattern should not be used and a different interaction pattern (radial menus for controllers, gesture-based for touch) should be adopted instead.",
+    "scores": {
+      "defensibility": 0.85,
+      "specificity": 0.88,
+      "robustness": 0.80,
+      "compatibility": 0.82
+    },
+    "reasoning": {
+      "defensibility": "Derived from documented console-port failures. The three preconditions are each independently justified by specific failure cases.",
+      "specificity": "Names three testable preconditions and two alternative patterns for specific platforms. A developer can apply this as a checklist.",
+      "robustness": "Could be challenged by noting that some console RTS games (Halo Wars) found workable compromises. The 'do not use the panel frame at all' stance may be too absolutist.",
+      "compatibility": "Compatible with all propositions about the panel frame's design, since it operates as a gating criterion that precedes those design decisions."
+    }
+  },
+  {
+    "id": "a2-25",
+    "proposition": "The golden-age panel frame was not one design but a family of designs each optimized for a specific interaction pattern, and the practitioner's task is to identify their game's primary interaction pattern, select the matching layout archetype, then apply the concrete principles (Fitts's Law placement, channel separation, expert/novice divergence, fixed-logical scaling, audio integration, overlay complementarity) to execute it.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.72,
+      "robustness": 0.85,
+      "compatibility": 0.95
+    },
+    "reasoning": {
+      "defensibility": "This is the document's thesis statement, well-supported by the entire preceding analysis. The enumeration of six concrete principles gives it substance beyond a vague claim.",
+      "specificity": "As a meta-principle it is necessarily less specific than individual design rules, but it names six concrete sub-principles by name. It is a framework, not a formula.",
+      "robustness": "Robust because it does not prescribe a single layout. By framing the answer as 'match pattern to archetype,' it accommodates novel games that might not fit existing categories.",
+      "compatibility": "This is the unifying proposition. All other propositions are either instances of or derivations from this claim. Maximum compatibility."
+    }
+  }
+]

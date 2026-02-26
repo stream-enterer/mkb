@@ -1,0 +1,402 @@
+[
+  {
+    "id": "a1-01",
+    "proposition": "The panel frame definition should use a hybrid approach: prototype theory with weighted factors for the cluster, but classical necessary-and-sufficient logic for one hard boundary condition (viewport partitioning).",
+    "scores": {
+      "defensibility": 0.92,
+      "specificity": 0.85,
+      "robustness": 0.88,
+      "compatibility": 0.80
+    },
+    "reasoning": {
+      "defensibility": "Well-grounded in classification theory (Rosch, Wittgenstein, Berlin Interpretation). The argument that pure prototype theory is too loose and pure classical definition too rigid is standard in philosophy of categorization.",
+      "specificity": "Names the exact mechanism (hybrid of prototype + one necessary condition) and identifies the specific condition (viewport partitioning). A developer knows what definitional structure to implement.",
+      "robustness": "Survives the obvious attacks: 'why not pure prototype?' (Diablo II problem), 'why not pure classical?' (Procrustean bed problem). The hybrid addresses both failure modes.",
+      "compatibility": "Practitioner agents may resist the formalism as over-engineered, but the structure is flexible enough to accommodate practical concerns. Slight tension with purely empirical approaches."
+    }
+  },
+  {
+    "id": "a1-02",
+    "proposition": "Viewport partitioning (viewport_area < display_surface_area) is the single necessary condition for panel frame membership, and it should be the ONLY necessary condition.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.93,
+      "robustness": 0.82,
+      "compatibility": 0.72
+    },
+    "reasoning": {
+      "defensibility": "The ontological argument is strong: an interface where the game world fills the entire screen is categorically different from one where the world is architecturally confined. This is a difference of kind, not degree.",
+      "specificity": "Extremely concrete: a single inequality that can be mechanically verified. No ambiguity about what it means or how to test it.",
+      "robustness": "Vulnerable to the objection that a 2% panel (viewport_budget = 0.98) technically passes but is functionally an overlay HUD. The author acknowledges this with practical thresholds, but the formal condition itself is binary.",
+      "compatibility": "Practitioners may want additional hard gates (e.g., opacity). Failure-analysis agents may argue that a single gate is insufficient to prevent misclassification. Some tension expected."
+    }
+  },
+  {
+    "id": "a1-03",
+    "proposition": "Every additional necessary condition beyond viewport partitioning risks excluding a legitimate edge case; opacity, permanence, fixed geometry, and spatial exclusivity should remain weighted factors, not hard gates.",
+    "scores": {
+      "defensibility": 0.80,
+      "specificity": 0.78,
+      "robustness": 0.72,
+      "compatibility": 0.65
+    },
+    "reasoning": {
+      "defensibility": "The argument from edge-case exclusion is reasonable but somewhat assertion-heavy. The claim that a semi-transparent permanent fixed panel is 'almost' a panel frame needs more grounding than one hypothetical.",
+      "specificity": "Clear directive: keep exactly one necessary condition. But the reasoning for why each specific factor should NOT be necessary is only sketched.",
+      "robustness": "Vulnerable to counterexamples where the single gate admits obvious non-members. If a game has viewport partitioning but violates opacity, permanence, fixed geometry, and spatial exclusivity simultaneously, it should probably be excluded.",
+      "compatibility": "Likely to conflict with failure-analysis perspectives that want stronger gatekeeping. Practitioners may also want firmer boundaries for implementation guidance."
+    }
+  },
+  {
+    "id": "a1-04",
+    "proposition": "The correct test for whether two factors should remain separate or be merged is: can the two factors be independently violated in at least one historical example?",
+    "scores": {
+      "defensibility": 0.90,
+      "specificity": 0.92,
+      "robustness": 0.85,
+      "compatibility": 0.88
+    },
+    "reasoning": {
+      "defensibility": "This is a clean, falsifiable criterion grounded in empirical evidence. The three examples given (TA minimap, Paradox panels, SimCity toolbox) concretely demonstrate independent violation.",
+      "specificity": "Highly actionable: for any proposed factor merge, find one counterexample or merge. A developer or analyst can apply this test mechanically.",
+      "robustness": "Survives most attacks. The only weakness is that 'at least one historical example' may set the bar too low -- a single obscure example could justify keeping factors that are 99% correlated.",
+      "compatibility": "This is a methodological claim that most perspectives should accept. It does not prescribe outcomes, only a procedure."
+    }
+  },
+  {
+    "id": "a1-05",
+    "proposition": "Factor granularity serves a diagnostic (prescriptive) function, not just a descriptive (classificatory) function: correlated factors should be preserved because they point to different implementation fixes.",
+    "scores": {
+      "defensibility": 0.85,
+      "specificity": 0.75,
+      "robustness": 0.80,
+      "compatibility": 0.82
+    },
+    "reasoning": {
+      "defensibility": "Sound argument: 'your panel is not spatially exclusive' and 'your panel is not opaque' are genuinely different diagnostic messages even if they correlate. The prescriptive purpose justifies redundancy.",
+      "specificity": "The principle is clear but somewhat abstract. It tells you WHY to keep factors separate but does not generate specific factor lists on its own.",
+      "robustness": "Could be challenged by arguing that diagnostic granularity should live in implementation guidance, not in the definitional factors. But the counter-argument (the bible serves both roles) is reasonable.",
+      "compatibility": "Practitioner agents should welcome this -- it explicitly serves the builder, not just the classifier. Compatible with most perspectives."
+    }
+  },
+  {
+    "id": "a1-06",
+    "proposition": "The binary high/low weighting scheme from the Berlin Interpretation should be replaced with a three-tier scheme: necessary (viewport partitioning only), characteristic (opacity, permanence, fixed geometry, spatial exclusivity, information density), and incidental (minimap, contextual sub-panels, decorative surround, resource bar, layout convention, panel-embedded controls).",
+    "scores": {
+      "defensibility": 0.83,
+      "specificity": 0.95,
+      "robustness": 0.78,
+      "compatibility": 0.75
+    },
+    "reasoning": {
+      "defensibility": "The three-tier scheme is well-motivated: it maps to must/should/may developer guidance. The specific assignments are reasonable but some placements are debatable (is permanence really characteristic and not necessary?).",
+      "specificity": "Extremely specific: names every factor and its tier. A developer reading this knows exactly which properties are mandatory, recommended, and optional.",
+      "robustness": "Vulnerable to disagreement about tier assignments. Why is information density characteristic but minimap incidental? The morphological space argument partially addresses this, but the assignments still involve judgment calls.",
+      "compatibility": "Practitioners may want different tier assignments. Failure analysts may argue some incidental factors are more important than claimed. The structure itself is likely acceptable; the specific assignments will be contested."
+    }
+  },
+  {
+    "id": "a1-07",
+    "proposition": "Archetypes (synchronic structural similarity) and lineages (diachronic design inheritance) are orthogonal classification axes, not competing alternatives, and should both be represented in the bible's taxonomy.",
+    "scores": {
+      "defensibility": 0.91,
+      "specificity": 0.80,
+      "robustness": 0.87,
+      "compatibility": 0.90
+    },
+    "reasoning": {
+      "defensibility": "The synchronic/diachronic distinction is well-established in taxonomy. The examples (Blizzard crossing from right-sidebar to bottom-panel archetype) concretely demonstrate that the axes are independent.",
+      "specificity": "Clear conceptual distinction but the implementation guidance (how to represent both axes simultaneously in a document) is less concrete.",
+      "robustness": "Hard to attack: the orthogonality claim is well-demonstrated. The main vulnerability is practical -- maintaining both axes doubles the organizational burden.",
+      "compatibility": "This is a structural observation that all perspectives should find useful. It does not constrain content, only organization."
+    }
+  },
+  {
+    "id": "a1-08",
+    "proposition": "The bible should define a six-dimensional morphological space (panel placement, panel count, functional decomposition, viewport budget, visual grammar, interaction model) where each game occupies a point, archetypes are clusters, lineages are paths, and sub-types are named regions.",
+    "scores": {
+      "defensibility": 0.78,
+      "specificity": 0.88,
+      "robustness": 0.70,
+      "compatibility": 0.68
+    },
+    "reasoning": {
+      "defensibility": "The morphological space concept is elegant and well-motivated. But six dimensions may be over-specified for a population of 50-100 games -- the same criticism the author levels at twelve binary factors producing 4096 combinations.",
+      "specificity": "All six dimensions are named and defined with concrete values (e.g., panel placement: right/bottom/top/left/combination). Highly actionable.",
+      "robustness": "Vulnerable to the complexity objection: a six-dimensional space is hard to visualize, communicate, and maintain. The practical utility for a developer may be lower than a simpler taxonomy.",
+      "compatibility": "Practitioners may find this too abstract for implementation guidance. Failure analysts may question whether the dimensions are truly independent. The formalism could intimidate rather than guide."
+    }
+  },
+  {
+    "id": "a1-09",
+    "proposition": "The viewport budget (viewport_area / display_surface_area) is a proxy for the designer's model of where information lives: high budgets say the world is the primary information display, low budgets say panels provide co-equal information alongside the world.",
+    "scores": {
+      "defensibility": 0.87,
+      "specificity": 0.72,
+      "robustness": 0.80,
+      "compatibility": 0.85
+    },
+    "reasoning": {
+      "defensibility": "The correlation between viewport budget and subgenre (RTS lower, city builder higher) supports this interpretation. The causal claim (budget reflects designer's information model) is plausible and productive.",
+      "specificity": "More of a theoretical insight than a concrete instruction. It explains WHY the metric matters but does not directly tell a developer what to set it to.",
+      "robustness": "Could be challenged by noting that viewport budget is sometimes constrained by technical factors (resolution, rendering cost) rather than information-design philosophy. But the general trend holds.",
+      "compatibility": "This interpretive lens should be compatible with most perspectives. It enriches rather than constrains other analyses."
+    }
+  },
+  {
+    "id": "a1-10",
+    "proposition": "The viewport budget should NOT serve as a scoring axis for pattern membership: a game with budget 0.55 is not 'more of a panel frame' than one with budget 0.80; the budget measures how the pattern is instantiated, not how well.",
+    "scores": {
+      "defensibility": 0.82,
+      "specificity": 0.85,
+      "robustness": 0.75,
+      "compatibility": 0.78
+    },
+    "reasoning": {
+      "defensibility": "The distinction between 'how instantiated' and 'how well instantiated' is clean. But one could argue that extreme budgets (0.98 or 0.50) are degraded instances, making the metric partially evaluative.",
+      "specificity": "Clear directive: do not use viewport budget as a membership score. A developer or analyst knows exactly what not to do.",
+      "robustness": "The author partially undermines this by proposing 'strong' (<=0.90) and 'weak' (<=0.95) thresholds, which re-introduce a scoring dimension. The position is internally somewhat inconsistent.",
+      "compatibility": "Practitioners may prefer a simpler 'higher budget = better' heuristic. This proposition resists that simplification, which could create friction."
+    }
+  },
+  {
+    "id": "a1-11",
+    "proposition": "The panel frame is a property of the persistent layout, not of the total interface: transient user-invoked windows (like RollerCoaster Tycoon's floating windows) are a separate pattern layered on top and do not affect panel frame classification.",
+    "scores": {
+      "defensibility": 0.86,
+      "specificity": 0.88,
+      "robustness": 0.82,
+      "compatibility": 0.80
+    },
+    "reasoning": {
+      "defensibility": "This is a productive scoping decision. The distinction between persistent layout and transient overlays is clear and resolves a real classification problem (RCT, Paradox games).",
+      "specificity": "Directly actionable: when evaluating a game, ignore transient windows and classify only the persistent elements. Clear boundary for analysis.",
+      "robustness": "Vulnerable to games where the line between 'persistent' and 'transient' is blurred (Paradox's right panel that appears contextually). The author addresses this but the boundary remains somewhat fuzzy.",
+      "compatibility": "Should be broadly acceptable. Practitioners benefit from knowing they can layer transient UI on a panel frame without breaking the pattern."
+    }
+  },
+  {
+    "id": "a1-12",
+    "proposition": "The panel frame resolves four fundamental design forces: world visibility vs. state accessibility, information density vs. cognitive load, interaction efficiency vs. learning curve, and aesthetic immersion vs. functional utility.",
+    "scores": {
+      "defensibility": 0.84,
+      "specificity": 0.70,
+      "robustness": 0.76,
+      "compatibility": 0.82
+    },
+    "reasoning": {
+      "defensibility": "The four forces are plausible and well-articulated. Following Alexander's pattern language methodology gives them theoretical backing. But the claim that these are THE four forces (rather than a subset) is not proven.",
+      "specificity": "More theoretical framework than implementation guidance. A developer understands WHY the pattern exists but not directly WHAT to build from this alone.",
+      "robustness": "Could be challenged by proposing additional forces (e.g., multiplayer spectator clarity, accessibility for different input devices) or by arguing some forces are redundant. The list feels curated rather than derived.",
+      "compatibility": "The force-based framing should complement most other perspectives. It provides 'why' to accompany the 'what' of factor lists."
+    }
+  },
+  {
+    "id": "a1-13",
+    "proposition": "The bible should adopt Christopher Alexander's force-based framing as its theoretical foundation, presented before factor definitions, so that factors become testable consequences of force resolution rather than arbitrary feature checklists.",
+    "scores": {
+      "defensibility": 0.80,
+      "specificity": 0.82,
+      "robustness": 0.72,
+      "compatibility": 0.70
+    },
+    "reasoning": {
+      "defensibility": "Alexander's methodology is well-respected and the application is appropriate. However, 'factors as consequences of forces' is aspirational -- the document does not rigorously derive each factor from the forces.",
+      "specificity": "Concrete structural recommendation: forces go before factors, factors cite their originating forces. A document author can implement this.",
+      "robustness": "Vulnerable to the objection that force-based derivation is post-hoc rationalization -- the factors were identified empirically, not derived from forces. The framing may impose false explanatory coherence.",
+      "compatibility": "Practitioners may find force analysis too theoretical. Failure analysts may prefer empirical grounding over theoretical derivation. Some friction expected."
+    }
+  },
+  {
+    "id": "a1-14",
+    "proposition": "Anti-patterns should be organized inline with the factors they violate, not in a dedicated section, because a developer reading about a factor should immediately see what happens when it is violated.",
+    "scores": {
+      "defensibility": 0.79,
+      "specificity": 0.90,
+      "robustness": 0.74,
+      "compatibility": 0.65
+    },
+    "reasoning": {
+      "defensibility": "The pedagogical argument (reducing cross-referencing) is sound. But the counterargument is also strong: a dedicated section allows systematic comparison of anti-patterns and reveals multi-factor violations.",
+      "specificity": "Very concrete: tells an author exactly where to place anti-pattern content. Directly affects document structure.",
+      "robustness": "The author partially retreats by carving out 'systemic anti-patterns' that violate multiple factors simultaneously and DO get a standalone section. This hybrid somewhat weakens the initial claim.",
+      "compatibility": "Failure-analysis agents who have invested in anti-pattern taxonomy may strongly prefer a dedicated section. This could be a significant point of contention."
+    }
+  },
+  {
+    "id": "a1-15",
+    "proposition": "Systemic anti-patterns that reject the entire pattern (like Sacrifice's first-person perspective with spell wheel overlay) deserve standalone treatment separate from inline single-factor anti-patterns.",
+    "scores": {
+      "defensibility": 0.85,
+      "specificity": 0.82,
+      "robustness": 0.80,
+      "compatibility": 0.78
+    },
+    "reasoning": {
+      "defensibility": "The distinction between single-factor violations and pattern-level rejection is genuine and useful. Sacrifice's case is clearly different from a game that merely uses semi-transparent panels.",
+      "specificity": "Names the category ('Pattern Rejection and Degradation') and gives concrete examples. A document author knows what goes where.",
+      "robustness": "The boundary between 'violates multiple factors' and 'rejects the pattern' could be fuzzy. How many factors must be violated before it counts as systemic? The author does not provide a threshold.",
+      "compatibility": "This nuance should satisfy both inline-anti-pattern advocates and dedicated-section advocates by giving each their appropriate scope."
+    }
+  },
+  {
+    "id": "a1-16",
+    "proposition": "Information strategies (modal screens, map-as-data, sidebar abstraction) are content patterns orthogonal to the panel frame's spatial layout pattern, and conflating them is a categorical error that would weaken the definition.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.80,
+      "robustness": 0.83,
+      "compatibility": 0.72
+    },
+    "reasoning": {
+      "defensibility": "The spatial-vs-content distinction is clean and well-argued. The examples (MOO2 and AoE both using all three strategies in different layouts) demonstrate orthogonality convincingly.",
+      "specificity": "Clear instruction: information strategies should be annotations on canonical examples, not factors of the panel frame itself. Tells the author what NOT to include in the factor list.",
+      "robustness": "Could be challenged by arguing that some spatial patterns strongly imply content patterns (a bottom-panel triptych implies a command-card information strategy). Orthogonality may be approximate rather than strict.",
+      "compatibility": "Practitioners who think holistically about UI design may resist this separation. They might argue the bible should address the complete interface experience, not just spatial layout."
+    }
+  },
+  {
+    "id": "a1-17",
+    "proposition": "The StarCraft triptych (minimap / info display / command card) should be treated as a functional constraint within the Ensemble Bottom Bar archetype -- a pattern nested within a pattern -- not as a top-level definitional element.",
+    "scores": {
+      "defensibility": 0.83,
+      "specificity": 0.87,
+      "robustness": 0.78,
+      "compatibility": 0.75
+    },
+    "reasoning": {
+      "defensibility": "The nesting argument is sound: the triptych is a functional decomposition within a spatial archetype, and their co-occurrence in StarCraft is historically contingent, not logically necessary.",
+      "specificity": "Concrete organizational recommendation: treat the triptych as a sub-pattern of the bottom-bar archetype. A document author knows exactly where to place it.",
+      "robustness": "Could be challenged by arguing that the triptych is so influential it transcends any single archetype -- it appears in non-bottom-bar layouts too. The nesting may be too restrictive.",
+      "compatibility": "Practitioners who use StarCraft as a primary reference may want the triptych elevated to a more prominent position. Some tension with empirically-grounded approaches."
+    }
+  },
+  {
+    "id": "a1-18",
+    "proposition": "Resolution and display scaling should be handled as a context section preceding factor definitions, not as factors themselves, because resolution is a property of the medium, not of the pattern.",
+    "scores": {
+      "defensibility": 0.86,
+      "specificity": 0.84,
+      "robustness": 0.80,
+      "compatibility": 0.82
+    },
+    "reasoning": {
+      "defensibility": "The medium-vs-pattern distinction is clean. The viewport budget is resolution-independent by definition (it is a ratio), which supports treating resolution as context rather than factor.",
+      "specificity": "Tells the author where to put resolution content (context section before factors) and what to include (historical resolution ranges, design implications at modern resolutions).",
+      "robustness": "Could be challenged by noting that resolution constraints materially shaped the pattern's form (Dune II's panel size was driven by 320x200 constraints). Excluding resolution from factors may lose this causal insight.",
+      "compatibility": "Broadly compatible. The recommendation keeps the definition clean while acknowledging practical reality."
+    }
+  },
+  {
+    "id": "a1-19",
+    "proposition": "The bible must maintain a strict separation between descriptive content (definition, factors, scoring, canon), analytical content (boundary cases, anti-patterns, context), and prescriptive content (developer guidance), to avoid contaminating the definition with opinions.",
+    "scores": {
+      "defensibility": 0.82,
+      "specificity": 0.85,
+      "robustness": 0.73,
+      "compatibility": 0.68
+    },
+    "reasoning": {
+      "defensibility": "The descriptive/analytical/prescriptive distinction is methodologically sound and standard in reference documents. Prevents conflation of 'what is' with 'what should be'.",
+      "specificity": "Names the exact section groupings and their rhetorical modes. A document author has a clear structural template.",
+      "robustness": "In practice, the boundary between descriptive and analytical is porous. Factor definitions inevitably embed analytical judgments. The strict separation may be aspirational rather than achievable.",
+      "compatibility": "Practitioners may prefer interleaved guidance (see a factor, immediately get implementation advice). This strict separation could frustrate the reader who just wants to build something."
+    }
+  },
+  {
+    "id": "a1-20",
+    "proposition": "The guidance section should be organized by developer decision points ('how wide should my sidebar be?', 'where should the minimap go?'), not by factors, with each recommendation explicitly citing the factors and analyses it derives from.",
+    "scores": {
+      "defensibility": 0.87,
+      "specificity": 0.90,
+      "robustness": 0.82,
+      "compatibility": 0.85
+    },
+    "reasoning": {
+      "defensibility": "User-centered organization is well-established in technical writing. Developers think in terms of decisions, not classification factors. The traceability requirement (citing sources) adds rigor.",
+      "specificity": "Gives concrete examples of decision points and specifies the citation requirement. An author can immediately start structuring the guidance section this way.",
+      "robustness": "Could be challenged by noting that some decisions span multiple factors in non-obvious ways, making organization by decision point messy. But the alternative (by factor) has the same problem in reverse.",
+      "compatibility": "Practitioners should strongly support this. Even formal-definition proponents benefit from clear guidance organization. High compatibility expected."
+    }
+  },
+  {
+    "id": "a1-21",
+    "proposition": "The Berlin Interpretation's failure to include any necessary conditions led to the notorious problem of calling Diablo II a roguelike; the panel frame definition avoids this by admitting exactly one necessary condition.",
+    "scores": {
+      "defensibility": 0.85,
+      "specificity": 0.78,
+      "robustness": 0.80,
+      "compatibility": 0.82
+    },
+    "reasoning": {
+      "defensibility": "The Diablo II problem is well-known in the roguelike community and serves as a concrete cautionary example. The argument that a necessary condition prevents this class of error is logically sound.",
+      "specificity": "The analogy is clear and the lesson is concrete: include at least one hard gate. But the specificity is somewhat reduced by being an argument-by-analogy rather than direct evidence.",
+      "robustness": "Could be challenged by noting that the Diablo II problem might be better solved by better-calibrated weights rather than a hard gate. The two approaches are not mutually exclusive.",
+      "compatibility": "Most perspectives should accept the cautionary tale. The specific remedy (exactly one necessary condition) may be more contested."
+    }
+  },
+  {
+    "id": "a1-22",
+    "proposition": "Golden-age viewport budgets (0.55-0.85) translate to enormous panel areas at modern resolutions; modern implementations must either fill that space with proportionally more information or adjust the budget upward toward 0.80-0.90.",
+    "scores": {
+      "defensibility": 0.88,
+      "specificity": 0.86,
+      "robustness": 0.83,
+      "compatibility": 0.88
+    },
+    "reasoning": {
+      "defensibility": "The math is irrefutable: a 0.70 budget at 1920x1080 yields more panel pixels than the entire 640x480 display. The design implication (fill or shrink) follows logically.",
+      "specificity": "Provides concrete numbers and two specific remedies. A developer targeting modern resolutions gets actionable guidance.",
+      "robustness": "Could be nuanced by noting that information density per pixel has also changed (higher-DPI displays, better fonts, richer graphics). But the core observation about absolute panel area remains valid.",
+      "compatibility": "This bridges historical analysis and modern practice. All perspectives should find it useful."
+    }
+  },
+  {
+    "id": "a1-23",
+    "proposition": "The bible should distinguish between properties that are constitutive of the panel frame pattern and properties that are historically common but contingent, to avoid the Berlin Interpretation's error of conflating historical accident with definitional necessity.",
+    "scores": {
+      "defensibility": 0.90,
+      "specificity": 0.75,
+      "robustness": 0.85,
+      "compatibility": 0.80
+    },
+    "reasoning": {
+      "defensibility": "The constitutive-vs-contingent distinction is philosophically well-grounded and practically important. The analogy to turn-based gameplay in roguelikes is apt.",
+      "specificity": "The principle is clear but the application requires judgment calls about which properties are constitutive vs. contingent. The document provides some guidance but not a complete mapping.",
+      "robustness": "Hard to attack as a principle. The main vulnerability is in application: reasonable people will disagree about which properties are constitutive.",
+      "compatibility": "All perspectives should accept this principle in the abstract. Disagreements will arise when applying it to specific factors."
+    }
+  },
+  {
+    "id": "a1-24",
+    "proposition": "The morphological space approach accommodates pattern evolution by treating it as movement through the space: post-golden-age trends (higher viewport budgets, contextual panels) are trajectories, not invalidations of the golden-age definition.",
+    "scores": {
+      "defensibility": 0.83,
+      "specificity": 0.77,
+      "robustness": 0.79,
+      "compatibility": 0.80
+    },
+    "reasoning": {
+      "defensibility": "The dynamic interpretation of the morphological space is elegant and addresses a real problem (the Berlin Interpretation became immediately outdated). Treating evolution as movement preserves the definition's validity.",
+      "specificity": "The concept is clear but the implementation (how to document trajectories, how to update the space) is left vague.",
+      "robustness": "Could be challenged by arguing that if the pattern evolves far enough, the original definition becomes irrelevant regardless of the representational framework. The space cannot prevent definitional obsolescence.",
+      "compatibility": "Compatible with both historical and forward-looking perspectives. The trajectory metaphor is intuitive."
+    }
+  },
+  {
+    "id": "a1-25",
+    "proposition": "The proposed thirteen-section bible structure (Scope, Forces, Definitions, Necessary Condition, Characteristic Factors, Incidental Factors, Viewport Budget, Morphological Space, Canon, Boundary Cases, Historical Context, Design Guidance, Glossary) moves from theoretical foundation through formal definition through empirical mapping to practical application, with each section building on the previous ones.",
+    "scores": {
+      "defensibility": 0.79,
+      "specificity": 0.93,
+      "robustness": 0.70,
+      "compatibility": 0.65
+    },
+    "reasoning": {
+      "defensibility": "The progressive-depth structure is well-motivated and each section's placement is justified. However, thirteen sections is substantial and the document may be criticized as over-engineered for its purpose.",
+      "specificity": "Extremely specific: every section is named, numbered, and its content described. An author could start drafting immediately from this outline alone.",
+      "robustness": "Vulnerable to the 'too complex' objection. A developer who just wants to build a panel frame must read through twelve sections before reaching guidance. The 'read only what you need' framing mitigates but does not eliminate this.",
+      "compatibility": "Practitioners who want a concise reference may resist this elaborate structure. Failure analysts may want different section ordering. The specific structure will be contested even if the general approach is accepted."
+    }
+  }
+]
