@@ -1,0 +1,48 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# Build output
+dist/
+build/
+*.o
+*.a
+*.so
+
+# Logs
+*.log
+
+# Claude Code sandbox placeholders (zero-byte read-only files)
+.bash_profile
+.bashrc
+config
+.gitconfig
+.gitmodules
+HEAD
+hooks
+.idea
+.mcp.json
+objects
+.profile
+refs
+.ripgreprc
+.vscode
+.zprofile
+.zshrc
