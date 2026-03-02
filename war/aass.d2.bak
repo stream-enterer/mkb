@@ -1,0 +1,173 @@
+vars: {
+  d2-config: {
+    layout-engine: elk
+    theme-id: 6
+  }
+}
+
+direction: right
+
+# ── Classes ──────────────────────────────────────────────
+
+classes: {
+  cat-actors: {
+    style.fill: "#DCEEFB"
+    style.stroke: "#1565C0"
+    style.stroke-width: 3
+    style.font-size: 28
+    style.bold: true
+    style.font-color: "#0D47A1"
+    style.border-radius: 12
+    label.near: outside-top-center
+  }
+  cat-attributes: {
+    style.fill: "#FFF3E0"
+    style.stroke: "#E65100"
+    style.stroke-width: 3
+    style.font-size: 28
+    style.bold: true
+    style.font-color: "#BF360C"
+    style.border-radius: 12
+    label.near: outside-top-center
+  }
+  cat-systems: {
+    style.fill: "#E8F5E9"
+    style.stroke: "#2E7D32"
+    style.stroke-width: 3
+    style.font-size: 28
+    style.bold: true
+    style.font-color: "#1B5E20"
+    style.border-radius: 12
+    label.near: outside-top-center
+  }
+  cat-space: {
+    style.fill: "#F3E5F5"
+    style.stroke: "#6A1B9A"
+    style.stroke-width: 3
+    style.font-size: 28
+    style.bold: true
+    style.font-color: "#4A148C"
+    style.border-radius: 12
+    label.near: outside-top-center
+  }
+  child: {
+    style.fill: "#FFFFFF"
+    style.stroke: "#9E9E9E"
+    style.stroke-width: 1
+    style.font-size: 20
+    style.border-radius: 6
+    width: 280
+    height: 60
+  }
+  edge-style: {
+    style.stroke-width: 2
+    style.font-size: 18
+    style.bold: true
+    style.stroke-dash: 5
+  }
+}
+
+# ── Title ────────────────────────────────────────────────
+
+title: "AASS World Model\nActors — Attributes — Systems — Space" {
+  near: top-center
+  shape: text
+  style.font-size: 36
+  style.bold: true
+  style.font-color: "#212121"
+}
+
+# ── ACTORS ───────────────────────────────────────────────
+
+actors: ACTORS {
+  class: cat-actors
+  grid-rows: 2
+  grid-columns: 3
+  grid-gap: 20
+
+  sovereign: Sovereign States { class: child }
+  intl-orgs: International Organizations { class: child }
+  sub-state: Sub-state Political Entities { class: child }
+  nsag: Non-state Armed Groups { class: child }
+  econ: Economic Actors { class: child }
+  trans: Transnational Networks { class: child }
+}
+
+# ── ATTRIBUTES ───────────────────────────────────────────
+
+attributes: ATTRIBUTES {
+  class: cat-attributes
+  grid-rows: 2
+  grid-columns: 3
+  grid-gap: 20
+
+  capabilities: Capabilities / Assets { class: child }
+  demographics: Demographics { class: child }
+  political: Political Conditions { class: child }
+  ideational: Ideational Attributes { class: child }
+  economic: Economic Attributes { class: child }
+  relational: Relational Attributes { class: child }
+}
+
+# ── SYSTEMS ──────────────────────────────────────────────
+
+systems: SYSTEMS {
+  class: cat-systems
+  grid-rows: 2
+  grid-columns: 3
+  grid-gap: 20
+
+  institutional: Institutional Systems { class: child }
+  infrastructure: Infrastructure Systems { class: child }
+  markets: Market / Exchange Systems { class: child }
+  normative: Normative Systems { class: child }
+  environmental: Environmental / Physical Systems { class: child }
+}
+
+# ── SPACE ────────────────────────────────────────────────
+
+space: SPACE {
+  class: cat-space
+  grid-rows: 2
+  grid-columns: 3
+  grid-gap: 20
+
+  phys: Physical Geography { class: child }
+  pol: Political Geography { class: child }
+  infra: Infrastructure Geography { class: child }
+  info: Informational / Virtual Space { class: child }
+  strategic: Strategic Domains { class: child }
+}
+
+# ── Interaction Edges ────────────────────────────────────
+
+actors <-> attributes: "possess / constrain" {
+  class: edge-style
+  style.stroke: "#1565C0"
+  style.font-color: "#1565C0"
+}
+actors <-> systems: "participate in / capture" {
+  class: edge-style
+  style.stroke: "#2E7D32"
+  style.font-color: "#2E7D32"
+}
+actors <-> space: "occupy / contest" {
+  class: edge-style
+  style.stroke: "#6A1B9A"
+  style.font-color: "#6A1B9A"
+}
+attributes <-> systems: "shape / determine" {
+  class: edge-style
+  style.stroke: "#E65100"
+  style.font-color: "#E65100"
+}
+systems <-> space: "operate across / enabled by" {
+  class: edge-style
+  style.stroke: "#00695C"
+  style.font-color: "#00695C"
+}
+attributes <-> space: "distributed across / located in" {
+  class: edge-style
+  style.stroke: "#AD1457"
+  style.font-color: "#AD1457"
+}
