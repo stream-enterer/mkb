@@ -260,7 +260,40 @@ The implicit assumption that turns represent fixed calendar periods has been **c
 A18 establishes the philosophy (curation, not construction). A27 provides the interaction model. AASS clarifies that military systems are **Capability/Asset Attributes** fielded as cards into conflict slots. The remaining question: what does military curation look like concretely? How do you acquire systems, what does your military "hand" look like, and what are the slot structures for military situations? **Status: AASS provides the ontological grounding; concrete mechanics needed.**
 
 ### D3: Card Taxonomy and Slot Patterns
-The card-slot architecture is confirmed (A27). AASS provides the **source categories** for cards (Attributes primarily, Actors and Systems secondarily). **Remaining questions:** What are the concrete card types within each AASS Attribute subcategory? What are the structurally distinct slot patterns for situations? How do the two levels (nation-build slots vs. situation-response slots) interact? How are cards acquired, lost, and transformed? **Status: Ontological grounding resolved by AASS. Concrete card design is the next major task.**
+The card-slot architecture is confirmed (A27). AASS provides the **source categories** for cards (Attributes primarily, Actors and Systems secondarily).
+
+**Confirmed mechanics (Situation behavior):**
+
+**Situations are slot structures that arise from the simulation.** They vary along two independent dimensions:
+
+- **Demand:** Some situations **force** card commitment (the crisis is happening, something WILL occupy your cards). Others are **optional** opportunities you can engage with or ignore. The mix of forced and optional situations is where tension lives.
+- **Temporality:** Situations vary in time pressure:
+  - **Immediate:** Procs and demands card commitment this turn.
+  - **Windowed:** Procs and gives you X turns to respond, with the option to respond early any turn within that window. This is advance warning — you see the consequence coming and can plan for it.
+  - **Multi-turn unfolding:** The situation itself advances or transforms across turns. This is distinct from a windowed deadline — it's an ongoing process where you may commit cards across multiple turns as it evolves.
+  - These can overlap: a situation can give a window for initial commitment, then unfold over subsequent turns.
+
+**Slotting a card into a situation does not imply resolution.** Possible outcomes include: the situation advancing or transforming into a new situation, side effects spawning further situations elsewhere, the original situation closing (one outcome among many, not the default). This directly implements A25 — decisions create new situations with their own tension.
+
+**Cards can only be in one place at a time.** This is the core scarcity mechanic. Committing a card to one situation makes it unavailable for others. Multi-turn situations lock cards across turn boundaries, meaning long commitments (e.g., military deployments) reduce your available cards for subsequent turns.
+
+**Two independent scarcity dimensions constrain the player:** A3's bounded action economy caps how many cards you can slot per turn. The one-place rule caps which cards are available at all. These compound — you're constrained both by orders and by card availability. This is load-bearing for difficulty and tension.
+
+**Three card expenditure modes coexist within the same system:**
+- **Consumed:** Card is spent and gone (expendable resources, one-time favors).
+- **Occupied:** Card is locked into a situation while it resolves, then returned. Unavailable for other use during occupation.
+- **Transformed:** Card goes in as one thing, comes back as something different. The input card is gone; a new card is produced.
+
+**Edge case to address in tuning:** If enough forced situations fire simultaneously, the player could run out of available cards. This is a legitimate "you're overwhelmed and losing" state, but may need a safety valve depending on how card counts and situation frequency feel in practice. This is a balance question, not a design flaw.
+
+**Remaining open questions:**
+- **Slot shape filtering:** Whether situations require specific card aspects/tags (strict filtering) or are open-ended ("put whatever you want, we evaluate what happens") is explicitly **open and can vary per situation type**.
+- What are the concrete card types within each AASS Attribute subcategory?
+- How do the two levels (nation-build slots vs. situation-response slots) interact?
+- How are cards acquired, lost, and transformed through gameplay progression?
+- What are the structurally distinct slot patterns (A23 template diversity applied to situations)?
+
+**Status: Situation mechanics confirmed. Card taxonomy and slot pattern design are the next major task.**
 
 ### D4: Economic Layer
 Identified as the **lynchpin** of the simulation (A24). A26 establishes the player verb: observe, then selectively intervene. AASS clarifies that the economy spans multiple categories: Economic Attributes (national), Market/Exchange Systems (global), and Infrastructure Geography (spatial). **Remaining questions:** What does the economic simulation look like as a spectacle? How does economic capacity constrain military procurement and political options? What are the high-impact economic intervention cards? **Status: Architecture resolved. Spectacle and card design needed.**
@@ -310,3 +343,9 @@ A1 establishes dual-purpose decision trees. A19 requires deep political transfor
 | Q23 | World model taxonomy | Actors — Attributes — Systems — Space (AASS); adversarially tested |
 | Q24 | Where cards come from | Primarily Attributes, secondarily Actors and Systems; Space provides context |
 | Q25 | How globalization is modeled | Global Systems layer parallel to national layers; nations embedded within shared systems; system leverage is a key variable |
+| Q26 | Situation demand model | Situations are either forced (demand card commitment) or optional (opportunities); the mix creates tension (D3) |
+| Q27 | Situation temporality | Immediate, windowed (X turns to respond), or multi-turn unfolding; can overlap (D3) |
+| Q28 | What slotting a card produces | Advancement, transformation, side-effect spawning, or closure — resolution is one outcome, not the default (D3, A25) |
+| Q29 | Card positional scarcity | Cards can only be in one place at a time; occupation across turn boundaries is possible (D3) |
+| Q30 | Dual scarcity model | Player constrained by both per-turn order cap (A3) and card availability (one-place rule); these compound (D3) |
+| Q31 | Card expenditure modes | Three modes coexist: consumed (gone), occupied (locked then returned), transformed (becomes different card) (D3) |
