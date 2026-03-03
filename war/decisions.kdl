@@ -283,6 +283,12 @@ derived "Q36" domain="mechanics" {
   depends-on "A32" "AASS"
 }
 
+derived "Q43" domain="mechanics" {
+  title "Situation Definition"
+  summary "Situations are cards (per A32) with conditions for change; sub-slots are a card feature, not a situation-defining characteristic"
+  depends-on "A32" "A27"
+}
+
 // ─── EXTENSIONS (confirmed but not axiom-required) ──────────
 
 extension "Q26" domain="mechanics" {
@@ -298,8 +304,8 @@ extension "Q27" domain="mechanics" {
 }
 
 extension "Q28" domain="mechanics" {
-  title "What Slotting Produces"
-  summary "Advancement, transformation, side-effect spawning, or closure; resolution is not the default"
+  title "Situation Change Types"
+  summary "Four types: resolution (consumed), transformation (becomes different card), modification (properties change), null (invalidated, no effect); effects are separate from change types"
   extends "A27" "A25"
 }
 
@@ -328,8 +334,8 @@ extension "Q37" domain="mechanics" review-pending=#true {
 }
 
 extension "Q38" domain="mechanics" {
-  title "Collection Model (No Hand)"
-  summary "Cards exist in a visible tableau/collection, not a hidden hand; no deck, no draw step, no hand size limit; Cultist Simulator model"
+  title "Single Tableau Model"
+  summary "Each actor has one visible tableau containing all cards (capabilities, entities, situations); no deck, no draw, no separate zones; cards are available or committed"
   extends "A27" "A32"
 }
 
@@ -357,6 +363,12 @@ extension "Q42" domain="diplomacy" {
   extends "Q31" "Q28"
 }
 
+extension "Q44" domain="mechanics" {
+  title "Condition Satisfaction Mechanisms"
+  summary "Four mechanisms: card commitment (sub-slots), modal choice, temporal auto-progression, external trigger; these can compound; modal responses resolve binary decisions"
+  extends "Q43" "Q26" "Q27"
+}
+
 // ─── OPEN DESIGN SPACES ────────────────────────────────────
 
 open "D1" domain="mechanics" deferred=#true {
@@ -375,7 +387,7 @@ open "D3" domain="mechanics" {
   title "Card Taxonomy and Slot Patterns"
   summary "Concrete card tags, slot patterns, Level 1/2 interaction, card lifecycle"
   depends-on "A27" "A32" "AASS"
-  has-confirmed "Q26" "Q27" "Q28" "Q29" "Q30" "Q31" "Q35" "Q36" "Q37" "Q38" "Q39"
+  has-confirmed "Q26" "Q27" "Q28" "Q29" "Q31" "Q35" "Q36" "Q37" "Q38" "Q39" "Q44"
 }
 
 open "D4" domain="economy" {
@@ -387,12 +399,12 @@ open "D4" domain="economy" {
 open "D5" domain="military" {
   title "Combat Resolution"
   summary "Auto-resolve vs map-based; escalation; nuclear deterrence mechanics"
-  depends-on "AASS"
+  depends-on "A27" "AASS"
 }
 
 open "D6" domain="diplomacy" {
   title "Diplomatic/Geopolitical Layer"
-  summary "Counter-offer flow, timing, spatial results, binary decisions, diplomatic tool prioritization; core proposal mechanic confirmed"
+  summary "Counter-offer flow, timing, spatial results, diplomatic tool prioritization; core proposal mechanic confirmed; binary decisions resolved by Q44"
   depends-on "A7" "A14" "A27" "A32" "Q37" "AASS"
   has-confirmed "Q40" "Q41" "Q42"
 }
