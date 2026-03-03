@@ -1,0 +1,354 @@
+// War Game — Decision Registry (KDL 2.0)
+//
+// Queryable source of truth for all design decisions.
+// DESIGN.md is the readable narrative; this file is the structured index.
+//
+// Node types:
+//   axiom     — First-principle commitment, status A
+//   derived   — Logical consequence of axioms, status D
+//   extension — Confirmed but not required by axioms, status E
+//   framework — Major structural model, status A
+//   open      — Unresolved design space
+//
+// Common children:
+//   title          "..."           — Short name
+//   summary        "..."           — One-line statement of the decision
+//   depends-on     "ID" "ID" ...   — Logical prerequisites (if these change, this must be reconsidered)
+//   extends        "ID" "ID" ...   — Compatibility dependencies (consistent with but not required by)
+//   also-answers   "Q#" "Q#" ...   — Resolved Questions this decision covers (avoids duplication)
+//   has-confirmed  "Q#" "Q#" ...   — Extensions confirmed within this open space
+//
+// Grep patterns for common queries:
+//   grep 'depends-on.*"A27"'   — What depends on A27?
+//   grep 'domain="military"'   — Everything about military
+//   grep '^open '              — All unresolved design spaces
+//   grep '^extension '         — All decisions that could be revised without breaking axioms
+
+// ─── AXIOMS ─────────────────────────────────────────────────
+
+axiom "A1" domain="content" {
+  title "Dual-Purpose Decision Trees"
+  summary "Strategic choices must serve both narrative/thematic immersion AND mechanical optimization"
+}
+
+axiom "A2" domain="content" {
+  title "Flavored Modifiers as Planning Incentives"
+  summary "Persistent modifiers should be narratively named and themed, creating visible planning goals"
+  depends-on "A1"
+}
+
+axiom "A3" domain="mechanics" {
+  title "Bounded Action Economy"
+  summary "Per-turn agency explicitly capped; the decision is what to prioritize, not whether to do everything"
+}
+
+axiom "A4" domain="mechanics" {
+  title "No Logistics Micromanagement"
+  summary "Supply/transport/logistics abstracted, automated, or implicit"
+}
+
+axiom "A5" domain="military" {
+  title "Named Archetypes Over Atomic Customization"
+  summary "Units have preset identities (real named types), not atomic component construction"
+}
+
+axiom "A6" domain="military" {
+  title "Modular Customization Within Locked Chassis"
+  summary "Customization at loadout/outfit level on top of fixed core identity"
+  depends-on "A5"
+}
+
+axiom "A7" domain="actors" {
+  title "Emotionally Engaging AI Actors"
+  summary "AI nations must be characters the player forms real feelings about"
+  also-answers "Q4"
+}
+
+axiom "A8" domain="identity" {
+  title "Modern/Near-Future Warfare Setting"
+  summary "Contemporary geopolitical moment: nuclear deterrence, drone warfare, eroding rules-based order"
+  also-answers "Q2"
+}
+
+axiom "A9" domain="mechanics" {
+  title "Turn-Based with Orders"
+  summary "Turn-based as structural requirement of bounded action economy"
+  depends-on "A3"
+  also-answers "Q3"
+}
+
+axiom "A10" domain="identity" {
+  title "Nation-Level Grand Strategy"
+  summary "Player controls a nation-state across geopolitical, military, and economic layers"
+  also-answers "Q1"
+}
+
+axiom "A11" domain="identity" {
+  title "Global Sandbox Simulation"
+  summary "Full world simulated; any nation playable; not scenario-based"
+  also-answers "Q7"
+}
+
+axiom "A12" domain="identity" {
+  title "Historical Start, Open Future"
+  summary "Starts ~2020 with real conditions; history unscripted from there; years-to-decades campaign"
+  also-answers "Q6"
+}
+
+axiom "A13" domain="politics" {
+  title "Persistent Nation, Mutable Leadership"
+  summary "Player is the nation, not the leader; heads of state change through elections/coups/etc"
+  also-answers "Q8" "Q16"
+}
+
+axiom "A14" domain="actors" {
+  title "AI Legibility Through Action, Not Prose"
+  summary "AI intent readable through observable behavior, not narrative text; show don't tell"
+}
+
+axiom "A15" domain="philosophy" {
+  title "Decentered Player — Living World"
+  summary "Simulation exists independently of the player; player is one actor among many"
+}
+
+axiom "A16" domain="identity" {
+  title "No Win Condition — Small Victories as Stopping Points"
+  summary "No overall victory; themed sub-objectives as satisfying stopping points"
+  also-answers "Q5"
+}
+
+axiom "A17" domain="philosophy" {
+  title "Sandbox as Political Expression"
+  summary "Game must be expressive enough for players to explore real-world political what-ifs"
+  depends-on "A11"
+}
+
+axiom "A18" domain="military" {
+  title "Military Curation, Not Construction"
+  summary "Curatorial relationship to real-world named military systems, like building an MTG Commander deck"
+  depends-on "A5"
+}
+
+axiom "A19" domain="politics" {
+  title "Deep Political Transformation Through Decision Chains"
+  summary "Radical political outcomes through accumulated meaningful decisions, not government-swap buttons"
+}
+
+axiom "A20" domain="philosophy" {
+  title "Systems Primacy with Constrained Agency"
+  summary "Historical outcomes from systemic conditions, not great men; individuals have constrained choice space"
+  also-answers "Q11"
+}
+
+axiom "A21" domain="philosophy" {
+  title "The Assumption Gap as Core Experience"
+  summary "Player imports assumptions; transparent systems produce honest consequences; gap creates insight"
+  depends-on "A20"
+}
+
+axiom "A22" domain="actors" {
+  title "Named Leaders as Emotional Import Points"
+  summary "Real named leaders exist as anchor points for player-imported emotions and assumptions"
+  depends-on "A21"
+}
+
+axiom "A23" domain="content" {
+  title "Template Diversity Over Template Volume"
+  summary "Library of structurally distinct templates, not volume of same-structure instances"
+}
+
+axiom "A24" domain="simulation" {
+  title "Simulation Variable Hierarchy"
+  summary "Layered hierarchy: bedrock (geography) → foundation (economy, demographics) → derived (military, political)"
+  depends-on "A20"
+  also-answers "Q12"
+}
+
+axiom "A25" domain="content" {
+  title "Decisions Create Situations, Not Increments"
+  summary "Every decision creates new tension; commitment → tension → dilemma; no counters or timers"
+  also-answers "Q15"
+}
+
+axiom "A26" domain="economy" {
+  title "Economy as Observable System with Selective Intervention"
+  summary "Complex system the player watches running, with occasional high-impact policy interventions"
+  depends-on "A15" "A25"
+  also-answers "Q13"
+}
+
+axiom "A27" domain="mechanics" {
+  title "Card-Slot Interaction Model (Core Mechanic)"
+  summary "Two-level card-and-slot system: Level 1 nation-build civic slots, Level 2 situation-response slots"
+  depends-on "A2" "A18" "A1"
+  also-answers "Q14" "Q20"
+}
+
+axiom "A28" domain="politics" {
+  title "Government Type Determines Control Surface"
+  summary "Government type configures which cards are directly controllable vs automated for all actors"
+  depends-on "A27"
+  also-answers "Q19"
+}
+
+axiom "A29" domain="actors" {
+  title "Non-Governmental Actors as Embedded Entity Cards"
+  summary "Corps, oligarchs, unions, religious bodies are deeply embedded entity cards like EU4 Estates"
+  depends-on "A27"
+  also-answers "Q17"
+}
+
+axiom "A30" domain="actors" {
+  title "Non-State Actors as Independent Simulation Entities"
+  summary "Non-state actors are independent entities; relationship determines card manifestation per actor"
+  depends-on "A27"
+  also-answers "Q22"
+}
+
+axiom "A31" domain="mechanics" {
+  title "Symmetric Rules for All Actors"
+  summary "All nations operate under identical rules; no hidden AI bonuses; differences from starting conditions only"
+  depends-on "A21"
+  also-answers "Q33"
+}
+
+// ─── FRAMEWORKS ─────────────────────────────────────────────
+
+framework "AASS" domain="simulation" {
+  title "Actors — Attributes — Systems — Space"
+  summary "Foundational world-state taxonomy for the simulation; adversarially tested"
+  also-answers "Q23"
+}
+
+// ─── DERIVED (logical consequences of axioms) ───────────────
+
+derived "Q9" domain="philosophy" {
+  title "Source of Emotional Engagement"
+  summary "Observable AI behavior + player-imported assumptions, not prose"
+  depends-on "A14" "A21" "A22"
+}
+
+derived "Q10" domain="content" {
+  title "Hand-crafted vs Procedural Content"
+  summary "Condition-driven templates with diverse structures"
+  depends-on "A23" "A24"
+}
+
+derived "Q18" domain="mechanics" {
+  title "Compound Decisions"
+  summary "Situations can require cards from multiple domains; resource allocation puzzle"
+  depends-on "A27"
+}
+
+derived "Q21" domain="mechanics" {
+  title "Card System as Unifying Mechanic"
+  summary "National Spirits, military systems, focus rewards, estates all unified as card types"
+  depends-on "A27" "A2" "A18" "A29"
+}
+
+derived "Q24" domain="simulation" {
+  title "Where Cards Come From"
+  summary "Primarily from Attributes, secondarily Actors and Systems; Space provides context"
+  depends-on "A27" "AASS"
+}
+
+derived "Q25" domain="simulation" {
+  title "How Globalization is Modeled"
+  summary "Global Systems layer parallel to national layers; system leverage is a key variable"
+  depends-on "AASS"
+}
+
+derived "Q30" domain="mechanics" {
+  title "Dual Scarcity Model"
+  summary "Constrained by both per-turn order cap and card availability; these compound"
+  depends-on "A3" "Q29"
+}
+
+derived "Q32" domain="simulation" {
+  title "World State vs Interaction Mechanics"
+  summary "AASS is world-state layer; card-slot is interaction-mechanics layer; both universal per A31"
+  depends-on "A27" "A30" "A31"
+}
+
+// ─── EXTENSIONS (confirmed but not axiom-required) ──────────
+
+extension "Q26" domain="mechanics" {
+  title "Situation Demand Model"
+  summary "Situations are forced (demand commitment) or optional (opportunities); mix creates tension"
+  extends "A27"
+}
+
+extension "Q27" domain="mechanics" {
+  title "Situation Temporality"
+  summary "Immediate, windowed (X turns), or multi-turn unfolding; can overlap"
+  extends "A27"
+}
+
+extension "Q28" domain="mechanics" {
+  title "What Slotting Produces"
+  summary "Advancement, transformation, side-effect spawning, or closure; resolution is not the default"
+  extends "A27" "A25"
+}
+
+extension "Q29" domain="mechanics" {
+  title "Card Positional Scarcity"
+  summary "Cards can only be in one place at a time; occupation across turn boundaries possible"
+  extends "A27"
+}
+
+extension "Q31" domain="mechanics" {
+  title "Card Expenditure Modes"
+  summary "Three modes: consumed (gone), occupied (locked then returned), transformed (becomes different card)"
+  extends "A27"
+}
+
+// ─── OPEN DESIGN SPACES ────────────────────────────────────
+
+open "D1" domain="mechanics" deferred=#true {
+  title "Temporality and Turn Structure"
+  summary "What a turn represents temporally is unresolved"
+  depends-on "A3" "A9"
+}
+
+open "D2" domain="military" {
+  title "Military Layer — The Deck-Building Verb"
+  summary "Concrete military curation mechanics: acquisition, hand composition, conflict slot structures"
+  depends-on "A18" "A27" "AASS"
+}
+
+open "D3" domain="mechanics" {
+  title "Card Taxonomy and Slot Patterns"
+  summary "Concrete card types, slot patterns, Level 1/2 interaction, card lifecycle"
+  depends-on "A27" "AASS"
+  has-confirmed "Q26" "Q27" "Q28" "Q29" "Q30" "Q31"
+}
+
+open "D4" domain="economy" {
+  title "Economic Layer"
+  summary "Economic simulation as spectacle; capacity constraints; intervention card design"
+  depends-on "A24" "A26" "AASS"
+}
+
+open "D5" domain="military" {
+  title "Combat Resolution"
+  summary "Auto-resolve vs map-based; escalation; nuclear deterrence mechanics"
+  depends-on "AASS"
+}
+
+open "D6" domain="diplomacy" {
+  title "Diplomatic/Geopolitical Layer"
+  summary "Diplomatic tool subset; interaction with AI legibility and emotional engagement"
+  depends-on "A7" "A14" "AASS"
+}
+
+open "D7" domain="identity" {
+  title "The Small Victories System"
+  summary "What generates sub-objectives; per-nation vs procedural; player-defined goals"
+  depends-on "A16"
+}
+
+open "D8" domain="content" {
+  title "Focus Tree / Decision Tree Architecture"
+  summary "Tree structure, card-slot interaction, card generation from systemic conditions"
+  depends-on "A1" "A19" "A23" "A27" "AASS"
+}

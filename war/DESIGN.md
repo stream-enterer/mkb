@@ -1,5 +1,19 @@
 # Game Design Document
 
+## Epistemic Status Key
+
+Every confirmed design decision is tagged with one of the following:
+
+| Tag | Meaning | Revisable by... |
+|-----|---------|-----------------|
+| **A** | **Axiomatic** — First-principle commitment from explicit discussion. Not derivable from other axioms. | Direct reconsideration of the commitment. |
+| **D** | **Derived** — Follows logically from specified axioms. If those axioms hold, this must hold. | Revising the source axioms. |
+| **E** | **Extension** — Confirmed through discussion. Consistent with axioms but not strictly required by them. | Design decision; can be revised without violating any axiom. |
+
+Items in Open Design Spaces are **unresolved** unless explicitly tagged otherwise.
+
+---
+
 ## Confirmed Axioms
 
 ### A1: Dual-Purpose Decision Trees
@@ -275,7 +289,7 @@ A18 establishes the philosophy (curation, not construction). A27 provides the in
 ### D3: Card Taxonomy and Slot Patterns
 The card-slot architecture is confirmed (A27). AASS provides the **source categories** for cards (Attributes primarily, Actors and Systems secondarily).
 
-**Confirmed mechanics (Situation behavior):**
+**Confirmed mechanics (Situation behavior):** *All items below are* ***E*** *(extensions) — confirmed through Cultist Simulator analysis, consistent with A27/A25 but not strictly required by them.*
 
 **Situations are slot structures that arise from the simulation.** They vary along two independent dimensions:
 
@@ -329,38 +343,38 @@ A1 establishes dual-purpose decision trees. A19 requires deep political transfor
 
 *Previously open questions that have been answered through discussion.*
 
-| # | Question | Resolution |
-|---|----------|------------|
-| Q1 | Genre/Scale | Nation-level grand strategy (A10) |
-| Q2 | Setting | Modern/near-future warfare (A8) |
-| Q3 | Real-time vs Turn-based | Turn-based with orders; hard dep from A3 (A9) |
-| Q4 | Single/Multiplayer | Single-player with emotionally engaging AI (A7) |
-| Q5 | Victory condition | No overall victory; small victories as stopping points (A16) |
-| Q6 | Temporal scope | Years to decades from ~2020 start (A12) |
-| Q7 | Geographic scope | Full globe, any nation playable (A11) |
-| Q8 | Player identity | The nation; leaders are mutable (A13) |
-| Q9 | Source of emotional engagement | Observable AI behavior + player-imported assumptions, not prose (A14, A21, A22) |
-| Q10 | Hand-crafted vs procedural content | Condition-driven templates with diverse structures (A23, A24) |
-| Q11 | Foundational philosophical assumption | Systems primacy with constrained agency (A20) |
-| Q12 | Core simulation variable | Economic structure as lynchpin (A24) |
-| Q13 | Economic player verb | Observe complex system, selectively intervene with high-impact dilemmas (A26) |
-| Q14 | Decision interaction model | Card-slot system: accumulated capabilities slotted into situation structures (A27) |
-| Q15 | Decision quality principle | Decisions create situations, not increments; dilemmas over optimizations (A25) |
-| Q16 | Player identity (mechanical) | Acceptable abstraction — you are "the nation," not a specific character (A13) |
-| Q17 | Non-governmental actors | Deeply embedded entity cards with mechanical teeth, like EU4 Estates (A29) |
-| Q18 | Compound decisions | Situations can require cards from multiple domains; resource allocation puzzle (A27) |
-| Q19 | Government type impact on gameplay | Controls which cards are automated vs player-controllable (A28) |
-| Q20 | What cards represent | Broader than "actions" — everything your nation IS and CAN DO (A27 revised) |
-| Q21 | Card system as unifying mechanic | National Spirits, military systems, focus rewards, estates all unified as card types (A27) |
-| Q22 | Non-state actors | Independent simulation entities; relationship determines card manifestation (A30) |
-| Q23 | World model taxonomy | Actors — Attributes — Systems — Space (AASS); adversarially tested |
-| Q24 | Where cards come from | Primarily Attributes, secondarily Actors and Systems; Space provides context |
-| Q25 | How globalization is modeled | Global Systems layer parallel to national layers; nations embedded within shared systems; system leverage is a key variable |
-| Q26 | Situation demand model | Situations are either forced (demand card commitment) or optional (opportunities); the mix creates tension (D3) |
-| Q27 | Situation temporality | Immediate, windowed (X turns to respond), or multi-turn unfolding; can overlap (D3) |
-| Q28 | What slotting a card produces | Advancement, transformation, side-effect spawning, or closure — resolution is one outcome, not the default (D3, A25) |
-| Q29 | Card positional scarcity | Cards can only be in one place at a time; occupation across turn boundaries is possible (D3) |
-| Q30 | Dual scarcity model | Player constrained by both per-turn order cap (A3) and card availability (one-place rule); these compound (D3) |
-| Q31 | Card expenditure modes | Three modes coexist: consumed (gone), occupied (locked then returned), transformed (becomes different card) (D3) |
-| Q32 | World state vs interaction mechanics | AASS is the world-state layer (what exists). The card-slot model is the interaction-mechanics layer (how all actors engage with world state). Both are universal per A31; the player-specific element is the UI/UX presentation, not the mechanics. |
-| Q33 | AI mechanical symmetry | All nations operate under identical rules. No hidden bonuses or asymmetric mechanics. Differences emerge from starting conditions and systemic position, not from the rules themselves (A31). |
+| # | Status | Question | Resolution |
+|---|--------|----------|------------|
+| Q1 | **A** | Genre/Scale | Nation-level grand strategy (A10) |
+| Q2 | **A** | Setting | Modern/near-future warfare (A8) |
+| Q3 | **A** | Real-time vs Turn-based | Turn-based with orders; hard dep from A3 (A9) |
+| Q4 | **A** | Single/Multiplayer | Single-player with emotionally engaging AI (A7) |
+| Q5 | **A** | Victory condition | No overall victory; small victories as stopping points (A16) |
+| Q6 | **A** | Temporal scope | Years to decades from ~2020 start (A12) |
+| Q7 | **A** | Geographic scope | Full globe, any nation playable (A11) |
+| Q8 | **A** | Player identity | The nation; leaders are mutable (A13) |
+| Q9 | **D** | Source of emotional engagement | Observable AI behavior + player-imported assumptions, not prose (A14, A21, A22) |
+| Q10 | **D** | Hand-crafted vs procedural content | Condition-driven templates with diverse structures (A23, A24) |
+| Q11 | **A** | Foundational philosophical assumption | Systems primacy with constrained agency (A20) |
+| Q12 | **A** | Core simulation variable | Economic structure as lynchpin (A24) |
+| Q13 | **A** | Economic player verb | Observe complex system, selectively intervene with high-impact dilemmas (A26) |
+| Q14 | **A** | Decision interaction model | Card-slot system: accumulated capabilities slotted into situation structures (A27) |
+| Q15 | **A** | Decision quality principle | Decisions create situations, not increments; dilemmas over optimizations (A25) |
+| Q16 | **A** | Player identity (mechanical) | Acceptable abstraction — you are "the nation," not a specific character (A13) |
+| Q17 | **A** | Non-governmental actors | Deeply embedded entity cards with mechanical teeth, like EU4 Estates (A29) |
+| Q18 | **D** | Compound decisions | Situations can require cards from multiple domains; resource allocation puzzle (A27) |
+| Q19 | **A** | Government type impact on gameplay | Controls which cards are automated vs player-controllable (A28) |
+| Q20 | **A** | What cards represent | Broader than "actions" — everything your nation IS and CAN DO (A27 revised) |
+| Q21 | **D** | Card system as unifying mechanic | National Spirits, military systems, focus rewards, estates all unified as card types (A27) |
+| Q22 | **A** | Non-state actors | Independent simulation entities; relationship determines card manifestation (A30) |
+| Q23 | **A** | World model taxonomy | Actors — Attributes — Systems — Space (AASS); adversarially tested |
+| Q24 | **D** | Where cards come from | Primarily Attributes, secondarily Actors and Systems; Space provides context |
+| Q25 | **D** | How globalization is modeled | Global Systems layer parallel to national layers; nations embedded within shared systems; system leverage is a key variable |
+| Q26 | **E** | Situation demand model | Situations are either forced (demand card commitment) or optional (opportunities); the mix creates tension (D3) |
+| Q27 | **E** | Situation temporality | Immediate, windowed (X turns to respond), or multi-turn unfolding; can overlap (D3) |
+| Q28 | **E** | What slotting a card produces | Advancement, transformation, side-effect spawning, or closure — resolution is one outcome, not the default (D3, A25) |
+| Q29 | **E** | Card positional scarcity | Cards can only be in one place at a time; occupation across turn boundaries is possible (D3) |
+| Q30 | **D** | Dual scarcity model | Player constrained by both per-turn order cap (A3) and card availability (one-place rule); these compound (D3) |
+| Q31 | **E** | Card expenditure modes | Three modes coexist: consumed (gone), occupied (locked then returned), transformed (becomes different card) (D3) |
+| Q32 | **D** | World state vs interaction mechanics | AASS is the world-state layer (what exists). The card-slot model is the interaction-mechanics layer (how all actors engage with world state). Both are universal per A31; the player-specific element is the UI/UX presentation, not the mechanics. |
+| Q33 | **A** | AI mechanical symmetry | All nations operate under identical rules. No hidden bonuses or asymmetric mechanics. Differences emerge from starting conditions and systemic position, not from the rules themselves (A31). |
