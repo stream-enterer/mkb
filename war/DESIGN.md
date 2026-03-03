@@ -354,6 +354,7 @@ These four patterns coexist within the same collection. A nation's tableau at an
 - How do the two levels (nation-build slots vs. situation-response slots) interact?
 - How are cards acquired through **gameplay decisions** (focus trees, political transformation, diplomatic deals)? The simulation-driven generation pipeline is confirmed, but player-driven acquisition mechanics are open (connects to D8).
 - What are the structurally distinct slot patterns (A23 template diversity applied to situations)?
+- **Default outcomes for unanswered situations:** What happens when a forced situation fires and the actor doesn't respond? Does the game block? Does a default outcome fire? Is inaction a valid response? This affects all situations — surfaced by diplomatic analysis but general in scope. Connects to A15 (living world moves without you) and A26 (observe, selectively intervene).
 
 **Status: Situation mechanics confirmed. Card properties (tags/counters), card existence pipeline, card lifecycle (collection model, four coexisting patterns), and cross-actor effects resolved. Card taxonomy (specific tags) and slot pattern design are the next major task.**
 
@@ -364,7 +365,41 @@ Identified as the **lynchpin** of the simulation (A24). A26 establishes the play
 When two nations go to war in a world with nuclear deterrence, what happens mechanically? AASS frames this as: Capability/Asset Attribute cards deployed into conflict slots, resolved within System context (alliance systems, normative systems like the nuclear taboo) and Space context (strategic geography). **Remaining questions:** Auto-resolve vs. map-based? Escalation mechanics? How does nuclear deterrence mechanically constrain conventional warfare? **Status: Ontologically grounded. Mechanics not yet explored.**
 
 ### D6: Diplomatic/Geopolitical Layer
-Alliances, treaties, sanctions, proxy wars, information warfare. AASS frames diplomacy as operating through **Relational Attributes** (actor-to-actor connections), **Institutional Systems** (UN, treaty regimes), and **Normative Systems** (sovereignty norms, international law). **Remaining questions:** What subset of diplomatic tools matters most? How does it interact with A7 (emotionally engaging AI) and A14 (legibility through action)? **Status: Ontologically grounded. Mechanics not yet explored.**
+Alliances, treaties, sanctions, proxy wars, information warfare. AASS frames diplomacy as operating through **Relational Attributes** (actor-to-actor connections), **Institutional Systems** (UN, treaty regimes), and **Normative Systems** (sovereignty norms, international law).
+
+**Confirmed mechanics (Diplomatic proposal structure):** *All items below are* ***E*** *(extensions) — confirmed through stress-testing bilateral interaction against A27/A32/Q37. No new interaction patterns introduced.*
+
+**Diplomatic interactions are situation-cards with typed slots.** When an actor initiates a diplomatic proposal, they construct a situation-card with two slot types:
+
+- **Offer slots** — filled with the proposer's own cards from their collection. These cards are **committed** (occupied per Q29) for the duration of the proposal, creating real scarcity cost. You cannot offer the same card in two simultaneous proposals.
+- **Demand slots** — defined as **tag-filtered requirements** that the recipient must fill with their own cards if they accept. The proposer specifies the slot shape (what types of cards are required); the recipient chooses which specific cards to commit. This preserves recipient agency and uses the existing slot-filtering mechanism (Q35 tags).
+
+This serves multiple axioms simultaneously: **A14** (legibility — the AI's proposal shows actual committed cards, making intent readable through action), **A31** (symmetric — AI constructs proposals identically to the player), **A7** (emotional — an ally's heavy demands are visible and felt), **A21** (transparent — you can reason about what the AI values from what they offer and demand), **A20** (systemic — what an actor can offer is constrained by their systemic position and available cards).
+
+**Diplomatic proposals unfold in phases** (per Q27 multi-turn situations):
+1. **Construction** — proposer fills Offer slots with their cards, defines Demand slot shapes
+2. **Delivery** — proposal spawns as a forced situation for the recipient (Q37)
+3. **Evaluation** — recipient reviews: accept, decline, or counter-offer
+4. **Fulfillment** (if accepted) — recipient fills Demand slots with their own cards
+5. **Resolution** — cards resolve using existing expenditure modes (Q31)
+
+**Acceptance resolution uses existing mechanics.** Different cards in a deal resolve based on their nature:
+- **Fungible resources** (abstracted currency, aid packages) → consumed (Q31). Recipient's simulation generates corresponding benefit.
+- **Capability cards** (base construction authority, military training programs) → occupied during fulfillment, then returned. The capability is temporarily committed, not permanently transferred.
+- **New persistent entities** → spawned via Q28 side-effect spawning. Example: a "base construction authority" card committed to an accepted deal spawns a new "US Military Base (Kazakhstan)" card. The spawned entity is distinct from anything in the original deal.
+
+**Viable direction (noted, not locked):** Counter-offers may work by the recipient modifying the proposal card and returning it, with the original proposer's offer cards **releasing** when terms change (preventing the gaming exploit of fake proposals to tie up opponent's resources). This needs further development.
+
+**Remaining open questions:**
+- **Counter-offer mechanics:** Do original offer cards release when a counter-offer is sent? How many rounds per turn? How to prevent gaming (fake proposals as resource denial)?
+- **Action cost per negotiation round:** Does each round consume an action (A3)? Connects to orders ↔ card-slotting (D3) and D1 (temporality).
+- **Offer card tie-up duration:** Until end of turn? Until response? Across turns for major deals?
+- **Persistent cross-actor entities:** Where does a military base in Kazakhstan "live" mechanically? Cards need spatial positioning beyond collection membership. Cross-depends on D2 (military deployment), D5 (combat spatial mechanics), AASS Space.
+- **Binary decisions:** The proposal mechanism handles most diplomatic interactions as package-construction, but some remain bare yes/no (declarations of war, alliance invitations). How do these fit the card-slot model?
+- **Specific vs general demands:** Can demand slots require a specific named card, or only tag-filtered categories, or both? Connects to D3 slot shape filtering.
+- **What subset of diplomatic tools matters most?** Sanctions, alliances, treaties, proxy support, information warfare — which get first-class mechanical treatment?
+
+**Status: Core proposal mechanic confirmed (situation-cards with Offer/Demand slots, multi-phase flow, existing expenditure modes). Counter-offer flow, timing, spatial results, and diplomatic tool prioritization are the open work.**
 
 ### D7: The "Small Victories" System
 A16 establishes that themed sub-objectives serve as stopping points. **Remaining questions:** What generates them? Per-nation? Procedural from Attribute conditions? How do they interact with the political decision system (A19/D3)? Can the player define their own? **Status: Not yet explored.**
@@ -419,3 +454,6 @@ A1 establishes dual-purpose decision trees. A19 requires deep political transfor
 | Q37 | **E** | Cross-actor card effects | Card plays spawn forced situations for other actors; escalation emerges from cascading situation chains across actor boundaries. Persistent effects modeled as multi-turn situations. Pending further review (D3, Q28). |
 | Q38 | **E** | Collection model (no hand) | Cards exist in a visible tableau/collection, not a hidden hand. No deck, no draw step, no hand size limit. Cultist Simulator model, not MTG hidden-hand model (D3). |
 | Q39 | **E** | Card lifecycle patterns | Four coexisting patterns: persistent (across turns), generated (simulation adds at turn start), returning (occupied cards refresh), consumed (gone forever). Turn start is the refresh/generation point (D3, Q31). |
+| Q40 | **E** | Diplomatic proposal structure | Proposals are situation-cards with Offer slots (proposer's committed cards, occupied per Q29) and Demand slots (tag-filtered requirements the recipient fills on acceptance). No new interaction patterns (D6). |
+| Q41 | **E** | Diplomatic multi-phase flow | Construct → deliver → evaluate → fulfill → resolve. Maps to Q27 multi-turn unfolding. Delivery via Q37 cross-actor situation spawning (D6). |
+| Q42 | **E** | Diplomatic acceptance resolution | Existing expenditure modes apply per card type: consumed (fungible resources), occupied+returned (capabilities), side-effect spawning via Q28 (new persistent entities like military bases) (D6). |

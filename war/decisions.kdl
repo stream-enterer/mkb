@@ -339,6 +339,24 @@ extension "Q39" domain="mechanics" {
   extends "A27" "Q31" "Q36"
 }
 
+extension "Q40" domain="diplomacy" {
+  title "Diplomatic Proposal Structure"
+  summary "Proposals are situation-cards with Offer slots (proposer's committed cards) and Demand slots (tag-filtered requirements for recipient)"
+  extends "A27" "A32" "Q37" "Q35"
+}
+
+extension "Q41" domain="diplomacy" {
+  title "Diplomatic Multi-Phase Flow"
+  summary "Construct → deliver → evaluate → fulfill → resolve; maps to multi-turn unfolding situations"
+  extends "Q27" "Q37"
+}
+
+extension "Q42" domain="diplomacy" {
+  title "Diplomatic Acceptance Resolution"
+  summary "Existing expenditure modes apply per card type: consumed (fungible), occupied+returned (capabilities), side-effect spawning (new persistent entities)"
+  extends "Q31" "Q28"
+}
+
 // ─── OPEN DESIGN SPACES ────────────────────────────────────
 
 open "D1" domain="mechanics" deferred=#true {
@@ -374,8 +392,9 @@ open "D5" domain="military" {
 
 open "D6" domain="diplomacy" {
   title "Diplomatic/Geopolitical Layer"
-  summary "Diplomatic tool subset; interaction with AI legibility and emotional engagement"
-  depends-on "A7" "A14" "AASS"
+  summary "Counter-offer flow, timing, spatial results, binary decisions, diplomatic tool prioritization; core proposal mechanic confirmed"
+  depends-on "A7" "A14" "A27" "A32" "Q37" "AASS"
+  has-confirmed "Q40" "Q41" "Q42"
 }
 
 open "D7" domain="identity" {
