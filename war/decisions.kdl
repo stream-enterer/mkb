@@ -327,6 +327,18 @@ extension "Q37" domain="mechanics" review-pending=#true {
   extends "Q28" "Q26" "Q27"
 }
 
+extension "Q38" domain="mechanics" {
+  title "Collection Model (No Hand)"
+  summary "Cards exist in a visible tableau/collection, not a hidden hand; no deck, no draw step, no hand size limit; Cultist Simulator model"
+  extends "A27" "A32"
+}
+
+extension "Q39" domain="mechanics" {
+  title "Card Lifecycle Patterns"
+  summary "Four coexisting patterns: persistent (across turns), generated (simulation adds at turn start), returning (occupied cards refresh), consumed (gone forever)"
+  extends "A27" "Q31" "Q36"
+}
+
 // ─── OPEN DESIGN SPACES ────────────────────────────────────
 
 open "D1" domain="mechanics" deferred=#true {
@@ -337,7 +349,7 @@ open "D1" domain="mechanics" deferred=#true {
 
 open "D2" domain="military" {
   title "Military Layer — The Deck-Building Verb"
-  summary "Concrete military curation mechanics: acquisition, hand composition, conflict slot structures"
+  summary "Concrete military curation mechanics: acquisition, collection composition, conflict slot structures"
   depends-on "A18" "A27" "AASS"
 }
 
@@ -345,7 +357,7 @@ open "D3" domain="mechanics" {
   title "Card Taxonomy and Slot Patterns"
   summary "Concrete card tags, slot patterns, Level 1/2 interaction, card lifecycle"
   depends-on "A27" "A32" "AASS"
-  has-confirmed "Q26" "Q27" "Q28" "Q29" "Q30" "Q31" "Q35" "Q36" "Q37"
+  has-confirmed "Q26" "Q27" "Q28" "Q29" "Q30" "Q31" "Q35" "Q36" "Q37" "Q38" "Q39"
 }
 
 open "D4" domain="economy" {

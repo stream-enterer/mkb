@@ -111,11 +111,11 @@ Different government types give the player **different relationships to their ow
 Corporations, oligarchs, media organizations, religious institutions, unions, criminal networks, militias, and similar non-governmental power structures are **entity cards deeply embedded in gameplay** — not background flavor. They provide advantages AND disadvantages, have their own dynamics (loyalty, influence, demands), and interact with the institutional structure. Comparable to EU4 Estates: load-bearing parts of the system with real mechanical teeth. (Derived from: "I'd argue they're more like Estates in EUIV... deeply embedded in how the game works")
 
 ### A30: Non-State Actors as Independent Simulation Entities
-Non-state actors (Hezbollah, Houthis, cartels, PMCs, transnational networks) are **independent entities in the simulation** with their own territory, goals, and capabilities. They are NOT inherently cards in any single player's hand. A nation's RELATIONSHIP to a non-state actor determines how it manifests mechanically:
+Non-state actors (Hezbollah, Houthis, cartels, PMCs, transnational networks) are **independent entities in the simulation** with their own territory, goals, and capabilities. They are NOT inherently cards in any single actor's collection. A nation's RELATIONSHIP to a non-state actor determines how it manifests mechanically:
 
 - **Patron relationship** (Iran → Hezbollah): Shows up as a deployable proxy-asset card. But the entity has its own interests and isn't perfectly obedient.
 - **Host relationship** (Mexico → Sinaloa Cartel): Shows up as a hostile/ambivalent entity card you're forced to manage — an estate with low loyalty.
-- **No relationship** (US → Sinaloa Cartel): Not in your hand at all — part of the simulation that generates situations you react to.
+- **No relationship** (US → Sinaloa Cartel): Not in your collection at all — part of the simulation that generates situations you react to.
 - **Relationships can be cultivated, lost, or stolen** through diplomatic, intelligence, and military actions.
 
 This gives **proxy warfare** a natural mechanical expression: deploying your non-state actor cards into situations on someone else's territory. (Derived from: Houthis/Hezbollah/Cartel analysis — "the same entity is different things to different players")
@@ -298,7 +298,7 @@ The implicit assumption that turns represent fixed calendar periods has been **c
 **Status: DEFERRED. Revisit after core card-slot mechanics and at least one game layer (military, economic, or diplomatic) are concretely designed, since those will constrain what temporal model works.**
 
 ### D2: Military Layer — The "Deck-Building" Verb
-A18 establishes the philosophy (curation, not construction). A27 provides the interaction model. AASS clarifies that military systems are **Capability/Asset Attributes** fielded as cards into conflict slots. The remaining question: what does military curation look like concretely? How do you acquire systems, what does your military "hand" look like, and what are the slot structures for military situations? **Status: AASS provides the ontological grounding; concrete mechanics needed.**
+A18 establishes the philosophy (curation, not construction). A27 provides the interaction model. AASS clarifies that military systems are **Capability/Asset Attributes** fielded as cards into conflict slots. The remaining question: what does military curation look like concretely? How do you acquire systems, what does your military collection look like, and what are the slot structures for military situations? **Status: AASS provides the ontological grounding; concrete mechanics needed.**
 
 ### D3: Card Taxonomy and Slot Patterns
 The card-slot architecture is confirmed (A27). AASS provides the **source categories** for cards (Attributes primarily, Actors and Systems secondarily).
@@ -335,6 +335,16 @@ Tags and counters are **mechanically distinct and non-overlapping**. A card's ta
 
 **Card existence is a simulation-layer concern.** The simulation (AASS world state) determines which cards are available to each actor based on world-state conditions (GDP thresholds, technological knowledge, institutional prerequisites, demographic conditions). Cards appear in an actor's collection when conditions are met and can disappear when conditions are no longer met. No special card-side gating mechanism is needed — the simulation generates the card surface, and the card surface is what actors interact with. This directly implements A32: the card layer doesn't need to know *why* a card exists; it just needs to present cards for decisions.
 
+**Cards exist in a visible collection, not a hidden hand.** There is no deck, no draw step, no hand size limit. An actor's cards are their **tableau** — all visible, all available unless committed to a situation. This follows the Cultist Simulator model, not MTG's hidden-hand model. The simulation adds cards to and removes cards from this collection; the actor decides what to do with what's there.
+
+**Card lifecycle follows four coexisting patterns:**
+- **Persistent** — cards that remain in your collection across turns. Your standing capabilities, institutions, and relationships. An F-35 squadron exists whether or not you deploy it this turn.
+- **Generated** — new cards that appear in your collection at turn start, produced by the simulation based on current conditions (world state, existing cards, or any other factor). This is the "draw" — but it's the simulation dealing to you based on what your nation's reality produces, not a random pull from a deck.
+- **Returning** — cards that were committed to situations (occupied, per Q31) and return to your collection when the situation resolves or the occupation period ends. Cards refresh at turn start.
+- **Consumed** — cards that are gone when used (Q31 consumed mode). The simulation may generate replacements if conditions are met, but the specific card is permanently spent. (Analogous to Cultist Simulator funds.)
+
+These four patterns coexist within the same collection. A nation's tableau at any moment is the sum of its persistent cards, recently generated cards, and recently returned cards, minus whatever is currently committed to situations or has been consumed. **How many cards the simulation generates per turn is an open question** — it connects to the orders ↔ card-slotting relationship and overall scarcity tuning.
+
 **Cross-actor effects route through situation spawning.** *(Confirmed but flagged for further review.)* When Actor A's card play affects Actor B, the primary mechanism is: A's card play **spawns a forced situation for B**, which B must respond to with their own cards. B's response may in turn spawn situations for other actors, creating **cascading chains** that produce escalation as an emergent property. Example: US plays sanctions card → forced "Sanctions Crisis" situation spawns for Iran → Iran commits cards to respond → Iran's response spawns further situations for regional actors. Persistent cross-actor effects (sanctions regimes, military occupations) may be **multi-turn situations** that lock the originator's cards while continuously generating pressure on the target. This requires no new mechanics — it uses the existing situation spawning (Q28), forced demand (Q26), and multi-turn unfolding (Q27) systems.
 
 **Remaining open questions:**
@@ -342,10 +352,10 @@ Tags and counters are **mechanically distinct and non-overlapping**. A card's ta
 - **Card type taxonomy:** Tags (confirmed above) provide the *mechanism* for categorizing cards, but the **concrete set of tags is open**. A previous draft proposed four types (active/deployable, passive/persistent, entity/institutional, expendable/consumed), but this was illustrative, not stress-tested. The taxonomy needs to be derived from AASS Attribute subcategories and validated against gameplay requirements. What tags exist? Which are domain tags (Military, Diplomatic, Economic)? Which are behavioral tags (Deployable, Persistent, Consumable)?
 - **Slot shape filtering:** Tags are confirmed as the filtering mechanism. What remains open is **which situations use strict tag-based filtering vs. open-ended slots**, and whether this varies per situation type or follows a general rule.
 - How do the two levels (nation-build slots vs. situation-response slots) interact?
-- How are cards acquired, lost, and transformed through gameplay progression?
+- How are cards acquired through **gameplay decisions** (focus trees, political transformation, diplomatic deals)? The simulation-driven generation pipeline is confirmed, but player-driven acquisition mechanics are open (connects to D8).
 - What are the structurally distinct slot patterns (A23 template diversity applied to situations)?
 
-**Status: Situation mechanics confirmed. Card properties (tags/counters), card existence pipeline, and cross-actor effects resolved. Card taxonomy (specific tags) and slot pattern design are the next major task.**
+**Status: Situation mechanics confirmed. Card properties (tags/counters), card existence pipeline, card lifecycle (collection model, four coexisting patterns), and cross-actor effects resolved. Card taxonomy (specific tags) and slot pattern design are the next major task.**
 
 ### D4: Economic Layer
 Identified as the **lynchpin** of the simulation (A24). A26 establishes the player verb: observe, then selectively intervene. AASS clarifies that the economy spans multiple categories: Economic Attributes (national), Market/Exchange Systems (global), and Infrastructure Geography (spatial). **Remaining questions:** What does the economic simulation look like as a spectacle? How does economic capacity constrain military procurement and political options? What are the high-impact economic intervention cards? **Status: Architecture resolved. Spectacle and card design needed.**
@@ -407,3 +417,5 @@ A1 establishes dual-purpose decision trees. A19 requires deep political transfor
 | Q35 | **E** | Card properties: tags and counters | Cards carry tags (categorical, stable, for slot filtering) and counters (numerical, mutable, for state tracking). These are distinct and non-overlapping. Tags answer "what is this?", counters answer "how is this right now?" (D3) |
 | Q36 | **D** | Card existence pipeline | The simulation layer determines which cards exist based on world-state conditions. No card-side gating mechanism needed; the simulation generates the card surface (A32, AASS). |
 | Q37 | **E** | Cross-actor card effects | Card plays spawn forced situations for other actors; escalation emerges from cascading situation chains across actor boundaries. Persistent effects modeled as multi-turn situations. Pending further review (D3, Q28). |
+| Q38 | **E** | Collection model (no hand) | Cards exist in a visible tableau/collection, not a hidden hand. No deck, no draw step, no hand size limit. Cultist Simulator model, not MTG hidden-hand model (D3). |
+| Q39 | **E** | Card lifecycle patterns | Four coexisting patterns: persistent (across turns), generated (simulation adds at turn start), returning (occupied cards refresh), consumed (gone forever). Turn start is the refresh/generation point (D3, Q31). |
