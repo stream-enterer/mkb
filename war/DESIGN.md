@@ -111,11 +111,14 @@ Non-state actors (Hezbollah, Houthis, cartels, PMCs, transnational networks) are
 
 This gives **proxy warfare** a natural mechanical expression: deploying your non-state actor cards into situations on someone else's territory. (Derived from: Houthis/Hezbollah/Cartel analysis — "the same entity is different things to different players")
 
+### A31: Symmetric Rules for All Actors
+All nations in the simulation — player and AI-controlled — operate under **identical mechanical rules**. AI nations hold the same types of cards, face the same situations, and are subject to the same constraints (including bounded action economy, A3) as the player. There are no hidden bonuses, difficulty-scaling resource cheats, or asymmetric mechanics. All differences between nations emerge from **starting conditions, systemic position, and decisions made within the shared rules** — not from the rules themselves. This directly serves A21: the player can reason about AI behavior using the same mechanical understanding they apply to their own decisions, because the mechanics ARE the same. Surprises come from the system, not from hidden advantages. (Derived from: explicit design philosophy — "I don't like hardcoded resource-cheating AIs... I like the entire game to be equal adversaries under the rules")
+
 ---
 
 ## World Model: Actors — Attributes — Systems — Space (AASS)
 
-*The foundational taxonomy of what the simulation contains. Derived from first-principles analysis, adversarial stress-testing (49 critiques), and design-relevance filtering (13 retained). This is the ontological foundation the card-slot mechanic (A27) operates on.*
+*The foundational taxonomy of what the simulation contains and how it behaves — the game's **world-state layer**. Derived from first-principles analysis, adversarial stress-testing (49 critiques), and design-relevance filtering (13 retained). The card-slot model (A27) is a separate **interaction-mechanics layer** through which all actors (player and AI alike, per A31) engage with this world state.*
 
 ### Actors
 **Entities with interests that take or can take purposive action.**
@@ -135,7 +138,7 @@ This gives **proxy warfare** a natural mechanical expression: deploying your non
 - Actors can **partially capture** systems — the US has disproportionate leverage over SWIFT, Saudi Arabia over oil markets. "No one owns systems" is false; influence over systems is a key strategic variable.
 
 ### Attributes
-**Properties, resources, capabilities, and conditions that characterize actors and the world-state. This is the PRIMARY SOURCE OF CARDS in the card-slot model (A27) — the "what your nation IS and CAN DO" layer.**
+**Properties, resources, capabilities, and conditions that characterize actors and the world state. The primary world state from which the card-slot model (A27) generates cards — what a nation IS and CAN DO at the ontological level.**
 
 | Subcategory | Examples | Card role |
 |-------------|----------|-----------|
@@ -163,7 +166,7 @@ This gives **proxy warfare** a natural mechanical expression: deploying your non
 | **Environmental/Physical Systems** | Climate system, ocean currents, disease ecology, resource depletion dynamics | Largely exogenous to actor control; impose constraints and generate crises |
 
 **Design notes:**
-- The five subtypes are **mechanically distinct** — they respond to player action differently. You can capture an institutional system; you can't capture the climate. You can disrupt infrastructure; you can't disrupt a market norm. This matters for card-slot interactions.
+- The five subtypes are **mechanically distinct** — they respond to actor action differently. You can capture an institutional system; you can't capture the climate. You can disrupt infrastructure; you can't disrupt a market norm. This matters for card-slot interactions.
 - Systems interact with Actors through **leverage and position**. A nation's position within a system (e.g., US position in global financial infrastructure) is a Relational Attribute that produces cards.
 - Normative Systems are where **ideology-as-structure** lives (distinct from ideology-as-actor-property, which is an Ideational Attribute). The liberal international order is a Normative System. A nation's commitment to liberalism is an Ideational Attribute.
 
@@ -196,6 +199,16 @@ This gives **proxy warfare** a natural mechanical expression: deploying your non
 | **Attribute ↔ Space** | Demographics are distributed across Space. Resources are located in Space. Capabilities are projected across Space. |
 
 ### How AASS Maps to the Card-Slot Model (A27)
+
+**AASS and the card-slot model are different architectural layers.** AASS is the **world-state layer** — it describes what exists and what is true about the world. The card-slot model (A27) is the **interaction-mechanics layer** — it defines how actors engage with and change the world state. Per A31, all actors (player and AI) interact through the same card-slot mechanics under the same rules.
+
+This distinction matters because:
+- **The two layers serve different purposes** — AASS must be *ontologically complete* (capture everything that exists and matters). The card-slot system must be *mechanically coherent* (provide legible, balanced interaction rules for all actors within A3's bounded agency).
+- **The same world state can produce different card surfaces for different actors** — A30 already demonstrates this: Hezbollah is a different card (or no card at all) depending on a nation's relationship to it, but it is the same AASS entity regardless. This applies symmetrically to all actors.
+- **Government type (A28) configures each actor's card availability** — it determines which cards are directly controllable and which are automated, for player and AI nations alike.
+- **The player-specific element is the UI/UX presentation, not the mechanics.** What the player sees on screen is a rendering of their cards and situations. The underlying card-slot mechanics are universal — every nation has cards, faces situations, and operates under the same rules (A31).
+
+The mapping from world state to cards:
 
 **Cards** are drawn from:
 - **Attributes** (primary source): your capabilities, political conditions, ideational character, economic tools, relational leverage
@@ -349,3 +362,5 @@ A1 establishes dual-purpose decision trees. A19 requires deep political transfor
 | Q29 | Card positional scarcity | Cards can only be in one place at a time; occupation across turn boundaries is possible (D3) |
 | Q30 | Dual scarcity model | Player constrained by both per-turn order cap (A3) and card availability (one-place rule); these compound (D3) |
 | Q31 | Card expenditure modes | Three modes coexist: consumed (gone), occupied (locked then returned), transformed (becomes different card) (D3) |
+| Q32 | World state vs interaction mechanics | AASS is the world-state layer (what exists). The card-slot model is the interaction-mechanics layer (how all actors engage with world state). Both are universal per A31; the player-specific element is the UI/UX presentation, not the mechanics. |
+| Q33 | AI mechanical symmetry | All nations operate under identical rules. No hidden bonuses or asymmetric mechanics. Differences emerge from starting conditions and systemic position, not from the rules themselves (A31). |
