@@ -179,7 +179,7 @@ axiom "A26" domain="economy" {
 
 axiom "A27" domain="mechanics" {
   title "Card-Slot Interaction Model (Core Mechanic)"
-  summary "Two-level card-and-slot system: Level 1 nation-build civic slots, Level 2 situation-response slots"
+  summary "Card-and-tableau decision interface; cards represent everything a nation IS and CAN DO; situations arise as cards, actors respond by committing cards from their tableau"
   depends-on "A2" "A18" "A1"
   also-answers "Q14" "Q20"
 }
@@ -385,7 +385,7 @@ open "D2" domain="military" {
 
 open "D3" domain="mechanics" {
   title "Card Taxonomy and Slot Patterns"
-  summary "Concrete card tags, slot patterns, Level 1/2 interaction, card lifecycle"
+  summary "Concrete card tags, slot patterns, nation-identity mechanics, card lifecycle"
   depends-on "A27" "A32" "AASS"
   has-confirmed "Q26" "Q27" "Q28" "Q29" "Q31" "Q35" "Q36" "Q37" "Q38" "Q39" "Q44"
 }
