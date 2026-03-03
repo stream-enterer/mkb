@@ -95,7 +95,7 @@ Every player decision should **create a new situation with its own internal tens
 The economic layer is primarily a **complex system the player watches running** — visible data streams, updating indicators, flowing resources — with **occasional, high-impact policy interventions** that cost orders. The player does not micromanage tax percentages or click buildings into provinces. When the player DOES intervene, each intervention should feel like a dilemma (A25), not an optimization. The economy runs every turn whether or not the player touches it (A15). (Derived from: "observe, then selectively intervene"; enjoyment of watching complex systems operate; dislike of micromanagement)
 
 ### A27: Card-Slot Interaction Model (Core Mechanic)
-The game's primary decision interface is a **card-and-tableau system**. Each actor's strategic position is represented as a **tableau of cards** — visible, specific, and scarce. Situations arise from the simulation as cards with conditions for change (Q43), and actors respond by committing cards from their tableau into sub-slots, making modal choices, or letting situations auto-progress (Q44).
+The game's primary decision interface is a **card-and-tableau system**. Each actor's strategic position is represented as a **tableau of cards** — visible, specific, and scarce. Situations arise from the simulation as cards with conditions for change (Q43), and actors respond by committing cards from their tableau into sub-slots, making modal choices, or letting situations auto-progress (Q44). Alongside actor tableaux, situations that inherently involve multiple actors exist in a **shared situation space** (A33) — a second zone where no single actor owns the situation, and multiple actors can commit cards to the same situation's sub-slots.
 
 **Cards are broader than actions.** They represent **everything that constitutes what your nation IS and what it CAN DO**. The concrete taxonomy of card types is an **open question** (see D3).
 
@@ -129,7 +129,7 @@ Within the interaction-mechanics layer, the **card is the only interface** for d
 
 **What is explicitly NOT a card:**
 - **Simulation-layer state** — aggregate variables (GDP, population, approval ratings) that feed the simulation. These are the world state that *generates* cards, not cards themselves.
-- **Systems** (AASS) — global structures that provide context for card-slot resolution. An actor's *leverage over* a system is a card; the system itself is the field.
+- **Systems-as-world-state** — the abstract dynamics of a system (how global markets function, how climate patterns evolve) remain simulation-layer computation, not cards. The distinction: the simulation computes system dynamics; **shared-space system cards** (A33) are the interface through which actors engage with those dynamics. An actor commits cards TO the WTO dispute resolution system card, not to "the abstract concept of institutional order." The boundary test holds: "I am committing THIS card to the WTO dispute situation rather than the financial crisis situation."
 - **Space** (AASS) — the board cards operate on. *Control over* a geographic feature is a card; the feature itself is not.
 - **Simulation dynamics** — the rules engine that determines how card-slot interactions resolve.
 
@@ -140,6 +140,24 @@ Within the interaction-mechanics layer, the **card is the only interface** for d
 - **A21 legibility** — the player's entire strategic position is readable in one visual language, supporting the assumption gap.
 
 (Derived from: Linux "everything is a file," MTG unified card interface, adversarial stress-testing of card/attribute boundary with 14 edge cases)
+
+### A33: Shared Situation Space
+Situations can exist in a **shared space** that is not owned by any actor. Multiple actors can commit cards from their tableaux into a shared situation's sub-slots, subject to **access scope** — a property of each sub-slot that determines which actors can commit to it.
+
+**AASS Systems manifest mechanically as persistent shared-space cards.** The five system subtypes (institutional, infrastructure, market, normative, environmental) plus information/media systems are cards in the shared space. They are persistent (they exist across turns), carry sub-slots with typed access scope, and interact with each other through counter interactions between shared-space cards — no special "system-to-system edge" is needed beyond the standard card interface (A32).
+
+**Access scope forms a gradient:**
+- **Environmental** — universal and involuntary. All actors are subject to climate system effects whether they engage or not.
+- **Market** — near-universal. Any actor with the prerequisite economic attributes can participate.
+- **Normative** — global reach, variable commitment. Actors can engage with or defy normative systems; engagement level is a choice.
+- **Infrastructure** — connected actors only. Participation requires physical or technical connectivity (pipeline access, internet backbone connection).
+- **Institutional** — members only. Only actors who have joined the institution can commit to its sub-slots (though non-members may commit to situations *about* the institution).
+
+**Non-system situations also live in shared space** when they inherently involve multiple actors: border disputes, humanitarian crises, trade negotiations, regional conflicts, global phenomena. The boundary test for shared vs. actor-only: **can the situation be meaningfully engaged with by more than one actor?** If yes, it belongs in shared space with appropriate access scope on its sub-slots. If no, it belongs in a single actor's tableau.
+
+**The two-zone model:** Each actor has a tableau (their cards — what they own and control). The shared space holds situations and system cards that exist between actors. Cards in an actor's tableau are "yours." Cards in shared space are "the world's." Actors interact with shared-space situations by committing cards FROM their tableau INTO the shared situation's sub-slots. The same card mechanics (Q29 one-place rule, Q31 expenditure modes, Q43 conditions for change, Q44 satisfaction mechanisms) apply identically in both zones.
+
+(Derived from: adversarial stress test of AASS → systems-as-cards insight → Cultist Simulator Mansus analogy → generalization to all multi-actor situations. This is a first-principle commitment: it cannot be derived from A27/A32 alone because those axioms previously excluded systems from card status.)
 
 ---
 
@@ -169,10 +187,10 @@ Within the interaction-mechanics layer, the **card is the only interface** for d
 
 | Subcategory | Examples | Card role |
 |-------------|----------|-----------|
-| **Capabilities/Assets** | F-35 squadrons, nuclear arsenal, semiconductor fabs, cyber tools, satellite constellation | Deployable capability cards |
+| **Capabilities/Assets** | F-35 squadrons, nuclear arsenal, semiconductor fabs, cyber tools, satellite constellation, intelligence apparatus, information/influence operations capability | Deployable capability cards |
 | **Demographics** | Population size, age structure, urbanization, ethnic composition, education level | Simulation substrate that generates condition cards |
-| **Political Conditions** | Regime type, domestic political cohesion, public opinion, institutional quality, polarization | Constrains which cards can be played; generates political situation slots |
-| **Ideational Attributes** | State ideology, religious composition, cultural soft power, normative commitments | Persistent modifier cards shaping interactions; motivation for AI actors |
+| **Political Conditions** | Regime type, domestic political cohesion, public opinion, institutional quality, polarization, state capacity, civil-military relations | Constrains which cards can be played; generates political situation slots |
+| **Ideational Attributes** | State ideology, religious composition, cultural soft power, normative commitments, historical grievances | Persistent modifier cards shaping interactions; motivation for AI actors |
 | **Economic Attributes** | GDP, industrial base, resource endowment, debt level, trade dependencies | Foundation-layer simulation variables; constrain military and political options |
 | **Relational Attributes** | Alliance memberships, rivalries, dependencies, treaty obligations, reputation, proxy relationships | Diplomatic cards; define actor-to-actor connections |
 
@@ -191,10 +209,13 @@ Within the interaction-mechanics layer, the **card is the only interface** for d
 | **Market/Exchange Systems** | Global financial markets, commodity markets, labor markets, arms markets | Emergent from actor interactions; can be influenced but not directly controlled; subject to systemic risk and cascading failure |
 | **Normative Systems** | Non-proliferation norm, nuclear taboo, human rights regime, sovereignty norms | Can be reinforced or eroded through actor behavior; shape what actions are "legitimate" |
 | **Environmental/Physical Systems** | Climate system, ocean currents, disease ecology, resource depletion dynamics | Largely exogenous to actor control; impose constraints and generate crises |
+| **Information/Media Systems** | Global news networks, social media platform dynamics, algorithmic content distribution, attention economy | Emergent from actor content production + platform architecture; can be influenced through content injection and regulation but outcomes not directly controllable; subject to viral cascading and narrative lock-in |
 
 **Design notes:**
-- The five subtypes are **mechanically distinct** — they respond to actor action differently. You can capture an institutional system; you can't capture the climate. You can disrupt infrastructure; you can't disrupt a market norm. This matters for card-slot interactions.
-- Systems interact with Actors through **leverage and position**. A nation's position within a system (e.g., US position in global financial infrastructure) is a Relational Attribute that produces cards.
+- Systems manifest in the interaction-mechanics layer as **persistent shared-space cards** (A33). Each system subtype is a card in the shared situation space, carrying sub-slots that actors commit their own cards into.
+- The six subtypes are **mechanically distinct** — their differences now map to three dimensions: **access scope** (who can commit cards — environmental is universal, institutional is members-only; see A33 gradient), **auto-progression dynamics** (markets and climate auto-progress with high autonomy; institutions change primarily through deliberate actor action), and **degree of actor control** over the card's sub-slots (you can reform institutional sub-slots; you can only adapt to environmental ones).
+- Systems interact with Actors through **leverage and position**. A nation's position within a system (e.g., US position in global financial infrastructure) is a Relational Attribute that produces cards. Leverage determines what sub-slots an actor can access and with what priority.
+- **System-to-system coupling** works through counter interactions between shared-space cards — no special interaction edge is needed. When the global financial system card's instability counter rises, it modifies counters on infrastructure system cards and market system cards through standard card-interaction mechanics (A32).
 - Normative Systems are where **ideology-as-structure** lives (distinct from ideology-as-actor-property, which is an Ideational Attribute). The liberal international order is a Normative System. A nation's commitment to liberalism is an Ideational Attribute.
 
 ### Space
@@ -225,6 +246,8 @@ Within the interaction-mechanics layer, the **card is the only interface** for d
 | **System ↔ Space** | Systems operate across Space. Spatial conditions enable or constrain system function (a pipeline needs physical geography). |
 | **Attribute ↔ Space** | Demographics are distributed across Space. Resources are located in Space. Capabilities are projected across Space. |
 
+These edges describe how AASS categories constitute each other ontologically — they are not the interaction model. How entities actually interact (including within the same category) is governed by the card-slot layer.
+
 ### How AASS Maps to the Card-Slot Model (A27)
 
 **AASS and the card-slot model are different architectural layers.** AASS is the **world-state layer** — it describes what exists and what is true about the world. The card-slot model (A27) is the **interaction-mechanics layer** — it defines how actors engage with and change the world state. Per A32, the card is the **only interface** within the interaction layer — if an actor must decide what to do with something, it is a card. Per A31, all actors (player and AI) interact through the same card-slot mechanics under the same rules.
@@ -234,13 +257,17 @@ This distinction matters because:
 - **The same world state can produce different card surfaces for different actors** — A30 already demonstrates this: Hezbollah is a different card (or no card at all) depending on a nation's relationship to it, but it is the same AASS entity regardless. This applies symmetrically to all actors.
 - **Government type (A28) configures each actor's card availability** — it determines which cards are directly controllable and which are automated, for player and AI nations alike.
 - **The player-specific element is the UI/UX presentation, not the mechanics.** What the player sees on screen is a rendering of their cards and situations. The underlying card-slot mechanics are universal — every nation has cards, faces situations, and operates under the same rules (A31).
+- **Category-agnostic interaction** — Within the card-slot layer, a card's originating AASS category is mechanically irrelevant. System-derived cards interact with other System-derived cards through the same interface as with Attribute-derived cards. Within-category interactions (Actor↔Actor, System↔System) need no ontological edges because they resolve through A32's uniform card interface.
 
-The mapping from world state to cards:
+The mapping from world state to cards operates across two zones:
 
-**Cards** are drawn from:
+**Actor tableaux** contain cards drawn from:
 - **Attributes** (primary source): your capabilities, political conditions, ideational character, economic tools, relational leverage
 - **Actors** (secondary): allied actors, sub-state factions, proxy relationships you can leverage
-- **Systems** (tertiary): institutional memberships, system positions, infrastructure access
+
+**Shared space** contains:
+- **System cards** (persistent): institutional, infrastructure, market, normative, environmental, information/media — these are the systems themselves as interactable shared-space cards (A33)
+- **Multi-actor situations**: generated by the simulation when conditions affect multiple actors (border disputes, trade negotiations, humanitarian crises, system-level events)
 
 **Situations** are generated when:
 - Systemic conditions cross thresholds (Market System instability triggers economic crisis slot)
@@ -250,9 +277,9 @@ The mapping from world state to cards:
 
 **Resolution** of card-slot interactions is determined by:
 - The cards' properties (tags and counter values)
-- The System context (which systems are relevant, who has leverage)
+- The relevant shared-space system cards — system context is provided by the system cards whose counters and sub-slot states affect the situation being resolved. The relevant systems are the ones the situation interacts with, not an abstract "which systems matter" query.
 - The Space context (geographic and strategic constraints)
-- Other Actors' responses (their cards in the same or related slots)
+- Other Actors' responses (their cards in the same or related slots — in shared-space situations, this means all actors who have committed cards)
 
 ---
 
@@ -266,6 +293,8 @@ The simulation's underlying variables are organized in a **layered hierarchy** w
 | **Derived** (faster-moving, shaped by foundation) | Military-industrial capacity, political conditions, ideational character, information environment | International norms, technology frontier, global information environment |
 
 The player mostly interacts with derived layers turn-to-turn, but the foundation layer determines long-term outcomes. Global layers constrain and connect national layers — a nation's economy exists WITHIN the global economic order. This maps to A20: the player can push on surface variables, but deep structural reality (both national and global) resists.
+
+**Note on Environmental/Physical Systems:** These are the one bedrock-layer element that shifts significantly within campaign timescale (~2020 to 2040+). A24's "near-static" characterization of bedrock holds for geography and resource deposits but not for the climate system, which undergoes non-linear change during the game's temporal scope. This makes environmental system cards (A33) uniquely dynamic among bedrock-derived entities — they auto-progress with consequences that cascade through foundation and derived layers.
 
 (Revised from original A24 to incorporate AASS global layer and Attribute categories. Derived from: discussion of economics as lynchpin, globalization analysis, AASS taxonomy development)
 
@@ -283,7 +312,7 @@ The game is an **argument in interactive form**: that systemic conditions — no
 
 *Areas explicitly flagged as needing further exploration. These are not problems — they are where the interesting design work lives.*
 
-### D1: Temporality and Turn Structure — DEFERRED
+### D1: Temporality and Turn Structure — PARTIALLY RESOLVED
 The implicit assumption that turns represent fixed calendar periods has been **challenged and found unjustified** — nothing in the confirmed axioms requires it. The modern setting creates a timescale problem: drone strikes happen in minutes, demographic shifts take decades. Fixed calendar turns either compress or stretch everything awkwardly.
 
 **Candidate models to explore when revisiting:**
@@ -291,16 +320,19 @@ The implicit assumption that turns represent fixed calendar periods has been **c
 - **Abstract duration categories**: Effects are tagged short/medium/long rather than tied to calendar months
 - **Asynchronous/fragmented turns**: Decision points aren't evenly spaced; the simulation drives when you act
 - **Event-driven cycles**: Simulation runs until enough situations accumulate to present a decision point; time is a consequence, not a clock
+- **Simultaneous commitment + ordered resolution**: All actors commit cards to situations (both tableau and shared-space) simultaneously. Resolution follows in a deterministic order. (Derived from A33 + A31 + A15: shared situations demand simultaneous input to prevent first-mover information advantage, which would create asymmetry from turn order rather than systemic position — contrary to A31's intent.)
 
-**What IS confirmed:** Turns exist (A9), agency per turn is bounded (A3), and the turn boundary forces commitment (A3/A9). What a turn REPRESENTS temporally is open.
+**Confirmed structural constraint:** Regardless of which temporal model is chosen, **the turn has two phases** — a **commitment phase** (all actors assign cards to situations simultaneously, under uncertainty about others' commitments) and a **resolution phase** (situations resolve, effects cascade, new situations spawn). This is confirmed because: A33 requires it (shared situations with multiple actors committing demand simultaneous input), A31 requires it (sequential play on shared situations gives informational advantage not from systemic position but from turn order), and A21 is served by it (the gap between your expected and actual resolution outcome — the moment when other actors' simultaneous commitments are revealed — is the insight-generating moment).
 
-**Status: DEFERRED. Revisit after core card-slot mechanics and at least one game layer (military, economic, or diplomatic) are concretely designed, since those will constrain what temporal model works.**
+**What IS confirmed:** Turns exist (A9), agency per turn is bounded (A3), the turn boundary forces commitment (A3/A9), and the turn has a commit-then-resolve structure (A33/A31). What a turn REPRESENTS temporally, and the specific resolution ordering rule, remain open.
+
+**Status: PARTIALLY RESOLVED. Turn structure (commit → resolve) is confirmed. What a turn represents temporally, and the specific resolution ordering rule, remain open.**
 
 ### D2: Military Layer — The "Deck-Building" Verb
 A18 establishes the philosophy (curation, not construction). A27 provides the interaction model. AASS clarifies that military systems are **Capability/Asset Attributes** fielded as cards into conflict slots. The remaining question: what does military curation look like concretely? How do you acquire systems, what does your military collection look like, and what are the slot structures for military situations? **Status: AASS provides the ontological grounding; concrete mechanics needed.**
 
 ### D3: Card Taxonomy and Slot Patterns
-The card-slot architecture is confirmed (A27). AASS provides the **source categories** for cards (Attributes primarily, Actors and Systems secondarily).
+The card-slot architecture is confirmed (A27). AASS provides the **source categories** for cards: Attributes and Actors populate actor tableaux; Systems manifest as persistent shared-space cards (A33).
 
 **Confirmed mechanics (Situation behavior):** *Items below are **D** (derived) or **E** (extensions) — confirmed through analysis of Cultist Simulator, Paradox event systems, and MTG mechanics, consistent with A27/A25/A32.*
 
@@ -362,7 +394,17 @@ Tags and counters are **mechanically distinct and non-overlapping**. A card's ta
 
 These four patterns coexist within the same collection. A nation's tableau at any moment is the sum of its persistent cards, recently generated cards, and recently returned cards, minus whatever is currently committed to situations or has been consumed. **How many cards the simulation generates per turn is an open question** — it connects to the orders ↔ card-slotting relationship and overall scarcity tuning.
 
-**Cross-actor effects route through situation spawning.** *(Confirmed but flagged for further review.)* When Actor A's card play affects Actor B, the primary mechanism is: A's card play **spawns a forced situation for B**, which B must respond to with their own cards. B's response may in turn spawn situations for other actors, creating **cascading chains** that produce escalation as an emergent property. Example: US plays sanctions card → forced "Sanctions Crisis" situation spawns for Iran → Iran commits cards to respond → Iran's response spawns further situations for regional actors. Persistent cross-actor effects (sanctions regimes, military occupations) may be **multi-turn situations** that lock the originator's cards while continuously generating pressure on the target. This requires no new mechanics — it uses the existing situation spawning (Q28), forced demand (Q26), and multi-turn unfolding (Q27) systems.
+**Cross-actor effects route through two mechanisms.** The primary mechanism for situations inherently involving multiple actors is **shared-space situations** (A33) with multi-actor access scope — actors commit to the same situation directly. Border disputes, trade negotiations, system participation, and any symmetric multi-actor interaction use shared-space situations. The secondary mechanism remains **situation spawning** — one actor's card play spawns a forced situation for another actor. Spawning is still needed for asymmetric effects (sanctions targeting a specific nation, covert operations against a target) where the originator acts and the target reacts. Persistent cross-actor effects may be **multi-turn situations** in either zone. Escalation emerges from cascading chains across both mechanisms: a shared-space trade negotiation can spawn asymmetric domestic situations for each participant. This uses the existing situation spawning (Q28), forced demand (Q26), and multi-turn unfolding (Q27) systems alongside A33's shared space.
+
+**Sub-slots carry access scope.** Each sub-slot on a situation card (in shared space or in an actor's tableau) specifies which actors can commit cards to it. Scope is a property of the slot, not the situation — a single situation can have slots accessible to different sets of actors. Scope types include:
+- **Single-actor** — domestic situations; only the owning actor can commit.
+- **Named-actor** — bilateral disputes or targeted situations; only specifically named actors can commit (e.g., "US and China" on a trade war situation).
+- **Conditional** — actors meeting tag/attribute criteria can commit (e.g., "any actor with [Nuclear] capability tag" for a non-proliferation negotiation).
+- **Universal** — any actor can commit (e.g., environmental crisis response, open market participation).
+
+This uses the existing tag-filtering mechanism (Q35) extended to actor identity. No new primitives are introduced.
+
+**Situations exist in shared space when they involve multiple actors.** The single-tableau model (Q38) is extended: each actor has a tableau (their cards), and a shared space holds situations and system cards that are not owned by any actor. Actors interact with shared-space situations by committing cards from their tableau into the situation's sub-slots, subject to access scope. The same card mechanics (Q29 one-place rule, Q31 expenditure modes, Q43 conditions for change, Q44 satisfaction mechanisms) apply identically in both zones.
 
 **Remaining open questions:**
 - **Orders ↔ card-slotting relationship:** A3 confirms bounded per-turn agency. A27 confirms card-slotting as the interaction mechanic. The relationship between these two is **unresolved**. Possibilities include: orders = card slots (1:1), orders as a superset encompassing non-card actions, card-slotting costing variable order points, or orders and card-slotting as fully orthogonal scarcity axes. This is load-bearing — the answer shapes how the two scarcity dimensions actually compound in play.
@@ -372,8 +414,9 @@ These four patterns coexist within the same collection. A nation's tableau at an
 - How are cards acquired through **gameplay decisions** (focus trees, political transformation, diplomatic deals)? The simulation-driven generation pipeline is confirmed, but player-driven acquisition mechanics are open (connects to D8).
 - What are the structurally distinct slot patterns (A23 template diversity applied to situations)?
 - **Cross-actor tableau visibility:** Per A14 (legibility through action) and A31 (symmetric rules), to what degree can actors observe each other's tableaux? Full visibility? Partial (only committed cards)? Only situations that affect them? This is an information design question with mechanical implications for AI legibility.
+- **Resolution ordering:** When all commitments are simultaneous (D1 confirmed constraint), what determines the order situations resolve in? Urgency-first? Geographic propagation? Cascading (parent before child)? This is a new design lever with major gameplay implications — the ordering rule determines which effects are "already resolved" when later situations process, creating strategic depth around which situations you want to resolve first.
 
-**Status: Situation mechanics confirmed, including situation definition (Q43), condition satisfaction mechanisms (Q44), change types (Q28 revised), and modal responses. Card properties (tags/counters), card existence pipeline, card lifecycle (collection model, four coexisting patterns), and cross-actor effects resolved. Card taxonomy (specific tags) and slot pattern design are the next major task.**
+**Status: Situation mechanics confirmed, including situation definition (Q43), condition satisfaction mechanisms (Q44), change types (Q28 revised), and modal responses. Card properties (tags/counters), card existence pipeline, card lifecycle (collection model, four coexisting patterns), cross-actor effects (dual mechanism: shared-space + spawning), sub-slot access scope, and shared-space situation model resolved. Card taxonomy (specific tags), slot pattern design, and resolution ordering are the next major tasks.**
 
 ### D4: Economic Layer
 Identified as the **lynchpin** of the simulation (A24). A26 establishes the player verb: observe, then selectively intervene. AASS clarifies that the economy spans multiple categories: Economic Attributes (national), Market/Exchange Systems (global), and Infrastructure Geography (spatial). **Remaining questions:** What does the economic simulation look like as a spectacle? How does economic capacity constrain military procurement and political options? What are the high-impact economic intervention cards? **Status: Architecture resolved. Spectacle and card design needed.**
@@ -455,7 +498,7 @@ A1 establishes dual-purpose decision trees. A19 requires deep political transfor
 | Q21 | **D** | Card system as unifying mechanic | National Spirits, military systems, focus rewards, estates all unified as card types (A27) |
 | Q22 | **A** | Non-state actors | Independent simulation entities; relationship determines card manifestation (A30) |
 | Q23 | **A** | World model taxonomy | Actors — Attributes — Systems — Space (AASS); adversarially tested |
-| Q24 | **D** | Where cards come from | Primarily Attributes, secondarily Actors and Systems; Space provides context |
+| Q24 | **D** | Where cards come from | Actor tableaux: primarily Attributes, secondarily Actors. Shared space: system cards (persistent, A33) and multi-actor situations (generated). Space provides context for both zones |
 | Q25 | **D** | How globalization is modeled | Global Systems layer parallel to national layers; nations embedded within shared systems; system leverage is a key variable |
 | Q26 | **E** | Situation demand model | Situations are either forced (demand card commitment) or optional (opportunities); the mix creates tension (D3) |
 | Q27 | **E** | Situation temporality | Immediate, windowed (X turns to respond), or multi-turn unfolding; can overlap (D3) |
@@ -465,14 +508,18 @@ A1 establishes dual-purpose decision trees. A19 requires deep political transfor
 | Q31 | **E** | Card expenditure modes | Three modes coexist: consumed (gone), occupied (locked then returned), transformed (becomes different card) (D3) |
 | Q32 | **D** | World state vs interaction mechanics | AASS is the world-state layer (what exists). The card-slot model is the interaction-mechanics layer (how all actors engage with world state). Both are universal per A31; the player-specific element is the UI/UX presentation, not the mechanics. |
 | Q33 | **A** | AI mechanical symmetry | All nations operate under identical rules. No hidden bonuses or asymmetric mechanics. Differences emerge from starting conditions and systemic position, not from the rules themselves (A31). |
-| Q34 | **A** | Uniform card interface | Within the interaction layer, the card is the only interface for decision-relevant entities. Boundary test: "Can I commit THIS thing HERE rather than THERE?" Simulation state, Systems, Space, and dynamics are explicitly not cards (A32). |
+| Q34 | **A** | Uniform card interface | Within the interaction layer, the card is the only interface for decision-relevant entities. Boundary test: "Can I commit THIS thing HERE rather than THERE?" Simulation state, systems-as-world-state (abstract dynamics), Space, and simulation dynamics are explicitly not cards; systems-as-interactable-entities are shared-space cards (A32 revised, A33). |
 | Q35 | **E** | Card properties: tags and counters | Cards carry tags (categorical, stable, for slot filtering) and counters (numerical, mutable, for state tracking). These are distinct and non-overlapping. Tags answer "what is this?", counters answer "how is this right now?" (D3) |
 | Q36 | **D** | Card existence pipeline | The simulation layer determines which cards exist based on world-state conditions. No card-side gating mechanism needed; the simulation generates the card surface (A32, AASS). |
-| Q37 | **E** | Cross-actor card effects | Card plays spawn forced situations for other actors; escalation emerges from cascading situation chains across actor boundaries. Persistent effects modeled as multi-turn situations. Pending further review (D3, Q28). |
-| Q38 | **E** | Single tableau model | Each actor has one visible tableau containing all cards (capabilities, entities, situations). No deck, no draw, no separate zones. Cards are either available or committed. Cultist Simulator model (D3). |
+| Q37 | **E** | Cross-actor card effects | Two mechanisms: (1) **Shared-space situations** (A33) — actors commit to the same situation directly; primary for symmetric multi-actor interactions (border disputes, trade negotiations, system participation). (2) **Situation spawning** — one actor's play generates a forced situation for another; primary for asymmetric effects (sanctions, covert ops). Escalation emerges from cascading chains across both mechanisms. Persistent effects modeled as multi-turn situations in either zone (D3, Q28, A33). |
+| Q38 | **E** | Tableau + shared space model | Each actor has a single tableau containing all their cards. Alongside actor tableaux, a **shared situation space** holds unowned situations and system cards (A33). Cards in an actor's tableau are available or committed. Commitment can be to situations in the actor's own tableau (domestic) or to situations in shared space (multi-actor). The Cultist Simulator single-zone model is extended to a two-zone model, not replaced — the single-tableau principle still holds for each actor's own cards (D3, A33). |
 | Q39 | **E** | Card lifecycle patterns | Four coexisting patterns: persistent (across turns), generated (simulation adds at turn start), returning (occupied cards refresh), consumed (gone forever). Turn start is the refresh/generation point (D3, Q31). |
 | Q40 | **E** | Diplomatic proposal structure | Proposals are situation-cards with Offer slots (proposer's committed cards, occupied per Q29) and Demand slots (tag-filtered requirements the recipient fills on acceptance). No new interaction patterns (D6). |
 | Q41 | **E** | Diplomatic multi-phase flow | Construct → deliver → evaluate → fulfill → resolve. Maps to Q27 multi-turn unfolding. Delivery via Q37 cross-actor situation spawning (D6). |
 | Q42 | **E** | Diplomatic acceptance resolution | Existing expenditure modes apply per card type: consumed (fungible resources), occupied+returned (capabilities), side-effect spawning via Q28 (new persistent entities like military bases) (D6). |
 | Q43 | **D** | Situation definition | Situations are cards (A32) with conditions for change; sub-slots are a card feature, not a situation-defining characteristic (A32, A27) |
 | Q44 | **E** | Condition satisfaction mechanisms | Four mechanisms: card commitment (sub-slots), modal choice, temporal auto-progression, external trigger; these can compound. Modal responses resolve binary decisions (D3, D6) |
+| Q45 | **D** | Systems as shared-space cards | AASS Systems manifest mechanically as persistent shared-space cards (A33). Systems pass A32's boundary test: actors commit cards TO them ("I am committing THIS card to THIS system"). The simulation still computes system dynamics; the cards are the interface through which actors engage. Derived from A33 + A32 revised (A33, A32). |
+| Q46 | **E** | Access scope on sub-slots | Sub-slots carry access scope determining which actors can commit. Scope types: single-actor, named-actor, conditional (tag/attribute criteria), universal. Uses existing tag-filtering mechanism (Q35) extended to actor identity. Gradient for system cards: environmental (universal) → market (near-universal) → normative (variable) → infrastructure (connected) → institutional (members). Consistent with A33 but not strictly required by it (A33, Q35). |
+| Q47 | **D** | Simultaneous commitment + ordered resolution | All actors commit cards to situations (tableau and shared-space) simultaneously during a commitment phase. Resolution follows in a deterministic order during a resolution phase. Sequential play on shared situations would give informational advantage from turn order rather than systemic position, violating A31/A15. Derived from A33 + A31 + A15 (A33, A31, A15, D1). |
+| Q48 | **E** | Information/media domain resolution | The information/media domain is modeled as a shared-space system card (Information/Media Systems in AASS), not a new framework subcategory. Actors interact with it by committing cards (content production, regulation, platform manipulation) into its sub-slots. Resolves the adversarial finding that information warfare lacked mechanical grounding, using A33's mechanics rather than framework expansion (A33, AASS). |
