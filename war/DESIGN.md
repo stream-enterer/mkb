@@ -98,14 +98,9 @@ The game's primary decision interface is a **card-and-slot system** that operate
 
 **Level 2 — Situation Response (Cultist Simulator-like):** When situations arise (crises, opportunities, dilemmas), they present **slot structures** that the player fills with **cards from their accumulated collection**. Some situations require cards from multiple domains (Cultist Simulator operations-style), creating a resource allocation puzzle: "I have 3 slots and 7 candidate cards — which combination?"
 
-**Cards are broader than actions.** They represent **everything that constitutes what your nation IS and what it CAN DO**:
+**Cards are broader than actions.** They represent **everything that constitutes what your nation IS and what it CAN DO**. The concrete taxonomy of card types is an **open question** (see D3).
 
-- **Active cards**: capabilities you deploy into situations (launch covert op, issue executive order, deploy military system)
-- **Passive cards**: persistent modifiers that shape your state (National Spirits — A2 was already this concept). May have active/passive modal toggle.
-- **Entity cards**: institutions, factions, estates, non-governmental power structures (oligarchs, corporations, religious bodies, unions) that are **deeply embedded in gameplay** with their own dynamics, advantages, and disadvantages — like EU4 Estates, not optional flavor
-- **Expendable cards**: one-time leverage, crisis responses, diplomatic favors — consumed on use
-
-**Unifying insight:** A2 (National Spirits) = passive cards. A18 (Military Systems) = a card category. A1 (Focus Tree rewards) = cards you acquire. These were always the same system.
+**Unifying insight:** A2 (National Spirits), A18 (Military Systems), A1 (Focus Tree rewards), and A29 (non-governmental actors/estates) are all cards in the same system. These were always the same mechanic.
 
 The combination of your Level 1 build + accumulated Level 2 cards IS your nation's identity. This is why the player feels attached — it's THEIR build, not just a flag on a map. (Derived from: Shadow Empire action cards, Cultist Simulator verb-object interactions, Civ4 civics slotting, EU4 estates, explicit synthesis across multiple discussions)
 
@@ -127,6 +122,25 @@ This gives **proxy warfare** a natural mechanical expression: deploying your non
 
 ### A31: Symmetric Rules for All Actors
 All nations in the simulation — player and AI-controlled — operate under **identical mechanical rules**. AI nations hold the same types of cards, face the same situations, and are subject to the same constraints (including bounded action economy, A3) as the player. There are no hidden bonuses, difficulty-scaling resource cheats, or asymmetric mechanics. All differences between nations emerge from **starting conditions, systemic position, and decisions made within the shared rules** — not from the rules themselves. This directly serves A21: the player can reason about AI behavior using the same mechanical understanding they apply to their own decisions, because the mechanics ARE the same. Surprises come from the system, not from hidden advantages. (Derived from: explicit design philosophy — "I don't like hardcoded resource-cheating AIs... I like the entire game to be equal adversaries under the rules")
+
+### A32: Uniform Card Interface
+Within the interaction-mechanics layer, the **card is the only interface** for decision-relevant entities. If an actor must decide what to do with something — commit it, withhold it, deploy it, or lose it — that thing must be a card. There is no second type of decision-relevant object. (Inspired by: Linux's "everything is a file," MTG's unified card interface)
+
+**The card/attribute boundary test:** Can you answer "I am committing THIS thing HERE rather than THERE"? If yes, it's a card — it has positional identity. If no, it's either a simulation-layer variable or a property of a card.
+
+**What is explicitly NOT a card:**
+- **Simulation-layer state** — aggregate variables (GDP, population, approval ratings) that feed the simulation. These are the world state that *generates* cards, not cards themselves.
+- **Systems** (AASS) — global structures that provide context for card-slot resolution. An actor's *leverage over* a system is a card; the system itself is the field.
+- **Space** (AASS) — the board cards operate on. *Control over* a geographic feature is a card; the feature itself is not.
+- **Simulation dynamics** — the rules engine that determines how card-slot interactions resolve.
+
+**Why the uniform interface is load-bearing:**
+- **Single scarcity grammar** — cross-domain tradeoffs only work when all decision-relevant entities compete through the same interface. "Do I commit my intelligence apparatus to the domestic crisis or the foreign operation?" requires both options to be cards.
+- **A31 compliance** — symmetric rules for all actors are automatically satisfied when all actors interact through the same card interface.
+- **A28 implementation** — government type becomes a tag on cards (player-controlled vs. automated), not different automation logic per entity type.
+- **A21 legibility** — the player's entire strategic position is readable in one visual language, supporting the assumption gap.
+
+(Derived from: Linux "everything is a file," MTG unified card interface, adversarial stress-testing of card/attribute boundary with 14 edge cases)
 
 ---
 
@@ -156,10 +170,10 @@ All nations in the simulation — player and AI-controlled — operate under **i
 
 | Subcategory | Examples | Card role |
 |-------------|----------|-----------|
-| **Capabilities/Assets** | F-35 squadrons, nuclear arsenal, semiconductor fabs, cyber tools, satellite constellation | Active cards — things you deploy |
+| **Capabilities/Assets** | F-35 squadrons, nuclear arsenal, semiconductor fabs, cyber tools, satellite constellation | Deployable capability cards |
 | **Demographics** | Population size, age structure, urbanization, ethnic composition, education level | Simulation substrate that generates condition cards |
 | **Political Conditions** | Regime type, domestic political cohesion, public opinion, institutional quality, polarization | Constrains which cards can be played; generates political situation slots |
-| **Ideational Attributes** | State ideology, religious composition, cultural soft power, normative commitments | Passive cards shaping all interactions; motivation for AI actors |
+| **Ideational Attributes** | State ideology, religious composition, cultural soft power, normative commitments | Persistent modifier cards shaping interactions; motivation for AI actors |
 | **Economic Attributes** | GDP, industrial base, resource endowment, debt level, trade dependencies | Foundation-layer simulation variables; constrain military and political options |
 | **Relational Attributes** | Alliance memberships, rivalries, dependencies, treaty obligations, reputation, proxy relationships | Diplomatic cards; define actor-to-actor connections |
 
@@ -214,7 +228,7 @@ All nations in the simulation — player and AI-controlled — operate under **i
 
 ### How AASS Maps to the Card-Slot Model (A27)
 
-**AASS and the card-slot model are different architectural layers.** AASS is the **world-state layer** — it describes what exists and what is true about the world. The card-slot model (A27) is the **interaction-mechanics layer** — it defines how actors engage with and change the world state. Per A31, all actors (player and AI) interact through the same card-slot mechanics under the same rules.
+**AASS and the card-slot model are different architectural layers.** AASS is the **world-state layer** — it describes what exists and what is true about the world. The card-slot model (A27) is the **interaction-mechanics layer** — it defines how actors engage with and change the world state. Per A32, the card is the **only interface** within the interaction layer — if an actor must decide what to do with something, it is a card. Per A31, all actors (player and AI) interact through the same card-slot mechanics under the same rules.
 
 This distinction matters because:
 - **The two layers serve different purposes** — AASS must be *ontologically complete* (capture everything that exists and matters). The card-slot system must be *mechanically coherent* (provide legible, balanced interaction rules for all actors within A3's bounded agency).
@@ -304,7 +318,7 @@ The card-slot architecture is confirmed (A27). AASS provides the **source catego
 
 **Cards can only be in one place at a time.** This is the core scarcity mechanic. Committing a card to one situation makes it unavailable for others. Multi-turn situations lock cards across turn boundaries, meaning long commitments (e.g., military deployments) reduce your available cards for subsequent turns.
 
-**Two independent scarcity dimensions constrain the player:** A3's bounded action economy caps how many cards you can slot per turn. The one-place rule caps which cards are available at all. These compound — you're constrained both by orders and by card availability. This is load-bearing for difficulty and tension.
+**Two independent scarcity dimensions constrain the player:** A3's bounded action economy caps per-turn agency through some mechanism (the specific relationship between orders and card-slotting is an **open question** — see below). The one-place rule caps which cards are available at all. These are confirmed as **separate axes of constraint** that compound. This is load-bearing for difficulty and tension.
 
 **Three card expenditure modes coexist within the same system:**
 - **Consumed:** Card is spent and gone (expendable resources, one-time favors).
@@ -313,14 +327,25 @@ The card-slot architecture is confirmed (A27). AASS provides the **source catego
 
 **Edge case to address in tuning:** If enough forced situations fire simultaneously, the player could run out of available cards. This is a legitimate "you're overwhelmed and losing" state, but may need a safety valve depending on how card counts and situation frequency feel in practice. This is a balance question, not a design flaw.
 
+**Cards carry two distinct types of properties:**
+- **Tags** — categorical, mostly stable labels that identify what *kind* of card this is. Tags enable slot filtering (a situation can require a [Military] card in slot 1 and a [Diplomatic] card in slot 2) and determine interaction rules. Analogous to MTG card types/subtypes (Creature — Elf Warrior) and Linux file types (regular, directory, socket). Tags answer: "What is this?"
+- **Counters** — numerical, mutable values that track the card's current *state*. Counters change through play: deployment may remove readiness counters, combat may add experience counters, neglect may degrade maintenance counters. Analogous to MTG +1/+1 counters, loyalty counters, charge counters. Counters answer: "How is this right now?"
+
+Tags and counters are **mechanically distinct and non-overlapping**. A card's tags determine *where it can go*. A card's counters determine *how well it performs there*. This resolves the "mutable card state" question without requiring a fourth expenditure mode — a card that returns from a situation with changed counters is using the **occupied** mode (Q31) with counter modification as a side effect of resolution.
+
+**Card existence is a simulation-layer concern.** The simulation (AASS world state) determines which cards are available to each actor based on world-state conditions (GDP thresholds, technological knowledge, institutional prerequisites, demographic conditions). Cards appear in an actor's collection when conditions are met and can disappear when conditions are no longer met. No special card-side gating mechanism is needed — the simulation generates the card surface, and the card surface is what actors interact with. This directly implements A32: the card layer doesn't need to know *why* a card exists; it just needs to present cards for decisions.
+
+**Cross-actor effects route through situation spawning.** *(Confirmed but flagged for further review.)* When Actor A's card play affects Actor B, the primary mechanism is: A's card play **spawns a forced situation for B**, which B must respond to with their own cards. B's response may in turn spawn situations for other actors, creating **cascading chains** that produce escalation as an emergent property. Example: US plays sanctions card → forced "Sanctions Crisis" situation spawns for Iran → Iran commits cards to respond → Iran's response spawns further situations for regional actors. Persistent cross-actor effects (sanctions regimes, military occupations) may be **multi-turn situations** that lock the originator's cards while continuously generating pressure on the target. This requires no new mechanics — it uses the existing situation spawning (Q28), forced demand (Q26), and multi-turn unfolding (Q27) systems.
+
 **Remaining open questions:**
-- **Slot shape filtering:** Whether situations require specific card aspects/tags (strict filtering) or are open-ended ("put whatever you want, we evaluate what happens") is explicitly **open and can vary per situation type**.
-- What are the concrete card types within each AASS Attribute subcategory?
+- **Orders ↔ card-slotting relationship:** A3 confirms bounded per-turn agency. A27 confirms card-slotting as the interaction mechanic. The relationship between these two is **unresolved**. Possibilities include: orders = card slots (1:1), orders as a superset encompassing non-card actions, card-slotting costing variable order points, or orders and card-slotting as fully orthogonal scarcity axes. This is load-bearing — the answer shapes how the two scarcity dimensions actually compound in play.
+- **Card type taxonomy:** Tags (confirmed above) provide the *mechanism* for categorizing cards, but the **concrete set of tags is open**. A previous draft proposed four types (active/deployable, passive/persistent, entity/institutional, expendable/consumed), but this was illustrative, not stress-tested. The taxonomy needs to be derived from AASS Attribute subcategories and validated against gameplay requirements. What tags exist? Which are domain tags (Military, Diplomatic, Economic)? Which are behavioral tags (Deployable, Persistent, Consumable)?
+- **Slot shape filtering:** Tags are confirmed as the filtering mechanism. What remains open is **which situations use strict tag-based filtering vs. open-ended slots**, and whether this varies per situation type or follows a general rule.
 - How do the two levels (nation-build slots vs. situation-response slots) interact?
 - How are cards acquired, lost, and transformed through gameplay progression?
 - What are the structurally distinct slot patterns (A23 template diversity applied to situations)?
 
-**Status: Situation mechanics confirmed. Card taxonomy and slot pattern design are the next major task.**
+**Status: Situation mechanics confirmed. Card properties (tags/counters), card existence pipeline, and cross-actor effects resolved. Card taxonomy (specific tags) and slot pattern design are the next major task.**
 
 ### D4: Economic Layer
 Identified as the **lynchpin** of the simulation (A24). A26 establishes the player verb: observe, then selectively intervene. AASS clarifies that the economy spans multiple categories: Economic Attributes (national), Market/Exchange Systems (global), and Infrastructure Geography (spatial). **Remaining questions:** What does the economic simulation look like as a spectacle? How does economic capacity constrain military procurement and political options? What are the high-impact economic intervention cards? **Status: Architecture resolved. Spectacle and card design needed.**
@@ -374,7 +399,11 @@ A1 establishes dual-purpose decision trees. A19 requires deep political transfor
 | Q27 | **E** | Situation temporality | Immediate, windowed (X turns to respond), or multi-turn unfolding; can overlap (D3) |
 | Q28 | **E** | What slotting a card produces | Advancement, transformation, side-effect spawning, or closure — resolution is one outcome, not the default (D3, A25) |
 | Q29 | **E** | Card positional scarcity | Cards can only be in one place at a time; occupation across turn boundaries is possible (D3) |
-| Q30 | **D** | Dual scarcity model | Player constrained by both per-turn order cap (A3) and card availability (one-place rule); these compound (D3) |
+| Q30 | **D** | Dual scarcity model | Player constrained by both A3's bounded action economy and card availability (one-place rule); these are separate axes that compound. The specific mechanical relationship between orders and card-slotting is **open** (D3) |
 | Q31 | **E** | Card expenditure modes | Three modes coexist: consumed (gone), occupied (locked then returned), transformed (becomes different card) (D3) |
 | Q32 | **D** | World state vs interaction mechanics | AASS is the world-state layer (what exists). The card-slot model is the interaction-mechanics layer (how all actors engage with world state). Both are universal per A31; the player-specific element is the UI/UX presentation, not the mechanics. |
 | Q33 | **A** | AI mechanical symmetry | All nations operate under identical rules. No hidden bonuses or asymmetric mechanics. Differences emerge from starting conditions and systemic position, not from the rules themselves (A31). |
+| Q34 | **A** | Uniform card interface | Within the interaction layer, the card is the only interface for decision-relevant entities. Boundary test: "Can I commit THIS thing HERE rather than THERE?" Simulation state, Systems, Space, and dynamics are explicitly not cards (A32). |
+| Q35 | **E** | Card properties: tags and counters | Cards carry tags (categorical, stable, for slot filtering) and counters (numerical, mutable, for state tracking). These are distinct and non-overlapping. Tags answer "what is this?", counters answer "how is this right now?" (D3) |
+| Q36 | **D** | Card existence pipeline | The simulation layer determines which cards exist based on world-state conditions. No card-side gating mechanism needed; the simulation generates the card surface (A32, AASS). |
+| Q37 | **E** | Cross-actor card effects | Card plays spawn forced situations for other actors; escalation emerges from cascading situation chains across actor boundaries. Persistent effects modeled as multi-turn situations. Pending further review (D3, Q28). |

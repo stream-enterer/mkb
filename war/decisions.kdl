@@ -166,7 +166,7 @@ axiom "A24" domain="simulation" {
 
 axiom "A25" domain="content" {
   title "Decisions Create Situations, Not Increments"
-  summary "Every decision creates new tension; commitment → tension → dilemma; no counters or timers"
+  summary "Every decision creates new tension; commitment → tension → dilemma; no mere incrementing of variables"
   also-answers "Q15"
 }
 
@@ -210,6 +210,13 @@ axiom "A31" domain="mechanics" {
   summary "All nations operate under identical rules; no hidden AI bonuses; differences from starting conditions only"
   depends-on "A21"
   also-answers "Q33"
+}
+
+axiom "A32" domain="mechanics" {
+  title "Uniform Card Interface"
+  summary "Within the interaction layer, the card is the only interface for decision-relevant entities; no second object type"
+  depends-on "A27" "AASS"
+  also-answers "Q34"
 }
 
 // ─── FRAMEWORKS ─────────────────────────────────────────────
@@ -260,14 +267,20 @@ derived "Q25" domain="simulation" {
 
 derived "Q30" domain="mechanics" {
   title "Dual Scarcity Model"
-  summary "Constrained by both per-turn order cap and card availability; these compound"
+  summary "Constrained by both bounded action economy (A3) and card availability (one-place rule); separate axes that compound. Orders ↔ card-slotting relationship is open"
   depends-on "A3" "Q29"
 }
 
 derived "Q32" domain="simulation" {
   title "World State vs Interaction Mechanics"
-  summary "AASS is world-state layer; card-slot is interaction-mechanics layer; both universal per A31"
-  depends-on "A27" "A30" "A31"
+  summary "AASS is world-state layer; card-slot is interaction-mechanics layer; both universal per A31; card is the only interaction interface per A32"
+  depends-on "A27" "A30" "A31" "A32"
+}
+
+derived "Q36" domain="mechanics" {
+  title "Card Existence Pipeline"
+  summary "Simulation layer determines which cards exist based on world-state conditions; no card-side gating mechanism needed"
+  depends-on "A32" "AASS"
 }
 
 // ─── EXTENSIONS (confirmed but not axiom-required) ──────────
@@ -302,6 +315,18 @@ extension "Q31" domain="mechanics" {
   extends "A27"
 }
 
+extension "Q35" domain="mechanics" {
+  title "Card Properties: Tags and Counters"
+  summary "Cards carry tags (categorical, stable, for slot filtering) and counters (numerical, mutable, for state tracking); distinct and non-overlapping"
+  extends "A27" "A32"
+}
+
+extension "Q37" domain="mechanics" review-pending=#true {
+  title "Cross-Actor Effects via Situation Spawning"
+  summary "Card plays spawn forced situations for other actors; escalation from cascading chains; persistent effects as multi-turn situations"
+  extends "Q28" "Q26" "Q27"
+}
+
 // ─── OPEN DESIGN SPACES ────────────────────────────────────
 
 open "D1" domain="mechanics" deferred=#true {
@@ -318,9 +343,9 @@ open "D2" domain="military" {
 
 open "D3" domain="mechanics" {
   title "Card Taxonomy and Slot Patterns"
-  summary "Concrete card types, slot patterns, Level 1/2 interaction, card lifecycle"
-  depends-on "A27" "AASS"
-  has-confirmed "Q26" "Q27" "Q28" "Q29" "Q30" "Q31"
+  summary "Concrete card tags, slot patterns, Level 1/2 interaction, card lifecycle"
+  depends-on "A27" "A32" "AASS"
+  has-confirmed "Q26" "Q27" "Q28" "Q29" "Q30" "Q31" "Q35" "Q36" "Q37"
 }
 
 open "D4" domain="economy" {
